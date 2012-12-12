@@ -27,7 +27,7 @@
           <li><a rel="external owl:imports" href="http://purl.org/dc/terms/">Dublin Core Terms</a></li>
           <li>The <a rel="external owl:imports" href="http://purl.org/NET/c4dm/event.owl#" title="The Event Ontology">Event Ontology</a></li>
           <li>The <a rel="external owl:imports" href="http://purl.org/ontology/bibo/">Bibliography Ontology</a></li>
-          <li>The <a rel="external owl:imports" href="http://purl.org/linked-data/cube#">Data Cube Ontology</a></li>
+          <li>The <a rel="external owl:imports" href="http://purl.org/linked-data/cube#">Data Cube Vocabulary</a></li>
           <li><acronym title="Functional Requirements for Bibliographic Records">FRBR</acronym> <a rel="external" href="http://vocab.org/frbr/core" title="Expression of Core FRBR Concepts in RDF">Core</a> and <a rel="external" href="http://vocab.org/frbr/extended" title="Expression of Extended FRBR Concepts in RDF">Extended</a></li>
         </ul>
       </div>
@@ -78,63 +78,6 @@
           <dd><a rel="rdfs:domain" href="#Merge">ci:Merge</a></dd>
           <dt>Range</dt>
           <dd><a rel="external rdfs:range" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="section-count" about="[ci:section-count]" typeof="owl:DatatypeProperty">
-        <h3 property="rdfs:label">section-count</h3>
-        <p property="rdfs:comment">For document types that have a concrete representation of sections, this property may be used to capture their sum.</p>
-        <dl>
-          <dt>Domain</dt>
-          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="block-count" about="[ci:block-count]" typeof="owl:DatatypeProperty">
-        <h3 property="rdfs:label">block-count</h3>
-        <p property="rdfs:comment">A block count is conceptually similar to a word or section count, though it counts the total of elements in the document considered to be text blocks, such as paragraphs, tables, lists and figures. It is suited for document types that have no concept of (semantic) sections, such as HTML. The purpose of this measurement is to provide a sort of ratio to the word count, to glean how well-proportioned the document is.</p>
-        <dl>
-          <dt>Domain</dt>
-          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="word-count" about="[ci:word-count]" typeof="owl:DatatypeProperty">
-        <h3 property="rdfs:label">word-count</h3>
-        <p property="rdfs:comment">This indicates the number of words in a document, similar to the familiar function in a word processor. The exact method of counting words may vary by document type, language etc., and is thus out of scope from this document.</p>
-        <dl>
-          <dt>Domain</dt>
-          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="character-count" about="[ci:character-count]" typeof="owl:DatatypeProperty">
-        <h3 property="rdfs:label">character-count</h3>
-        <p property="rdfs:comment">This indicates the number of characters in a document, with punctuation and the XPath normalize-space function applied. Note this is characters, not bytes.</p>
-        <dl>
-          <dt>Domain</dt>
-          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
-          <dt>See Also</dt>
-          <dd><a rel="external rdfs:seeAlso" href="http://www.w3.org/TR/xpath/#function-normalize-space"><samp>normalize-space</samp> in the XPath 1.0 specification</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="block-stats" about="[ci:block-stats]" typeof="owl:ObjectProperty">
-        <h3 property="rdfs:label">block-stats</h3>
-        <p property="rdfs:comment">Points to a set of descriptive statistics about the ratio of words per block</p>
-        <dl>
-          <dt>Domain</dt>
-          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="external rdfs:range" resource="http://purl.org/linked-data/cube#DataSet" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_DataSet">qb:DataSet</a></dd>
         </dl>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
@@ -236,6 +179,13 @@
             <ul>
               <li typeof="qb:ComponentSpecification"><a rel="qb:dimension" href="#document">document</a></li>
             </ul>
+            <h6>Counts</h6>
+            <ul>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#sections">sections</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#blocks">blocks</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#words">words</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#characters">characters</a></li>
+            </ul>
             <h6>Five-number summary</h6>
             <ul>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#min">min</a></li>
@@ -258,16 +208,95 @@
         <div id="document" about="[ci:document]" typeof="qb:DimensionProperty">
           <h4 property="rdfs:label">document</h4>
           <p property="rdfs:comment">Document Reference</p>
+          <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range</dt>
+            <dd><a rel="external rdfs:range" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </div>
       </div>
       <div>
         <p>The <a rel="external" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_MeasureProperty">qb:MeasureProperties</a> are what define the data observed in a <a rel="external" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a>. Here we are interested in a <a rel="external" href="http://en.wikipedia.org/wiki/Five-number_summary">five-number summary</a>, along with the <a rel="external" href="http://en.wikipedia.org/wiki/Mean">mean</a> and <a rel="external" href="http://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> of block sizes (in words) found in a given document.</p>
         <h3>Measures</h3>
+        <div id="sections" about="[ci:sections]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label">sections</h4>
+          <p property="rdfs:comment">For document types that have a concrete representation of sections, this property may be used to capture their sum.</p>
+          <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Range</dt>
+            <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </div>
+        <div id="blocks" about="[ci:block]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label">blocks</h4>
+          <p property="rdfs:comment">A block count is conceptually similar to a word or section count, though it counts the total of elements in the document considered to be text blocks, such as paragraphs, tables, lists and figures. It is suited for document types that have no concept of (semantic) sections, such as HTML. The purpose of this measurement is to provide a sort of ratio to the word count, to glean how well-proportioned the document is.</p>
+          <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range</dt>
+            <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </div>
+        <div id="words" about="[ci:words]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label">words</h4>
+          <p property="rdfs:comment">This indicates the number of words in a document, similar to the familiar function in a word processor. The exact method of counting words may vary by document type, language etc., and is thus out of scope from this document.</p>
+          <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>            <dt>Range</dt>
+            <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </div>
+        <div id="characters" about="[ci:characters]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label">characters</h4>
+          <p property="rdfs:comment">This indicates the number of characters in a document, with punctuation and the XPath normalize-space function applied. Note this is characters, not bytes.</p>
+          <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range</dt>
+            <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+            <dt>See Also</dt>
+            <dd><a rel="external rdfs:seeAlso" href="http://www.w3.org/TR/xpath/#function-normalize-space"><samp>normalize-space</samp> in the XPath 1.0 specification</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </div>
+        <div id="outdegree" about="[ci:outdegree]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label">outdegree</h4>
+          <p property="rdfs:comment">The number of links exiting from the specified resource.</p>
+          <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range</dt>
+            <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
+            <dt>See Also</dt>
+            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">Directed graph (Wikipedia)</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </div>
+        <div id="indegree" about="[ci:indegree]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label">indegree</h4>
+          <p property="rdfs:comment">The number of links pointing at the specified resource.</p>
+          <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range</dt>
+            <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
+            <dt>See Also</dt>
+            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">Directed graph (Wikipedia)</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </div>
         <div id="min" about="[ci:min]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label">min</h4>
           <p property="rdfs:comment">The smallest observation in the sample.</p>
           <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
@@ -279,6 +308,8 @@
           <h4 property="rdfs:label">low-quartile</h4>
           <p property="rdfs:comment">Equivalent to the bottom quarter, or 25th percentile, of the observed data.</p>
           <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
@@ -290,6 +321,8 @@
           <h4 property="rdfs:label">median</h4>
           <p property="rdfs:comment">Median</p>
           <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
@@ -301,6 +334,8 @@
           <h4 property="rdfs:label">high-quartile</h4>
           <p property="rdfs:comment">Third Quartile</p>
           <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
@@ -312,6 +347,8 @@
           <h4 property="rdfs:label">max</h4>
           <p property="rdfs:comment">Maximum</p>
           <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
@@ -323,6 +360,8 @@
           <h4 property="rdfs:label">mean</h4>
           <p property="rdfs:comment">Mean</p>
           <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
@@ -334,6 +373,8 @@
           <h4 property="rdfs:label">sd</h4>
           <p property="rdfs:comment">Standard Deviation</p>
           <dl>
+            <dt>Domain</dt>
+            <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
