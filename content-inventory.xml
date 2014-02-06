@@ -70,6 +70,28 @@
         </dl>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
+      <div id="embed" about="[ci:embed]" typeof="owl:ObjectProperty">
+        <h3 property="rdfs:label">embed</h3>
+        <p property="rdfs:comment">This property specifies an embedded resource which is visible in the subject's user interface.</p>
+        <dl>
+          <dt>Domain:</dt>
+          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          <dt>Sub-property of:</dt>
+          <dd><a rel="external rdfs:subPropertyOf" href="http://purl.org/dc/terms/hasPart">dct:hasPart</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <div id="link" about="[ci:link]" typeof="owl:ObjectProperty">
+        <h3 property="rdfs:label">link</h3>
+        <p property="rdfs:comment">This property specifies a linked resource which is visible in the subject's user interface.</p>
+        <dl>
+          <dt>Domain:</dt>
+          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          <dt>Sub-property of:</dt>
+          <dd><a rel="external rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
       <div id="target" about="[ci:target]" typeof="owl:ObjectProperty">
         <h3 property="rdfs:label">target</h3>
         <p property="rdfs:comment">Specify the URI of the target resource into which this document should be merged.</p>
