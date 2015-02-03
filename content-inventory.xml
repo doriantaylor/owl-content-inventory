@@ -11,7 +11,7 @@
       xmlns:ev="http://purl.org/NET/c4dm/event.owl#"
       xmlns:qb="http://purl.org/linked-data/cube#"
       xmlns:ci="http://privatealpha.com/ontology/content-inventory/1#"
-      version="XHTML+RDFa 1.0" xml:lang="en">
+      xml:lang="en">
   <head>
     <title about="#" property="dct:title">PrivateAlpha Content Inventory Vocabulary</title>
     <base href="http://privatealpha.com/ontology/content-inventory/1"/>
@@ -28,7 +28,7 @@
           <li>The <a rel="external owl:imports" href="http://purl.org/NET/c4dm/event.owl#" title="The Event Ontology">Event Ontology</a></li>
           <li>The <a rel="external owl:imports" href="http://purl.org/ontology/bibo/">Bibliography Ontology</a></li>
           <li>The <a rel="external owl:imports" href="http://purl.org/linked-data/cube#">Data Cube Vocabulary</a></li>
-          <li><acronym title="Functional Requirements for Bibliographic Records">FRBR</acronym> <a rel="external" href="http://vocab.org/frbr/core" title="Expression of Core FRBR Concepts in RDF">Core</a> and <a rel="external" href="http://vocab.org/frbr/extended" title="Expression of Extended FRBR Concepts in RDF">Extended</a></li>
+          <li><abbr title="Functional Requirements for Bibliographic Records">FRBR</abbr> <a rel="external" href="http://vocab.org/frbr/core" title="Expression of Core FRBR Concepts in RDF">Core</a> and <a rel="external" href="http://vocab.org/frbr/extended" title="Expression of Extended FRBR Concepts in RDF">Extended</a></li>
         </ul>
       </div>
     </div>
@@ -140,6 +140,11 @@
           <p property="rdfs:comment">The document has been explicitly retired by an editor or curator, but still exists in the archive.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </div>
+        <div id="unavailable" about="[ci:unavailable]" typeof="bibo:DocumentStatus">
+          <h4 property="rdfs:label">unavailable</h4>
+          <p property="rdfs:comment">The resource at the subject address is unavailable for reasons other than explicit retirement, e.g. HTTP 404 or 403, or going out of print.</p>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </div>
       </div>
       <div>
         <h3>Actions</h3>
@@ -226,7 +231,7 @@
       </div>
       <div>
         <h3>Dimensions</h3>
-        <p>The set of all <a rel="external" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_DimensionProperty">qb:DimensionProperties</a> for a given data structure can positively identify an observation. We currently only specify one dimension, the <acronym title="Uniform Resource Identifier">URI</acronym> of the document in question.</p>
+        <p>The set of all <a rel="external" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_DimensionProperty">qb:DimensionProperties</a> for a given data structure can positively identify an observation. We currently only specify one dimension, the <abbr title="Uniform Resource Identifier">URI</abbr> of the document in question.</p>
         <div id="document" about="[ci:document]" typeof="qb:DimensionProperty">
           <h4 property="rdfs:label">document</h4>
           <p property="rdfs:comment">Document Reference</p>
