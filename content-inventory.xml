@@ -103,6 +103,41 @@
         </dl>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
+      <div id="alias" about="[ci:alias]" typeof="owl:ObjectProperty">
+        <h3 property="rdfs:label">alias</h3>
+        <p property="rdfs:comment">This is an alternate URI for the subject resource. It is simply meant to annotate a resource with another address. It differs from owl:sameAs in that it does not imply that &lt;a&gt; = &lt;b&gt; as well as &lt;b&gt; = &lt;a&gt;.</p>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <div id="canonical" about="[ci:canonical]" typeof="owl:ObjectProperty owl:FunctionalProperty">
+        <h3 property="rdfs:label">canonical</h3>
+        <p property="rdfs:comment">This is the canonical URI of the subject resource, which should be given the highest priority in use.<!-- All canonical URIs are also owl:sameAs.--></p>
+        <dl>
+          <dt>Sub-property of:</dt>
+          <!--<dd><a rel="rdfs:subPropertyOf" href="#alias">ci:alias</a></dd>-->
+          <dd><a rel="external rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#sameAs">owl:sameAs</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <div id="slug" about="[ci:slug]" typeof="owl:DatatypeProperty">
+        <h3 property="rdfs:label">slug</h3>
+        <p property="rdfs:comment">The slug is a text token which represents either the full path or terminal path segment of an HTTP(S) URL by which a resource can be located. This property is mainly for the purpose of archiving old or alternative URL paths in a content inventory, for such tasks as generating URL rewriting maps.</p>
+        <dl>
+          <dt>Range</dt>
+          <dd><a rel="external rdfs:range" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <div id="canonical-slug" about="[ci:canonical-slug]" typeof="owl:DatatypeProperty owl:FunctionalProperty">
+        <h3 property="rdfs:label">canonical-slug</h3>
+        <p property="rdfs:comment">This is the canonical slug associated with the resource.</p>
+        <dl>
+          <dt>Sub-property of:</dt>
+          <dd><a rel="external rdfs:subPropertyOf" href="#slug">ci:slug</a></dd>
+          <dt>Range</dt>
+          <dd><a rel="external rdfs:range" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
     </div>
     <div>
       <h2>Individuals</h2>
@@ -130,9 +165,14 @@
           <p property="rdfs:comment">The content of this document was correct and relevant at one point, but external circumstances have caused it to lapse in relevance or factual accuracy.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </div>
+        <div id="landing" about="[ci:landing]" typeof="bibo:DocumentStatus">
+          <h4 property="rdfs:label">landing</h4>
+          <p property="rdfs:comment">The resource is a landing page from some other medium (e.g. e-mail, television, billboard). This status is a hint to automated systems which would otherwise orphan or retire a landing page with no inbound links.</p>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </div>
         <div id="orphan" about="[ci:orphan]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label">orphan</h4>
-          <p property="rdfs:comment">The document is not explicitly pending or removed from publication, there is no path to it from a landing page, and it is not a landing page on its own. That is to say that it may be linked from other documents within the system (though not from outside, as that would make it a landing page) but it and those documents that link to it are ultimately inaccessible. Documents which are only linked from retired documents are also considered orphans.</p>
+          <p property="rdfs:comment">The resource is not explicitly pending or removed from publication, however it has managed to be disconnected from the rest of the site: There is no path to it from a landing page, and it is not a landing page on its own. That is to say that the resource either has no inbound links, or if it does, those links are from other resources that are in the same situation. Documents which are only linked from retired documents are also considered orphans.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </div>
         <div id="retired" about="[ci:retired]" typeof="bibo:DocumentStatus">
@@ -340,7 +380,7 @@
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
-            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Sample_minimum">Sample minimum (Wikipedia)</a></dd>
+            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Quartile">Quartile (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </div>
@@ -353,7 +393,7 @@
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
-            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Sample_minimum">Sample minimum (Wikipedia)</a></dd>
+            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Median">Median (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </div>
@@ -366,7 +406,7 @@
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
-            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Sample_minimum">Sample minimum (Wikipedia)</a></dd>
+            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Quartile">Quartile (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </div>
@@ -379,7 +419,7 @@
             <dt>Range</dt>
             <dd><a rel="external rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
             <dt>See Also</dt>
-            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Sample_minimum">Sample minimum (Wikipedia)</a></dd>
+            <dd><a rel="external rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Sample_maximum">Sample maximum (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </div>
