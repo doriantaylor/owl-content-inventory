@@ -8,13 +8,14 @@
       xmlns:dct="http://purl.org/dc/terms/"
       xmlns:bibo="http://purl.org/ontology/bibo/"
       xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
       xmlns:ev="http://purl.org/NET/c4dm/event.owl#"
       xmlns:qb="http://purl.org/linked-data/cube#"
-      xmlns:ci="http://privatealpha.com/ontology/content-inventory/1#"
+      xmlns:ci="https://privatealpha.com/ontology/content-inventory/1#"
       xml:lang="en">
   <head>
     <title about="#" property="dct:title">PrivateAlpha Content Inventory Vocabulary</title>
-    <base href="http://privatealpha.com/ontology/content-inventory/1"/>
+    <base href="https://privatealpha.com/ontology/content-inventory/1"/>
     <link about="#" rel="rdfs:isDefinedBy bibo:uri" href="#"/>
   </head>
   <body>
@@ -36,7 +37,7 @@
       <h2>Classes</h2>
       <p>There are currently only two classes in this vocabulary, as other vocabularies account for all other constructs.</p>
       <div id="Action" about="[ci:Action]" typeof="owl:Class">
-        <h3 property="rdfs:label">Action</h3>
+        <h4 property="rdfs:label">Action</h4>
         <p property="rdfs:comment">An action, as its name implies, is meant to represent something a person or other agent ought to do to a document.</p>
         <p>Being a subclass of an event, a ci:Action can have agents, factors, products, places and times ascribed to it.</p>
         <dl>
@@ -46,7 +47,7 @@
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
       <div id="Merge" about="[ci:Merge]" typeof="owl:Class">
-        <h3 property="rdfs:label">Merge</h3>
+        <h4 property="rdfs:label">Merge</h4>
         <p property="rdfs:comment">In order to merge a document, we must define the target to which it ought to be merged. This class is identical to an Action, save for such a property.</p>
         <dl>
           <dt>Subclass of:</dt>
@@ -57,8 +58,21 @@
     </div>
     <div>
       <h2>Properties</h2>
+      <h3>Authorial/Editorial Intent</h3>
+      <div id="desired-outcome" about="[ci:desired-outcome]" typeof="owl:ObjectProperty">
+        <h4 property="rdfs:label">desired-outcome</h4>
+        <p property="rdfs:comment">This property is intended to indicate what the document is supposed to do&#x2014;what material effect it is supposed to produce. It is intentionally open-ended, and as such can point to something like a skos:Concept, another document, or a literal string of text describing the outcome.</p>
+        <dl>
+          <dt>Domain:</dt>
+          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          <dt>Sub-property of:</dt>
+          <dd><a rel="external rdfs:subPropertyOf" href="http://purl.org/dc/terms/type">dct:type</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <h3>Editing Tasks</h3>
       <div id="action" about="[ci:action]" typeof="owl:ObjectProperty">
-        <h3 property="rdfs:label">action</h3>
+        <h4 property="rdfs:label">action</h4>
         <p property="rdfs:comment">use this to signal an action to take with the document in question.</p>
         <dl>
           <dt>Domain:</dt>
@@ -70,8 +84,63 @@
         </dl>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
+      <div id="target" about="[ci:target]" typeof="owl:ObjectProperty">
+        <h4 property="rdfs:label">target</h4>
+        <p property="rdfs:comment">Specify the URI of the target resource into which this document should be merged.</p>
+        <dl>
+          <dt>Domain</dt>
+          <dd><a rel="rdfs:domain" href="#Merge">ci:Merge</a></dd>
+          <dt>Range</dt>
+          <dd><a rel="external rdfs:range" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <h3>Conceptual Relations</h3>
+      <p>The purpose of these properties is to provide an interface to concept schemes created in SKOS. Relations created through the use of these properties will enable searching, filtering and partitioning sets of documents based on what they talk about.</p>
+      <div id="mentions" about="[ci:mentions]" typeof="owl:ObjectProperty">
+        <h4 property="rdfs:label">mentions</h4>
+        <p property="rdfs:comment">The document explicitly mentions this concept.</p>
+        <dl>
+          <dt>Domain:</dt>
+          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          <dt>Range</dt>
+          <dd><a rel="external rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></dd>
+          <dt>Sub-property of:</dt>
+          <dd><a rel="external rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <div id="introduces" about="[ci:introduces]" typeof="owl:ObjectProperty">
+        <h4 property="rdfs:label">introduces</h4>
+        <p property="rdfs:comment">The document defines, describes, or otherwise introduces the audience to this concept.</p>
+        <dl>
+          <dt>Domain:</dt>
+          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          <dt>Range</dt>
+          <dd><a rel="external rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></dd>
+          <dt>Sub-property of:</dt>
+          <dd><a rel="rdfs:subPropertyOf" href="#mentions">ci:mentions</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <div id="assumes" about="[ci:assumes]" typeof="owl:ObjectProperty">
+        <h4 property="rdfs:label">assumes</h4>
+        <p property="rdfs:comment">The document assumes the audience is familiar with this concept, and may not mention it explicitly.</p>
+        <dl>
+          <dt>Domain:</dt>
+          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          <dt>Range</dt>
+          <dd><a rel="external rdfs:range" href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></dd>
+          <dt>Sub-property of:</dt>
+          <dd><a rel="external rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
+            <dt>See Also</dt>
+            <dd><a rel="external rdfs:seeAlso" href="http://purl.org/dc/terms/educationLevel">dct:educationLevel</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <h3>Content Management Metadata</h3>
       <div id="embed" about="[ci:embed]" typeof="owl:ObjectProperty">
-        <h3 property="rdfs:label">embed</h3>
+        <h4 property="rdfs:label">embed</h4>
         <p property="rdfs:comment">This property specifies an embedded resource which is visible in the subject's user interface.</p>
         <dl>
           <dt>Domain:</dt>
@@ -82,7 +151,7 @@
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
       <div id="link" about="[ci:link]" typeof="owl:ObjectProperty">
-        <h3 property="rdfs:label">link</h3>
+        <h4 property="rdfs:label">link</h4>
         <p property="rdfs:comment">This property specifies a linked resource which is visible in the subject's user interface.</p>
         <dl>
           <dt>Domain:</dt>
@@ -92,25 +161,14 @@
         </dl>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
-      <div id="target" about="[ci:target]" typeof="owl:ObjectProperty">
-        <h3 property="rdfs:label">target</h3>
-        <p property="rdfs:comment">Specify the URI of the target resource into which this document should be merged.</p>
-        <dl>
-          <dt>Domain</dt>
-          <dd><a rel="rdfs:domain" href="#Merge">ci:Merge</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="external rdfs:range" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
       <div id="alias" about="[ci:alias]" typeof="owl:ObjectProperty">
-        <h3 property="rdfs:label">alias</h3>
+        <h4 property="rdfs:label">alias</h4>
         <p property="rdfs:comment">This is an alternate URI for the subject resource. It is simply meant to annotate a resource with another address. It differs from owl:sameAs in that it does not imply that &lt;a&gt; = &lt;b&gt; as well as &lt;b&gt; = &lt;a&gt;.</p>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
       <div id="canonical" about="[ci:canonical]" typeof="owl:ObjectProperty owl:FunctionalProperty">
-        <h3 property="rdfs:label">canonical</h3>
-        <p property="rdfs:comment">This is the canonical URI of the subject resource, which should be given the highest priority in use.<!-- All canonical URIs are also owl:sameAs.--></p>
+        <h4 property="rdfs:label">canonical</h4>
+        <p property="rdfs:comment">This is the canonical URI of the subject resource, i.e., the one you always want to publish in content or redirect Web requests to.<!-- All canonical URIs are also owl:sameAs.--></p>
         <dl>
           <dt>Sub-property of:</dt>
           <!--<dd><a rel="rdfs:subPropertyOf" href="#alias">ci:alias</a></dd>-->
@@ -119,7 +177,7 @@
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
       <div id="slug" about="[ci:slug]" typeof="owl:DatatypeProperty">
-        <h3 property="rdfs:label">slug</h3>
+        <h4 property="rdfs:label">slug</h4>
         <p property="rdfs:comment">The slug is a text token which represents either the full path or terminal path segment of an HTTP(S) URL by which a resource can be located. This property is mainly for the purpose of archiving old or alternative URL paths in a content inventory, for such tasks as generating URL rewriting maps.</p>
         <dl>
           <dt>Range</dt>
@@ -128,11 +186,11 @@
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
       <div id="canonical-slug" about="[ci:canonical-slug]" typeof="owl:DatatypeProperty owl:FunctionalProperty">
-        <h3 property="rdfs:label">canonical-slug</h3>
-        <p property="rdfs:comment">This is the canonical slug associated with the resource.</p>
+        <h4 property="rdfs:label">canonical-slug</h4>
+        <p property="rdfs:comment">This is the canonical slug associated with the resource, and should be populated with the slug which is actually in use.</p>
         <dl>
           <dt>Sub-property of:</dt>
-          <dd><a rel="external rdfs:subPropertyOf" href="#slug">ci:slug</a></dd>
+          <dd><a rel="rdfs:subPropertyOf" href="#slug">ci:slug</a></dd>
           <dt>Range</dt>
           <dd><a rel="external rdfs:range" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></dd>
         </dl>
@@ -232,13 +290,15 @@
       </div>
     </div>
     <div>
-      <h2>Data Cube Specifications</h2>
-      <p>We use the <a rel="external" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html">RDF Data Cube vocabulary</a> to specify the quantitative metrics we gather over our documents.</p>
+      <h2>Quantitative Metrics</h2>
+      <p>There are many ways to measure a set of Web pages that give valuable insight into not only the individual character of each page, but also the character of an entire site.</p>
+      
+      <p>We use the <a rel="external" href="http://www.w3.org/TR/vocab-data-cube/">RDF Data Cube vocabulary</a> to specify the quantitative metrics we gather over our documents.</p>
       <div>
         <h3>Data Structure Definitions</h3>
-        <p>The following object is an instance of <a rel="external" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_DataStructureDefinition">qb:DataStructureDefinition</a>. It depicts the dimensions, measures and attributes for <a rel="external" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_DataSet">qb:DataSets</a> that carry the relevant statistical data. (This particular data structure only contains dimensions and measures.)</p>
-        <div id="stat-summary" about="[ci:stat-summary]" typeof="qb:DataStructureDefinition">
-          <h4 property="rdfs:label">stat-summary</h4>
+        <p>The following object is an instance of <a rel="external" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_DataStructureDefinition">qb:DataStructureDefinition</a>. It depicts the dimensions, measures and attributes for <a rel="external" href="http://www.w3.org/TR/vocab-data-cube/#ref_qb_DataSet">qb:DataSets</a> that carry the relevant statistical data. (This particular data structure only contains dimensions and measures.)</p>
+        <div id="words-and-blocks" about="[ci:words-and-blocks]" typeof="qb:DataStructureDefinition">
+          <h4 property="rdfs:label">words-and-blocks</h4>
           <p property="rdfs:comment">A set of descriptive statistics pertaining to the number of words per block of text in a given document.</p>
           <div rel="qb:component">
             <h5>Components</h5>
@@ -334,7 +394,7 @@
         </div>
         <div id="outdegree" about="[ci:outdegree]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label">outdegree</h4>
-          <p property="rdfs:comment">The number of links exiting from the specified resource.</p>
+          <p property="rdfs:comment">The number of links emanating from the specified resource.</p>
           <dl>
             <dt>Domain</dt>
             <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
@@ -386,7 +446,7 @@
         </div>
         <div id="median" about="[ci:median]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label">median</h4>
-          <p property="rdfs:comment">Median</p>
+          <p property="rdfs:comment">The median of a population </p>
           <dl>
             <dt>Domain</dt>
             <dd><a rel="external rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
