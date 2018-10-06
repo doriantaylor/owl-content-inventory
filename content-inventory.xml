@@ -14,12 +14,30 @@
       xmlns:ci="https://privatealpha.com/ontology/content-inventory/1#"
       xml:lang="en">
   <head>
-    <title about="#" property="dct:title">PrivateAlpha Content Inventory Vocabulary</title>
+    <title about="#" property="dct:title">A Content Inventory Vocabulary</title>
     <base href="https://privatealpha.com/ontology/content-inventory/1"/>
     <link about="#" rel="rdfs:isDefinedBy bibo:uri" href="#"/>
   </head>
   <body>
     <div about="#" typeof="owl:Ontology bibo:Webpage">
+      <dl>
+        <dt>Author</dt>
+        <dd><a rel="external dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me"><span property="foaf:name">Dorian Taylor</span></a></dd>
+        <dt>Version</dt>
+        <dd property="owl:versionInfo">0.6</dd>
+        <dt>Created</dt>
+        <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-0800">January 23, 2012</dd>
+        <dt>Updated</dt>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2012-12-11T22:22:00-0800">December 11, 2012</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2014-02-06T14:10:00-0800">February 6, 2014</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2015-02-03T14:39:00-0800">February 8, 2015</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2017-04-06T15:24:00-0700">April 6, 2017</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2018-10-06T16:23:52Z">October 6, 2018</dd>
+        <dt>Namespace URI</dt>
+        <dd><a href="#">https://privatealpha.com/ontology/content-inventory/1#</a></dd>
+        <dt>Preferred Namespace Prefix</dt>
+        <dd about="#" property="vann:preferredNamespacePrefix" datatype="xsd:string">ci</dd>
+      </dl>
       <div>
         <p property="rdfs:comment" content="This vocabulary defines a number of concepts peculiar to content strategy which are not accounted for by other vocabularies."> This vocabulary defines a number of concepts peculiar to <a rel="external" href="http://en.wikipedia.org/wiki/Content_strategy" title="Content strategy &#x2014; Wikipedia">content strategy</a> which are not accounted for by other vocabularies.</p>
         <p>Such vocabularies include, but are far from limited to:</p>
@@ -67,6 +85,17 @@
           <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
           <dt>Sub-property of:</dt>
           <dd><a rel="external rdfs:subPropertyOf" href="http://purl.org/dc/terms/type">dct:type</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <div id="non-audience" about="[ci:non-audience]" typeof="owl:ObjectProperty">
+        <h4 property="rdfs:label">non-audience</h4>
+        <p property="rdfs:comment">This property complements <code>dcterms:audience</code> insofar as enabling the author to designate a set of entities who are explicitly <em>not</em> the intended audience of the document.</p>
+        <dl>
+          <dt>Domain:</dt>
+          <dd><a rel="external rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          <dt>Range:</dt>
+          <dd><a rel="external rdfs:range" href="http://purl.org/dc/terms/AgentClass">dct:AgentClass</a></dd>
         </dl>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
@@ -512,7 +541,7 @@
       </div>
     </div>
     <div>
-      <p about="#">This document is copyright 2010-2012 <a rel="external dct:creator" href="http://doriantaylor.com/person/dorian-taylor">Dorian Taylor</a>, available under a <a rel="external license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
+      <p about="#">This document is copyright 2010-2012 <a rel="external dct:creator" href="http://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="external license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
     </div>
   </body>
 </html>
