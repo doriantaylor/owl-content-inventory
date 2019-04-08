@@ -1,0 +1,38 @@
+digraph {
+    graph [bgcolor=transparent,rankdir=LR];
+    node [shape=box,color="#eeeeee",fontcolor="#eeeeee",fontname="Lucida Grande, Lucida Sans Unicode, sans-serif",target="_top"];
+    edge [fontsize=10,concentrate=true,color="#eeeeee",fontcolor="#eeeeee",fontname="Lucida Grande, Lucida Sans Unicode, sans-serif"];
+    subgraph {
+        node [style=dashed];
+        owl_Thing [label="owl:Thing",href="https://www.w3.org/TR/2012/REC-owl2-syntax-20121211/#a_Thing"];
+        ev_Event [label="ev:Event",href="http://motools.sourceforge.net/event/event.html#term_Event"];
+        dct_AgentClass [label="dct:AgentClass",href="http://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-AgentClass"];
+        skos_Concept [label="skos:Concept",href="https://www.w3.org/TR/skos-reference/#concepts"];
+        foaf_Document [label="foaf:Document",href="http://xmlns.com/foaf/spec/#term_Document"];
+    }
+
+    ci_Action [label="ci:Action",href="https://privatealpha.com/ontology/content-inventory/1#Action"];
+    ci_Audience [label="ci:Audience",href="https://privatealpha.com/ontology/content-inventory/1#Audience"];
+    ci_Merge [label="ci:Merge",href="https://privatealpha.com/ontology/content-inventory/1#Merge"];
+
+    ci_Merge -> foaf_Document [label="ci:target"];
+    foaf_Document -> ci_Action [label="ci:action"];
+
+    foaf_Document -> skos_Concept [label="ci:mentions, ci:introduces, ci:assumes"];
+    ci_Audience -> skos_Concept [label="ci:understands"];
+    foaf_Document -> dct_AgentClass [label="ci:non-audience"];
+    foaf_Document -> owl_Thing [label="ci:desired-outcome"];
+    foaf_Document -> owl_Thing [label="ci:embeds, ci:links"];
+    
+    subgraph {
+        edge [style=dashed, label="rdfs:subClassOf"];
+        ci_Merge -> ci_Action -> ev_Event;
+        ci_Audience -> dct_AgentClass;
+        ci_Audience -> skos_Concept;
+    }
+    subgraph {
+        edge [style=dashed];
+        foaf_Document -> skos_Concept [label="dct:subject"];
+        foaf_Document -> dct_AgentClass [label="dct:audience"];
+    }
+}
