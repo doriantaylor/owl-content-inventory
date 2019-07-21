@@ -26,7 +26,7 @@
         <dt>Author</dt>
         <dd><a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me"><span property="foaf:name">Dorian Taylor</span></a></dd>
         <dt>Version</dt>
-        <dd property="owl:versionInfo" datatype="xsd:string">0.9</dd>
+        <dd property="owl:versionInfo" datatype="xsd:string">0.10</dd>
         <dt>Created</dt>
         <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
         <dt>Updated</dt>
@@ -40,6 +40,7 @@
         <dd property="dct:modified" datatype="xsd:dateTime" content="2019-04-18T01:01:09Z">April 17, 2019</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-07T22:10:55Z">July 7, 2019</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-10T22:28:06Z">July 10, 2019</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-21T23:05:32Z">July 21, 2019</dd>
         <dt>Namespace URI</dt>
         <dd><a href="#">https://privatealpha.com/ontology/content-inventory/1#</a></dd>
         <dt>Preferred Namespace Prefix</dt>
@@ -239,13 +240,13 @@
           <dt>Sub-property of:</dt>
           <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations">skos:related</a></dd>
           <dt>See Also:</dt>
-          <dd><a rel="rdfs:seeAlso" href="#disdains">ci:disdains</a></dd>
+          <dd><a rel="rdfs:seeAlso" href="#eschews">ci:eschews</a></dd>
         </dl>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
-      <div id="disdains" about="[ci:disdains]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">disdains</h4>
-        <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to actively eschew or regard with contempt. This relation is intended to represent the complement of <em>values</em>.</p>
+      <div id="eschews" about="[ci:eschews]" typeof="owl:ObjectProperty">
+        <h4 property="rdfs:label" datatype="xsd:token">eschews</h4>
+        <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to actively avoid or regard with contempt. This relation is intended to represent the complement of <em>values</em>.</p>
         <dl>
           <dt>Domain:</dt>
           <dd><a rel="rdfs:domain" href="#audience">ci:Audience</a></dd>

@@ -19,7 +19,7 @@ digraph {
     foaf_Document -> ci_Action [label="ci:action"];
 
     foaf_Document -> skos_Concept [label="ci:mentions, ci:introduces,\nci:assumes"];
-    ci_Audience -> skos_Concept [label="ci:aware-of, ci:understands,\nci:values, ci:disdains"];
+    ci_Audience -> skos_Concept [label="ci:aware-of, ci:understands,\nci:values, ci:eschews"];
     foaf_Document -> dct_AgentClass [label="ci:non-audience"];
     foaf_Document -> owl_Thing [label="ci:desired-outcome"];
     foaf_Document -> owl_Thing [label="ci:embeds, ci:links"];
