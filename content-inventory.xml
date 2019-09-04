@@ -26,7 +26,7 @@
         <dt>Author</dt>
         <dd><a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me"><span property="foaf:name">Dorian Taylor</span></a></dd>
         <dt>Version</dt>
-        <dd property="owl:versionInfo" datatype="xsd:string">0.10</dd>
+        <dd property="owl:versionInfo" datatype="xsd:string">0.11</dd>
         <dt>Created</dt>
         <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
         <dt>Updated</dt>
@@ -41,6 +41,7 @@
         <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-07T22:10:55Z">July 7, 2019</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-10T22:28:06Z">July 10, 2019</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-21T23:05:32Z">July 21, 2019</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-09-04T20:27:32Z">September 4, 2019</dd>
         <dt>Namespace URI</dt>
         <dd><a href="#">https://privatealpha.com/ontology/content-inventory/1#</a></dd>
         <dt>Preferred Namespace Prefix</dt>
@@ -284,16 +285,34 @@
       </div>
       <div id="alias" about="[ci:alias]" typeof="owl:ObjectProperty">
         <h4 property="rdfs:label" datatype="xsd:token">alias</h4>
-        <p property="rdfs:comment">This is an alternate URI for the subject resource. It is simply meant to annotate a resource with another address. It differs from owl:sameAs in that it does not imply that &lt;a&gt; = &lt;b&gt; as well as &lt;b&gt; = &lt;a&gt;.</p>
+        <p property="rdfs:comment">Denotes an alternate URI for the subject resource. It extends <code>owl:sameAs</code> insofar as asserting that the object is somehow <q>less canonical</q> than the subject.</p>
+        <dl>
+          <dt>Sub-property of:</dt>
+          <dd><a rel="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#sameAs">owl:sameAs</a></dd>
+          <dt>Inverse of:</dt>
+          <dd><a rel="owl:inverseOf" href="#alias-for">ci:alias-for</a></dd>
+        </dl>
+        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+      </div>
+      <div id="alias-for" about="[ci:alias-for]" typeof="owl:ObjectProperty">
+        <h4 property="rdfs:label" datatype="xsd:token">alias-for</h4>
+        <p property="rdfs:comment">Denotes that the <em>subject</em> is the alias URI, and the object is <q>more canonical</q> (though not necessarily the <em>most</em> canonical).</p>
+        <dl>
+          <dt>Sub-property of:</dt>
+          <dd><a rel="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#sameAs">owl:sameAs</a></dd>
+          <dt>Inverse of:</dt>
+          <dd><a rel="owl:inverseOf" href="#alias">ci:alias</a></dd>
+          <dt>See also:</dt>
+          <dd><a rel="rdfs:seeAlso" href="#canonical">ci:canonical</a></dd>
+        </dl>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
       <div id="canonical" about="[ci:canonical]" typeof="owl:ObjectProperty owl:FunctionalProperty">
         <h4 property="rdfs:label" datatype="xsd:token">canonical</h4>
-        <p property="rdfs:comment">This is the canonical URI of the subject resource, i.e., the one you always want to publish in content or redirect Web requests to.<!-- All canonical URIs are also owl:sameAs.--></p>
+        <p property="rdfs:comment">Asserts the canonical URI of the subject resource, i.e., the one you always want to publish in content or redirect Web requests to.<!-- All canonical URIs are also owl:sameAs.--></p>
         <dl>
           <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="#alias">ci:alias</a></dd>
-          <dd><a rel="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#sameAs">owl:sameAs</a></dd>
+          <dd><a rel="rdfs:subPropertyOf" href="#alias-for">ci:alias</a></dd>
         </dl>
         <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
       </div>
