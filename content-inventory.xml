@@ -21,445 +21,706 @@
     <link about="#" rel="rdfs:isDefinedBy bibo:uri" href="#"/>
   </head>
   <body about="" typeof="bibo:Webpage" rel="dct:subject foaf:primaryTopic">
-    <div about="#" typeof="owl:Ontology">
+    <section about="#" typeof="owl:Ontology">
+      <h2>A Content Inventory Vocabulary</h2>
       <dl>
         <dt>Author</dt>
         <dd><a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me"><span property="foaf:name">Dorian Taylor</span></a></dd>
         <dt>Version</dt>
-        <dd property="owl:versionInfo" datatype="xsd:string">0.11</dd>
+        <dd property="owl:versionInfo" datatype="xsd:string">0.13</dd>
         <dt>Created</dt>
         <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
-        <dt>Updated</dt>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2012-12-11T22:22:00-08:00">December 11, 2012</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2014-02-06T14:10:00-08:00">February 6, 2014</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2015-02-03T14:39:00-08:00">February 8, 2015</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2017-04-06T15:24:00-07:00">April 6, 2017</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2018-10-06T16:23:52Z">October 6, 2018</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-03-05T23:38:59Z">March 5, 2019</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-04-07T16:36:10Z">April 7, 2019</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-04-18T01:01:09Z">April 17, 2019</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-07T22:10:55Z">July 7, 2019</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-10T22:28:06Z">July 10, 2019</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-21T23:05:32Z">July 21, 2019</dd>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-09-04T20:27:32Z">September 4, 2019</dd>
-        <dt>Namespace URI</dt>
+        <dt><a href="#sec-changelog">Updated</a></dt>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2020-07-04T01:24:22Z">July 3, 2020</dd>
+        <dt>Namespace <abbr>URI</abbr></dt>
         <dd><a href="#">https://privatealpha.com/ontology/content-inventory/1#</a></dd>
         <dt>Preferred Namespace Prefix</dt>
-        <dd about="#" property="vann:preferredNamespacePrefix" datatype="xsd:string">ci</dd>
+        <dd><code about="#" property="vann:preferredNamespacePrefix" datatype="xsd:token">ci</code></dd>
+        <dt>Imports</dt>
+        <dd><a about="#" rel="owl:imports" resource="http://www.w3.org/2002/07/owl#" href="https://www.w3.org/TR/owl2-overview/">OWL</a></dd>
+        <dd><a about="#" rel="owl:imports" resource="http://www.w3.org/2001/XMLSchema#" href="https://www.w3.org/TR/xmlschema-2/">XML Schema Part 2: Datatypes</a></dd>
       </dl>
-      <div>
+      <section>
         <p property="rdfs:comment" content="This vocabulary defines a number of concepts peculiar to content strategy which are not accounted for by other vocabularies."> This vocabulary defines a number of concepts peculiar to <a rel="dct:references" href="http://en.wikipedia.org/wiki/Content_strategy" title="Content strategy &#x2014; Wikipedia">content strategy</a> which are not accounted for by other vocabularies.</p>
         <p>Such vocabularies include, but are far from limited to:</p>
         <ul>
-          <li><a rel="owl:imports" href="http://xmlns.com/foaf/0.1/">Friend of a Friend</a></li>
-          <li><a rel="owl:imports" href="http://purl.org/dc/terms/">Dublin Core Terms</a></li>
-          <li>The <a rel="owl:imports" href="http://purl.org/NET/c4dm/event.owl#" title="The Event Ontology">Event Ontology</a></li>
-          <li>The <a rel="owl:imports" href="http://purl.org/ontology/bibo/">Bibliography Ontology</a></li>
-          <li>The <a rel="owl:imports" href="http://purl.org/linked-data/cube#">Data Cube Vocabulary</a></li>
-          <li><abbr title="Functional Requirements for Bibliographic Records">FRBR</abbr> <a rel="dct:references" href="http://vocab.org/frbr/core" title="Expression of Core FRBR Concepts in RDF">Core</a> and <a rel="dct:references" href="http://vocab.org/frbr/extended" title="Expression of Extended FRBR Concepts in RDF">Extended</a></li>
+          <li><a rel="owl:imports" href="http://purl.org/dc/terms/">Dublin Core Terms</a> provide basic bibliographic metadata,</li>
+          <li>The <a rel="owl:imports" href="http://purl.org/ontology/bibo/">Bibliography Ontology</a> provides additional bibliographic metadata plus dozens of useful document types,</li>
+          <li><abbr title="Functional Requirements for Bibliographic Records">FRBR</abbr> <a rel="dct:references" href="http://vocab.org/frbr/core" title="Expression of Core FRBR Concepts in RDF">Core</a> and <a rel="dct:references" href="http://vocab.org/frbr/extended" title="Expression of Extended FRBR Concepts in RDF">Extended</a> provides terms for modeling even more sophisticated intertextual relations,</li>
+          <li><a rel="owl:imports" resource="http://www.w3.org/2004/02/skos/core#" href="https://www.w3.org/TR/skos-reference/"><abbr title="Simple Knowledge Organization System">SKOS</abbr></a> provides a rich substrate for concept schemes and taxonomies,</li>
+          <li><a rel="owl:imports" href="http://xmlns.com/foaf/0.1/">Friend of a Friend</a> and <a href="https://www.w3.org/TR/vocab-org/">The Organization Ontology</a> give us models of people and business entities,</li>
+          <li>The <a rel="owl:imports" href="http://purl.org/NET/c4dm/event.owl#" title="The Event Ontology">Event Ontology</a> enables the modeling of processes, factors, and outcomes,</li>
+          <li><a rel="dct:references" href="https://www.w3.org/TR/prov-o/">The Provenance Ontology</a> gives us a vocabulary for recording the handling of content over time,</li>
+          <li>The <a rel="owl:imports" href="http://purl.org/linked-data/cube#">Data Cube Vocabulary</a> organizes quantitative and statistical data.</li>
         </ul>
-      </div>
-    </div>
-    <div about="#">
+        <p>This document is organized in terms of <a href="#sec-classes">Classes</a>, <a href="#sec-properties">Properties</a>, <a href="#sec-individuals">Individuals</a>, and an appendix for the <a href="#sec-dsd">Data Structure Definition</a> for quantitative content analytics. Terms are organized topologically first, and alphabetically second.</p>
+        <aside role="note">
+          <h3>Reading the Examples</h3>
+          <p>Examples are given in <a href="https://www.w3.org/TR/turtle/">the Turtle syntax</a>. The basic syntax reads like so:</p>
+          <figure>
+            <pre>&lt;subject> &lt;predicate> &lt;object> <strong>.</strong>
+
+&lt;subject> &lt;predicate> &lt;object> <strong>;</strong> &lt;predicate> &lt;object> <strong>.</strong>
+
+&lt;subject> &lt;predicate> &lt;object> <strong>,</strong> &lt;object> <strong>.</strong></pre>
+          </figure>
+          <p>That is, complete statements are separated by periods, predicate-object pairs are collated by semicolons, and sets of objects are separated by commas. Turtle also provides for <dfn>prefix mappings</dfn> to shorten the terms. This is denoted by:</p>
+          <figure>
+            <pre>@prefix p: &lt;https://example.club/long/uri/> .</pre>
+          </figure>
+          <p>and thus would map <code>p:<em>some-term</em></code> to <code>https://example.club/long/uri/<em>some-term</em></code>. Note that these strings are just concatenated together, in contrast to conventional relative <abbr>URI</abbr> resolution. Terms belonging to this specification have been emphasized to make them easier to pick out.</p>
+        </aside>
+      </section>
+    </section>
+    <section id="sec-classes" about="#">
       <h2>Classes</h2>
-      <object style="display: block; margin: auto; max-width: 100%; height: auto;" data="example.svg"><img src="example" alt=""/></object>
-      <p>There are currently only three classes in this vocabulary, as other vocabularies account for all other constructs.</p>
-      <div id="Action" about="[ci:Action]" typeof="owl:Class">
-        <h4 property="rdfs:label" datatype="xsd:token">Action</h4>
-        <p property="rdfs:comment">An action, as its name implies, is meant to represent something a person or other agent ought to do to a document.</p>
-        <p>Being a subclass of an event, a ci:Action can have agents, factors, products, places and times ascribed to it.</p>
-        <dl>
-          <dt>Subclass of:</dt>
-          <dd><a rel="rdfs:subClassOf" resource="http://purl.org/NET/c4dm/event.owl#Event" href="http://motools.sourceforge.net/event/event.html#term_Event">ev:Event</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="Advertisement" about="[ci:Advertisement]" typeof="owl:Class">
-        <h4 property="rdfs:label" datatype="xsd:token">Advertisement</h4>
-        <p property="rdfs:comment">This is intended to be a decorator class to indicate that the subject is an advertisement. It can therefore be combined with other classes such as <code>foaf:Image</code>.</p>
-        <dl>
-          <dt>Subclass of:</dt>
-          <dd><a rel="rdfs:subClassOf" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="Audience" about="[ci:Audience]" typeof="owl:Class">
-        <h4 property="rdfs:label" datatype="xsd:token">Audience</h4>
-        <p property="rdfs:comment">An audience represents the set of people who are the intended recipients of the resource. This class is at once an agent class as well as a conceptual entity, capable of being mixed into a SKOS concept scheme.</p>
-        <dl>
-          <dt>Subclass of:</dt>
-          <dd><a rel="rdfs:subClassOf" resource="http://purl.org/dc/terms/AgentClass" href="http://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-AgentClass">dct:AgentClass</a></dd>
-          <dd><a rel="rdfs:subClassOf" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
-          <dt>See Also:</dt>
-          <dd><a rel="rdfs:seeAlso" resource="http://purl.org/dc/terms/audience" href="http://dublincore.org/documents/dcmi-terms/#terms-audience">dct:audience</a></dd>
-          <dd><a rel="rdfs:seeAlso" resource="http://www.w3.org/ns/org#Role" href="https://www.w3.org/TR/vocab-org/#org:Role">org:Role</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="Merge" about="[ci:Merge]" typeof="owl:Class">
-        <h4 property="rdfs:label" datatype="xsd:token">Merge</h4>
-        <p property="rdfs:comment">In order to merge a document, we must define the target to which it ought to be merged. This class is identical to an Action, save for such a property.</p>
-        <dl>
-          <dt>Subclass of:</dt>
-          <dd><a rel="rdfs:subClassOf" href="#Action">ci:Action</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-    </div>
-    <div about="#">
+      <p>There are currently only four classes in this vocabulary, as other vocabularies account for all other constructs.</p>
+      <figure>
+        <object style="display: block; margin: auto; max-width: 100%; height: auto;" data="example.svg"><img src="example" alt=""/></object>
+        <figcaption>
+          <p>This diagram shows the classes and properties defined in this document using solid lines, and third-party classes and properties using dashed lines.</p>
+        </figcaption>
+      </figure>
+      <section>
+        <h3>Editorial Action</h3>
+        <p>These classes enable the assignment of specific things to <em>do</em> to a document.</p>
+        <section id="Action" about="[ci:Action]" typeof="owl:Class">
+          <h4 property="rdfs:label" datatype="xsd:token">Action</h4>
+          <p property="rdfs:comment">An action, as its name implies, is meant to represent something a person or other agent ought to do to a document.</p>
+          <aside role="note">
+            <p property="skos:usageNote">Being a subclass of an event, a <code>ci:Action</code> can have agents, factors, products, places and times ascribed to it.</p>
+          </aside>
+          <dl>
+            <dt>Subclass of:</dt>
+            <dd><a rel="rdfs:subClassOf" resource="http://purl.org/NET/c4dm/event.owl#Event" href="http://motools.sourceforge.net/event/event.html#term_Event">ev:Event</a></dd>
+            <dt>Currently defined:</dt>
+            <dd>
+              <ul rev="rdf:type">
+                <li><a href="#keep">keep</a></li>
+                <li><a href="#split">split</a></li>
+                <li><a href="#tentative-merge">tentative-merge</a></li>
+                <li><a href="#update-metadata">update-metadata</a></li>
+                <li><a href="#proofread">proofread</a></li>
+                <li><a href="#revise">revise</a></li>
+                <li><a href="#rewrite">rewrite</a></li>
+                <li><a href="#retire">retire</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="Merge" about="[ci:Merge]" typeof="owl:Class">
+          <h4 property="rdfs:label" datatype="xsd:token">Merge</h4>
+          <p property="rdfs:comment">In order to merge a document, we must define the target to which it ought to be merged. This class is identical to an Action, save for such a property.</p>
+          <dl>
+            <dt>Subclass of:</dt>
+            <dd><a rel="rdfs:subClassOf" href="#Action">ci:Action</a></dd>
+            <dt>Properties:</dt>
+            <dd><a rev="rdfs:domain" href="#target">ci:target</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+      <section>
+        <h3>Document Classes/Decorators</h3>
+        <p>Ontologies like <abbr>BIBO</abbr> are far from exhaustive in their breadth of document types, so any additional salient document types will go here. Currently there is only the one.</p>
+        <section id="Advertisement" about="[ci:Advertisement]" typeof="owl:Class">
+          <h4 property="rdfs:label" datatype="xsd:token">Advertisement</h4>
+          <p property="rdfs:comment">In general there is no programmatic way to tell whether a resource is an advertisement, since advertisements on the Web look (to a machine) like any other resource. This is intended to be a decorator class to indicate that the subject is an advertisement. It can therefore be combined with other classes such as <code>foaf:Image</code>, or <code>bibo:AudioVisualDocument</code>.</p>
+          <figure>
+            <pre property="skos:example">@prefix bibo: &lt;http://purl.org/ontology/bibo/> .
+@prefix dct:  &lt;http://purl.org/dc/terms/> .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/> .
+@prefix ci:   &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+
+&lt;https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
+  dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
+  dct:hasPart &lt;https://adtech.biz/assets/punch-the-monkey> .
+
+&lt;https://adtech.biz/assets/punch-the-monkey> a foaf:Image, <em>ci:Advertisement</em> ;
+  dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .
+            </pre>
+          </figure>
+          <dl>
+            <dt>Subclass of:</dt>
+            <dd><a rel="rdfs:subClassOf" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+      <section>
+        <h3>Audience Modelling</h3>
+        <p>Classes involved in describing audiences will go here.</p>
+        <section id="Audience" about="[ci:Audience]" typeof="owl:Class">
+          <h4 property="rdfs:label" datatype="xsd:token">Audience</h4>
+          <p property="rdfs:comment">An audience represents the set of people who are the intended recipients of the resource. This class is at once an agent class as well as a conceptual entity, capable of being mixed into a SKOS concept scheme.</p>
+          <dl>
+            <dt>Subclass of:</dt>
+            <dd><a rel="rdfs:subClassOf" resource="http://purl.org/dc/terms/AgentClass" href="http://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-AgentClass">dct:AgentClass</a></dd>
+            <dd><a rel="rdfs:subClassOf" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
+            <dt>Properties:</dt>
+            <dd><a rev="rdfs:domain" href="#aware-of">ci:aware-of</a></dd>
+            <dd><a rev="rdfs:domain" href="#understands">ci:understands</a></dd>
+            <dd><a rev="rdfs:domain" href="#values">ci:values</a></dd>
+            <dd><a rev="rdfs:domain" href="#eschews">ci:eschews</a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" resource="http://purl.org/dc/terms/audience" href="http://dublincore.org/documents/dcmi-terms/#terms-audience">dct:audience</a></dd>
+            <dd><a rel="rdfs:seeAlso" resource="http://www.w3.org/ns/org#Role" href="https://www.w3.org/TR/vocab-org/#org:Role">org:Role</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+    </section>
+    <section id="sec-properties" about="#">
       <h2>Properties</h2>
-      <h3>Authorial/Editorial Intent</h3>
-      <div id="desired-outcome" about="[ci:desired-outcome]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">desired-outcome</h4>
-        <p property="rdfs:comment">This property is intended to indicate what the document is supposed to do&#x2014;what material effect it is supposed to produce. It is intentionally open-ended, and as such can point to something like a skos:Concept, another document, or a literal string of text describing the outcome.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/type">dct:type</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="non-audience" about="[ci:non-audience]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">non-audience</h4>
-        <p property="rdfs:comment">This property complements <code>dct:audience</code> insofar as enabling the author or editor to designate a set of entities who are explicitly <em>not</em> the intended audience of the document.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range:</dt>
-          <dd><a rel="rdfs:range" href="http://purl.org/dc/terms/AgentClass">dct:AgentClass</a></dd>
-          <dt>See Also:</dt>
-          <dd><a rel="rdfs:seeAlso" resource="http://purl.org/dc/terms/audience" href="http://dublincore.org/documents/dcmi-terms/#terms-audience">dct:audience</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <h3>Editing Tasks</h3>
-      <div id="action" about="[ci:action]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">action</h4>
-        <p property="rdfs:comment">use this to signal an action to take with the document in question.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range:</dt>
-          <dd><a rel="rdfs:range" href="#Action">ci:Action</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#factor_of">ev:factor_of</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="target" about="[ci:target]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">target</h4>
-        <p property="rdfs:comment">Specify the URI of the target resource into which this document should be merged.</p>
-        <dl>
-          <dt>Domain</dt>
-          <dd><a rel="rdfs:domain" href="#Merge">ci:Merge</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <h3>Conceptual Relations</h3>
-      <p>The purpose of these properties is to provide an interface to concept schemes created in SKOS. Relations created through the use of these properties will enable searching, filtering and partitioning sets of documents based on what they talk about.</p>
-      <div id="mentions" about="[ci:mentions]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">mentions</h4>
-        <p property="rdfs:comment">The document explicitly mentions this concept.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="introduces" about="[ci:introduces]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">introduces</h4>
-        <p property="rdfs:comment">The document defines, describes, or otherwise introduces the audience to this concept.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="#mentions">ci:mentions</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="assumes" about="[ci:assumes]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">assumes</h4>
-        <p property="rdfs:comment">The document assumes the audience is familiar with this concept, and may not mention it explicitly.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
-            <dt>See Also:</dt>
+      <section>
+        <h3>Authorial/Editorial Intent</h3>
+        <p>After a content inventory comes an audit, wherein we figure out what we want to do with the content. The following properties govern <em>who</em> the document is (not) for and <em>what outcome</em> it is supposed to accomplish.</p>
+        <section id="desired-outcome" about="[ci:desired-outcome]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">desired-outcome</h4>
+          <p property="rdfs:comment">This property is intended to indicate what the document is supposed to do&#x2014;what material effect it is supposed to produce. It is intentionally open-ended, and as such can point to something like a <code>skos:Concept</code>, another document, or a literal string of text describing the outcome.</p>
+          <figure>
+            <pre property="skos:example">@prefix bibo: &lt;http://purl.org/ontology/bibo/> .
+@prefix dct:  &lt;http://purl.org/dc/terms/> .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/> .
+@prefix ci:   &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix eg:   &lt;https://backoffice.example.club/concepts/> .
+
+# we can extend our article metadata the following way:
+
+&lt;https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
+  dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
+  <em>ci:desired-outcome</em> eg:maximize-clicks .
+
+# and create a corresponding resource to unambiguously identify the goal:
+
+eg:maximize-clicks a skos:Concept ;
+  skos:prefLabel "Maximize Clicks"@en ;
+  skos:description "Moar clicks means moar monies."@en .
+            </pre>
+          </figure>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/type">dct:type</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="non-audience" about="[ci:non-audience]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">non-audience</h4>
+          <p property="rdfs:comment">This property complements <code>dct:audience</code> insofar as enabling the author or editor to designate a set of entities who are explicitly <em>not</em> the intended audience of the document.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="http://purl.org/dc/terms/AgentClass">dct:AgentClass</a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" resource="http://purl.org/dc/terms/audience" href="http://dublincore.org/documents/dcmi-terms/#terms-audience">dct:audience</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+      <section>
+        <h3>Editing Tasks</h3>
+        <p>A content audit will generate actionable tasks on some subset of the inventoried documents. Use <code>ci:action</code> to relate a document to an action, including one or more of the actions <a href="#sec-actions">specified in this document</a>. A <code>ci:Merge</code> is a special kind of <code>ci:Action</code> that takes a <code>ci:target</code>, as in the following example:</p>
+        <figure>
+          <pre>
+@prefix bibo: &lt;http://purl.org/ontology/bibo/> .
+@prefix bs:   &lt;http://purl.org/ontology/bibo/status/> .
+@prefix ci:   &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+
+&lt;https://example.club/our-team> a bibo:Webpage ;
+  bibo:status bs:published, <em>ci:obsolete</em> ;
+  <em>ci:action</em> &lt;tag:example.club,2020-01:content-inventory/merge/our-team> .
+
+&lt;tag:example.club,2020-01:content-inventory:merge:our-team> a <em>ci:Merge</em> ; 
+  <em>ci:target</em> &lt;https://example.club/about> .
+          </pre>
+          <figcaption>
+            <p>This example is in <a href="https://www.w3.org/TR/turtle/">Turtle syntax</a>. It is stating that the published document at <code>https://example.club/our-team</code> is obsolete and should be merged into <code>https://example.club/about</code>. A <a href="https://tools.ietf.org/html/rfc4151"><code>tag:</code> <abbr>URI</abbr></a> was chosen to identify the merge, to reinforce the idea that it is just a piece of data and not a Web page (although one could imagine representing it as one).</p>
+          </figcaption>
+        </figure>
+        <section id="action" about="[ci:action]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">action</h4>
+          <p property="rdfs:comment">Relates a document to an action to take.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="#Action">ci:Action</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/NET/c4dm/event.owl#factor_of">ev:factor_of</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="target" about="[ci:target]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">target</h4>
+          <p property="rdfs:comment">Specify the URI of the target resource into which this document should be merged.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="#Merge">ci:Merge</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+      <section>
+        <h3>Conceptual Relations</h3>
+        <p>Documents, if they don't explicitly <em>mention</em>, certainly <em>allude to concepts</em>. Certain documents may <em>introduce</em> or <em>define</em> a concept, making it suitable introductory material. Still other documents may evoke images or concepts which members of the audience are actually trying to <em>avoid</em>. The following properties relate documents to concepts, specifically whether a document mentions, introduces, evokes without mentioning, or otherwise assumes a level of understanding on the part of the audience.</p>
+        <p>The concepts themselves belong to an ordinary <abbr>SKOS</abbr> concept scheme, and can be reasoned over using their ordinary semantic relations (<code>skos:broader</code>, <code>skos:narrower</code>, <code>skos:related</code>).</p>
+        <section id="mentions" about="[ci:mentions]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">mentions</h4>
+          <p property="rdfs:comment">The document explicitly mentions this concept.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="depicts" about="[ci:depicts]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">depicts</h4>
+          <p property="rdfs:comment">The document explicitly depicts this concept (or other entity).</p>
+          <aside role="note">
+            <p property="skos:note">This term is identical in meaning to <code>foaf:depicts</code> except that the latter constrains its domain to images only, whereas this can relate any kind of document. The range of this property is also left open, to accommodate any kind of resource being depicted.</p>
+          </aside>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" resource="foaf:depicts" href="http://xmlns.com/foaf/spec/#term_depicts">foaf:depicts</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="introduces" about="[ci:introduces]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">introduces</h4>
+          <p property="rdfs:comment">The document defines, describes, or otherwise introduces the audience to this concept.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#mentions">ci:mentions</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="assumes" about="[ci:assumes]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">assumes</h4>
+          <p property="rdfs:comment">The document assumes the audience is familiar with this concept, and may not mention it explicitly.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" resource="http://purl.org/dc/terms/educationLevel" href="http://dublincore.org/documents/dcmi-terms/#terms-educationLevel">dct:educationLevel</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <h3>Audience Properties</h3>
-      <div id="aware-of" about="[ci:aware-of]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">aware-of</h4>
-        <p property="rdfs:comment">This property relates an Audience to a SKOS concept that is likely to be in the orbit of the audience's members: they are <em>aware</em> that the concept <em>exists</em>, although they may not necessarily <em>understand</em> it.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="#audience">ci:Audience</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations">skos:related</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="understands" about="[ci:understands]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">understands</h4>
-        <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to comprehend, and thereby do not need any additional explanation.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="#audience">ci:Audience</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="#aware-of">ci:aware-of</a></dd>
-          <dt>See Also:</dt>
-          <dd><a rel="rdfs:seeAlso" resource="http://purl.org/dc/terms/educationLevel" href="http://dublincore.org/documents/dcmi-terms/#terms-educationLevel">dct:educationLevel</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="values" about="[ci:values]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">values</h4>
-        <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to <em>value</em>, that is, to find meaningful in an axiological sense.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="#audience">ci:Audience</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations">skos:related</a></dd>
-          <dt>See Also:</dt>
-          <dd><a rel="rdfs:seeAlso" href="#eschews">ci:eschews</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="eschews" about="[ci:eschews]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">eschews</h4>
-        <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to actively avoid or regard with contempt. This relation is intended to represent the complement of <em>values</em>.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="#audience">ci:Audience</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations">skos:related</a></dd>
-          <dt>See Also:</dt>
-          <dd><a rel="rdfs:seeAlso" href="#values">ci:values</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <h3>Content Management Metadata</h3>
-      <div id="embed" about="[ci:embed]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">embed</h4>
-        <p property="rdfs:comment">This property specifies an embedded resource which is visible in the subject's user interface.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/hasPart">dct:hasPart</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="link" about="[ci:link]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">link</h4>
-        <p property="rdfs:comment">This property specifies a linked resource which is visible in the subject's user interface.</p>
-        <dl>
-          <dt>Domain:</dt>
-          <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="alias" about="[ci:alias]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">alias</h4>
-        <p property="rdfs:comment">Denotes an alternate URI for the subject resource. It extends <code>owl:sameAs</code> insofar as asserting that the object is somehow <q>less canonical</q> than the subject.</p>
-        <dl>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#sameAs">owl:sameAs</a></dd>
-          <dt>Inverse of:</dt>
-          <dd><a rel="owl:inverseOf" href="#alias-for">ci:alias-for</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="alias-for" about="[ci:alias-for]" typeof="owl:ObjectProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">alias-for</h4>
-        <p property="rdfs:comment">Denotes that the <em>subject</em> is the alias URI, and the object is <q>more canonical</q> (though not necessarily the <em>most</em> canonical).</p>
-        <dl>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#sameAs">owl:sameAs</a></dd>
-          <dt>Inverse of:</dt>
-          <dd><a rel="owl:inverseOf" href="#alias">ci:alias</a></dd>
-          <dt>See also:</dt>
-          <dd><a rel="rdfs:seeAlso" href="#canonical">ci:canonical</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="canonical" about="[ci:canonical]" typeof="owl:ObjectProperty owl:FunctionalProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">canonical</h4>
-        <p property="rdfs:comment">Asserts the canonical URI of the subject resource, i.e., the one you always want to publish in content or redirect Web requests to.<!-- All canonical URIs are also owl:sameAs.--></p>
-        <dl>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="#alias-for">ci:alias</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="slug" about="[ci:slug]" typeof="owl:DatatypeProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">slug</h4>
-        <p property="rdfs:comment">The slug is a text token which represents either the full path or terminal path segment of an HTTP(S) URL by which a resource can be located. This property is mainly for the purpose of archiving old or alternative URL paths in a content inventory, for such tasks as generating URL rewriting maps.</p>
-        <dl>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="canonical-slug" about="[ci:canonical-slug]" typeof="owl:DatatypeProperty owl:FunctionalProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">canonical-slug</h4>
-        <p property="rdfs:comment">This is the canonical slug associated with the resource, and should be populated with the slug which is actually in use.</p>
-        <dl>
-          <dt>Sub-property of:</dt>
-          <dd><a rel="rdfs:subPropertyOf" href="#slug">ci:slug</a></dd>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-      <div id="indexed" about="[ci:indexed]" typeof="owl:DatatypeProperty owl:FunctionalProperty">
-        <h4 property="rdfs:label" datatype="xsd:token">indexed</h4>
-        <p property="rdfs:comment">This is a boolean value to indicate whether or not a resource ought to be indexed. It does not necessarily ascribe a policy: an absence of an explicit <em>true</em> value does not necessarily imply the resource ought not be indexed, but the <em>presence</em> of a <em>false</em> value probably should.</p>
-        <dl>
-          <dt>Range</dt>
-          <dd><a rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></dd>
-        </dl>
-        <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-      </div>
-    </div>
-    <div about="#">
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="evokes" about="[ci:evokes]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">evokes</h4>
+          <p property="rdfs:comment">The document evokes the given concept without mentioning it explicitly.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#assumes">ci:assumes</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+      <section>
+        <h3>Audience Properties</h3>
+        <p>On the other side of the relationships between documents and concepts, are the relationships between <em>audiences</em> and concepts. In order to get any use out of a document, it is safe to assume a person has to <em>understand</em> it, which they won't if the document deals with concepts the person doesn't understand, unless the document specifically contains content explaining those concepts. Conversely, a person may understand a concept all too well, and have an opinion about it, which will entice them to either <em>seek out</em> or <em>avoid</em> documents that deal with those concepts. These properties are intended to model both the audience's grasp of, and emotional valence toward, a given concept.</p>
+        <p>Intersecting the concept relations declared on the documents in our inventory with the following properties declared on our audiences will enable us to construct appropriate pairings of content to audiences, and/or root out gaps in our assumptions about both our content <em>and</em> our audiences.</p>
+        <figure>
+          <pre>@prefix bibo: &lt;http://purl.org/ontology/bibo/> .
+@prefix dct:  &lt;http://purl.org/dc/terms/> .
+@prefix ci:   &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix dbc:  &lt;https://dbpedia.org/page/Category:> .
+
+&lt;https://example.news/2020/01/gruesome-car-accident> a bibo:Article ;
+  dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
+  <em>ci:depicts</em> <a href="http://dbpedia.org/page/Category:Traffic_collisions">dbc:Traffic_collisions</a>, <a href="http://dbpedia.org/page/Category:Road_incident_deaths">dbc:Road_incident_deaths</a> .
+
+# we could define the following audience:
+
+&lt;https://example.news/audience/squeamish-person> a <em>ci:Audience</em> ;
+  <em>ci:eschews</em> <a href="http://dbpedia.org/page/Category:Accidents">dbc:Accidents</a>, <a href="http://dbpedia.org/page/Category:Injuries">dbc:Injuries</a>, <a href="http://dbpedia.org/page/Category:Death">dbc:Death</a>, <a href="http://dbpedia.org/page/Category:Violence">dbc:Violence</a> .
+
+# over at DBPedia, there is the following relation:
+
+<a href="http://dbpedia.org/page/Category:Traffic_collisions">dbc:Traffic_collisions</a> skos:broader <a href="http://dbpedia.org/page/Category:Accidents">dbc:Accidents</a> .
+
+# that statement is enough to match the audience, but this chain
+# would match it too:
+
+<a href="http://dbpedia.org/page/Category:Road_incident_deaths">dbc:Road_incident_deaths</a> skos:broader <a href="http://dbpedia.org/page/Category:Deaths_by_cause">dbc:Deaths_by_cause</a> .
+<a href="http://dbpedia.org/page/Category:Deaths_by_cause">dbc:Deaths_by_cause</a> skos:broader <a href="http://dbpedia.org/page/Category:Causes_of_death">dbc:Causes_of_death</a> .
+<a href="http://dbpedia.org/page/Category:Causes_of_death">dbc:Causes_of_death</a> skos:broader <a href="http://dbpedia.org/page/Category:Death">dbc:Death</a> .
+
+# from this we can reason (programmatically) that the article is not
+# appropriate for the given audience and append the following statement
+# to the article's metadata:
+
+&lt;https://example.news/2020/01/gruesome-car-accident>
+  <em>ci:non-audience</em> &lt;https://example.news/audience/squeamish-person> .
+          </pre>
+          <figcaption>
+            <p>References to DBPedia concepts have been linked to demonstrate that concepts can also be rendered as Web pages, as well as cross domains.</p>
+          </figcaption>
+        </figure>
+        <section id="aware-of" about="[ci:aware-of]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">aware-of</h4>
+          <p property="rdfs:comment">This property relates an Audience to a SKOS concept that is likely to be in the orbit of the audience's members: they are <em>aware</em> that the concept <em>exists</em>, although they may not necessarily <em>understand</em> it.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="#Audience">ci:Audience</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations">skos:related</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="understands" about="[ci:understands]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">understands</h4>
+          <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to comprehend, and thereby do not need any additional explanation.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="#Audience">ci:Audience</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#aware-of">ci:aware-of</a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" resource="http://purl.org/dc/terms/educationLevel" href="http://dublincore.org/documents/dcmi-terms/#terms-educationLevel">dct:educationLevel</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="values" about="[ci:values]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">values</h4>
+          <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to <em>value</em>, that is, to find meaningful in an axiological sense.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="#Audience">ci:Audience</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations">skos:related</a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" href="#eschews">ci:eschews</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="eschews" about="[ci:eschews]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">eschews</h4>
+          <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to actively avoid or regard with contempt. This relation is intended to represent the complement of <em>values</em>.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="#Audience">ci:Audience</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts">skos:Concept</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations">skos:related</a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" href="#values">ci:values</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+      <section>
+        <h3>Content Management Metadata</h3>
+        <p>One of the details we want in a content inventory is the set of hyperlinks going out of a document, including whether or not the user can see them, and what kind of links they are. These next few terms extend Dublin Core with that additional information.</p>
+        <aside role="note">
+          <p>Note that words like <q>visible</q> and <q>see</q> are proxies for saying something like <q>amenable to non-specific perception and/or interaction by the user</q>. The essential information to capture with these properties is whether the hyperlink is on the user-facing canvas, or hidden away in the document's metadata.</p>
+        </aside>
+        <aside role="note">
+          <p>Note as well that these properties are intended to capture relations between documents read naïvely as hypermedia, <em>not</em> as embedded metadata such as Microdata or <abbr>RDFa</abbr>. Indeed, in <abbr>RDFa</abbr>, a construct like <code>&lt;a rel="some:relation" resource="some:object" href="/some/page"&gt;&#x2026;</code> would yield the contents of <code>resource=</code> whereas these properties (in this example, <code>ci:link</code>) are meant to capture the contents of <code>href=</code> (or <code>src=</code>, <code>action=</code>, etc.).</p>
+        </aside>
+        <figure>
+          <pre>@prefix ci: &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+
+# This statement relates a resource to its canonical address:
+
+&lt;https://example.club/seventeen-mindblowing-ways-to-write-listicles>
+  <em>ci:canonical</em> &lt;https://example.club/17-mindblowing-ways-to-write-listicles> .
+
+# here we define a slug and aliases:
+
+&lt;https://example.club/17-mindblowing-ways-to-write-listicles>
+  <em>ci:canonical-slug</em> "17-mindblowing-ways-to-write-listicles"^^xsd:token ;
+  <em>ci:alias</em> &lt;https://example.club/seventeen-mindblowing-ways-to-write-listicles>,
+    &lt;https://short.nr/aXbQ1> .
+
+# one of these alias clauses is implied by the other statement, as
+# ci:canonical is a subproperty of ci:alias-for, which is the inverse
+# of ci:alias.
+          </pre>
+        </figure>
+        <section id="embed" about="[ci:embed]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">embed</h4>
+          <p property="rdfs:comment">This property specifies an embedded resource, such as an image, which is visible on the document's canvas.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/hasPart">dct:hasPart</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="form" about="[ci:form]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">form</h4>
+          <p property="rdfs:comment">This property specifies form target, which may or may not be visible to the user.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#link">ci:link</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="include" about="[ci:include]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">include</h4>
+          <p property="rdfs:comment">This property specifies a related resource which is <em>not</em> directly visible to the user.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/requires">dct:requires</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="link" about="[ci:link]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">link</h4>
+          <p property="rdfs:comment">This property specifies an ordinary hyperlink, which is visible on the document's canvas.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/references">dct:references</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <p>Resources on the Web tend to be identified by more than one <abbr>URI</abbr>. The following properties extend the <code>owl:sameAs</code> property to indicate a definite direction of canonicality, and throw in another couple of properties to capture the same idea for the terminal <q>slug</q> of the URI path, i.e., <code>/this/thing/<strong>here</strong></code>. An example use case for these properties is the generation of <dfn>rewrite maps</dfn>.</p>
+        <section id="alias" about="[ci:alias]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">alias</h4>
+          <p property="rdfs:comment">Denotes an alternate URI for the subject resource. It extends <code>owl:sameAs</code> insofar as asserting that the object is somehow <q>less canonical</q> than the subject.</p>
+          <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#sameAs">owl:sameAs</a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#alias-for">ci:alias-for</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="alias-for" about="[ci:alias-for]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">alias-for</h4>
+          <p property="rdfs:comment">Denotes that the <em>subject</em> is the alias URI, and the object is <q>more canonical</q> (though not necessarily the <em>most</em> canonical).</p>
+          <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://www.w3.org/2002/07/owl#sameAs">owl:sameAs</a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#alias">ci:alias</a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" href="#canonical">ci:canonical</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="representation" about="[ci:representation]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">representation</h4>
+          <p property="rdfs:comment">Denotes a resource that is a concrete representation of the subject, which assumed to be more abstract.</p>
+          <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" resource="dct:hasFormat" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat">dct:hasFormat</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="variant" about="[ci:variant]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">variant</h4>
+          <p property="rdfs:comment">Denotes a resource that is a concrete representation of the subject, which assumed to be more abstract.</p>
+          <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" resource="dct:hasFormat" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat">dct:hasFormat</a></dd>
+            <dt>Equivalent to:</dt>
+            <dd><a rel="owl:equivalentProperty" href="#representation">ci:representation</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="primary" about="[ci:primary]" typeof="owl:ObjectProperty owl:FunctionalProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">primary</h4>
+          <p property="rdfs:comment">Denotes the <em>primary</em> variant that concretely represents the resource.</p>
+          <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#variant">ci:variant</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="canonical" about="[ci:canonical]" typeof="owl:ObjectProperty owl:FunctionalProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">canonical</h4>
+          <p property="rdfs:comment">Asserts the canonical URI of the subject resource, i.e., the one you always want to publish in content or redirect Web requests to.<!-- All canonical URIs are also owl:sameAs.--></p>
+          <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#alias-for">ci:alias-for</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="slug" about="[ci:slug]" typeof="owl:DatatypeProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">slug</h4>
+          <p property="rdfs:comment">The slug is a text token which represents either the full path or terminal path segment of an HTTP(S) URL by which a resource can be located. This property is mainly for the purpose of archiving old or alternative URL paths in a content inventory, for such tasks as generating URL rewriting maps.</p>
+          <dl>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="canonical-slug" about="[ci:canonical-slug]" typeof="owl:DatatypeProperty owl:FunctionalProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">canonical-slug</h4>
+          <p property="rdfs:comment">This is the canonical slug associated with the resource, and should be populated with the slug which is actually in use.</p>
+          <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#slug">ci:slug</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="indexed" about="[ci:indexed]" typeof="owl:DatatypeProperty owl:FunctionalProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">indexed</h4>
+          <p property="rdfs:comment">This is a boolean value to indicate whether or not a resource ought to be indexed. It does not necessarily ascribe a policy: an absence of an explicit <em>true</em> value does not necessarily imply the resource ought not be indexed, but the <em>presence</em> of a <em>false</em> value probably should.</p>
+          <dl>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+    </section>
+    <section id="sec-individuals" about="#">
       <h2>Individuals</h2>
       <p>This document defines a set of values useful for describing the status of documents and actions to take with them.</p>
-      <div>
+      <section>
         <h3>Statuses</h3>
         <p>The following bibo:DocumentStatuses are supplied in addition to the statuses specified by the Bibliography Ontology.</p>
-        <div id="empty" about="[ci:empty]" typeof="bibo:DocumentStatus">
+        <section id="empty" about="[ci:empty]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">empty</h4>
           <p property="rdfs:comment">The document contains no content.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="incomplete" about="[ci:incomplete]" typeof="bibo:DocumentStatus">
+        </section>
+        <section id="incomplete" about="[ci:incomplete]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">incomplete</h4>
           <p property="rdfs:comment">The document has been started, but is clearly not finished.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="incorrect" about="[ci:incorrect]" typeof="bibo:DocumentStatus">
+        </section>
+        <section id="incorrect" about="[ci:incorrect]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">incorrect</h4>
           <p property="rdfs:comment">The content of this document is factually wrong.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="obsolete" about="[ci:obsolete]" typeof="bibo:DocumentStatus">
+        </section>
+        <section id="obsolete" about="[ci:obsolete]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">obsolete</h4>
           <p property="rdfs:comment">The content of this document was correct and relevant at one point, but external circumstances have caused it to lapse in relevance or factual accuracy.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="landing" about="[ci:landing]" typeof="bibo:DocumentStatus">
+        </section>
+        <section id="landing" about="[ci:landing]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">landing</h4>
           <p property="rdfs:comment">The resource is a landing page from some other medium (e.g. e-mail, television, billboard). This status is a hint to automated systems which would otherwise orphan or retire a landing page with no inbound links.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="orphan" about="[ci:orphan]" typeof="bibo:DocumentStatus">
+        </section>
+        <section id="orphan" about="[ci:orphan]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">orphan</h4>
           <p property="rdfs:comment">The resource is not explicitly pending or removed from publication, however it has managed to be disconnected from the rest of the site: There is no path to it from a landing page, and it is not a landing page on its own. That is to say that the resource either has no inbound links, or if it does, those links are from other resources that are in the same situation. Documents which are only linked from retired documents are also considered orphans.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="confidential" about="[ci:confidential]" typeof="bibo:DocumentStatus">
+        </section>
+        <section id="confidential" about="[ci:confidential]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">confidential</h4>
           <p property="rdfs:comment">The document is confidential and not for publication.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="circulated" about="[ci:circulated]" typeof="bibo:DocumentStatus">
+        </section>
+        <section id="circulated" about="[ci:circulated]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">circulated</h4>
           <p property="rdfs:comment">The document is available for select people to see, but not <q>published</q> in the strict literal sense.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="retired" about="[ci:retired]" typeof="bibo:DocumentStatus">
+        </section>
+        <section id="retired" about="[ci:retired]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">retired</h4>
           <p property="rdfs:comment">The document has been explicitly retired by an editor or curator, but still exists in the archive.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="unavailable" about="[ci:unavailable]" typeof="bibo:DocumentStatus">
+        </section>
+        <section id="unavailable" about="[ci:unavailable]" typeof="bibo:DocumentStatus">
           <h4 property="rdfs:label" datatype="xsd:token">unavailable</h4>
           <p property="rdfs:comment">The resource at the subject address is unavailable for reasons other than explicit retirement, e.g. HTTP 404 or 403, or going out of print.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-      </div>
-      <div>
+        </section>
+      </section>
+      <section id="sec-actions">
         <h3>Actions</h3>
-        <p>The following is a list of ci:Actions to be used with the ci:action property.</p>
-        <div id="keep" about="[ci:keep]" typeof="ci:Action">
+        <p>The following is a list of <a href="#Action"><code>ci:Action</code></a> entities to be used with the <a href="#action"><code>ci:action</code></a> property.</p>
+        <section id="keep" about="[ci:keep]" typeof="ci:Action">
           <h4 property="rdfs:label" datatype="xsd:token">keep</h4>
           <p property="rdfs:comment">Keep this document to which this is associated; make no changes to it at this time.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="split" about="[ci:split]" typeof="ci:Action">
+        </section>
+        <section id="split" about="[ci:split]" typeof="ci:Action">
           <h4 property="rdfs:label" datatype="xsd:token">split</h4>
           <p property="rdfs:comment">Split this document into multiple pieces.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="tentative-merge" about="[ci:tentative-merge]" typeof="ci:Merge">
+        </section>
+        <section id="tentative-merge" about="[ci:tentative-merge]" typeof="ci:Merge">
           <h4 property="rdfs:label" datatype="xsd:token">tentative-merge</h4>
           <p property="rdfs:comment">Merge this document into some other document, though unspecified at this time as to which.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="update-metadata" about="[ci:update-metadata]" typeof="ci:Action">
+        </section>
+        <section id="update-metadata" about="[ci:update-metadata]" typeof="ci:Action">
           <h4 property="rdfs:label" datatype="xsd:token">update-metadata</h4>
           <p property="rdfs:comment">Update the metadata of this document, such as keywords, audience, etc.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="proofread" about="[ci:proofread]" typeof="ci:Action">
+        </section>
+        <section id="proofread" about="[ci:proofread]" typeof="ci:Action">
           <h4 property="rdfs:label" datatype="xsd:token">proofread</h4>
           <p property="rdfs:comment">Proofread this document.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="revise" about="[ci:revise]" typeof="ci:Action">
+        </section>
+        <section id="revise" about="[ci:revise]" typeof="ci:Action">
           <h4 property="rdfs:label" datatype="xsd:token">revise</h4>
           <p property="rdfs:comment">Revise or restructure this document.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="rewrite" about="[ci:rewrite]" typeof="ci:Action">
+        </section>
+        <section id="rewrite" about="[ci:rewrite]" typeof="ci:Action">
           <h4 property="rdfs:label" datatype="xsd:token">rewrite</h4>
           <p property="rdfs:comment">Rewrite this document from scratch.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="retire" about="[ci:retire]" typeof="ci:Action">
+        </section>
+        <section id="retire" about="[ci:retire]" typeof="ci:Action">
           <h4 property="rdfs:label" datatype="xsd:token">retire</h4>
           <p property="rdfs:comment">Remove all references to this document and consign it to the archive.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-      </div>
-    </div>
-    <div about="#">
+        </section>
+      </section>
+    </section>
+    <section id="#sec-dsd" about="#">
       <h2>Quantitative Metrics</h2>
       <p>There are many ways to measure a set of Web pages that give valuable insight into not only the individual character of each page, but also the character of an entire site.</p>
-      
       <p>We use the <a rel="dct:references" href="http://www.w3.org/TR/vocab-data-cube/">RDF Data Cube vocabulary</a> to specify the quantitative metrics we gather over our documents.</p>
-      <div>
+      <section>
         <h3>Data Structure Definitions</h3>
-        <p>The following object is an instance of <a rel="dct:references" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_DataStructureDefinition">qb:DataStructureDefinition</a>. It depicts the dimensions, measures and attributes for <a rel="dct:references" href="http://www.w3.org/TR/vocab-data-cube/#ref_qb_DataSet">qb:DataSets</a> that carry the relevant statistical data. (This particular data structure only contains dimensions and measures.)</p>
-        <div id="words-and-blocks" about="[ci:words-and-blocks]" typeof="qb:DataStructureDefinition">
+        <p>The following object is an instance of <a rel="dct:references" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_DataStructureDefinition">qb:DataStructureDefinition</a>. It depicts the dimensions, measures and attributes for <a rel="dct:references" href="http://www.w3.org/TR/vocab-data-cube/#ref_qb_DataSet">qb:DataSets</a> that carry the relevant statistical data. (This particular data structure only contains dimensions and measures.)</p>
+        <section id="words-and-blocks" about="[ci:words-and-blocks]" typeof="qb:DataStructureDefinition">
           <h4 property="rdfs:label" datatype="xsd:token">words-and-blocks</h4>
           <p property="rdfs:comment">A set of descriptive statistics pertaining to the number of words per block of text in a given document.</p>
-          <div rel="qb:component">
+          <section rel="qb:component">
             <h5>Components</h5>
             <h6>Dimensions</h6>
             <ul>
@@ -471,6 +732,13 @@
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#blocks">blocks</a></li>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#words">words</a></li>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#characters">characters</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#images">images</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#videos">videos</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#embeds">embeds</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#tables">tables</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#forms">forms</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#scripts">scripts</a></li>
+              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#stylesheets">stylesheets</a></li>
             </ul>
             <h6>Five-number summary</h6>
             <ul>
@@ -485,193 +753,303 @@
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#mean">mean</a></li>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#sd">sd</a></li>
             </ul>
-          </div>
-        </div>
-      </div>
-      <div>
+          </section>
+        </section>
+      </section>
+      <section>
         <h3>Dimensions</h3>
-        <p>The set of all <a rel="dct:references" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_DimensionProperty">qb:DimensionProperties</a> for a given data structure can positively identify an observation. We currently only specify one dimension, the <abbr title="Uniform Resource Identifier">URI</abbr> of the document in question.</p>
-        <div id="document" about="[ci:document]" typeof="qb:DimensionProperty">
+        <p>The set of all <a rel="dct:references" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_DimensionProperty">qb:DimensionProperties</a> for a given data structure can positively identify an observation. We currently only specify one dimension, the <abbr title="Uniform Resource Identifier">URI</abbr> of the document in question.</p>
+        <section id="document" about="[ci:document]" typeof="qb:DimensionProperty">
           <h4 property="rdfs:label" datatype="xsd:token">document</h4>
           <p property="rdfs:comment">Document Reference</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-      </div>
-      <div>
-        <p>The <a rel="dct:references" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_MeasureProperty">qb:MeasureProperties</a> are what define the data observed in a <a rel="dct:references" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a>. Here we are interested in a <a rel="dct:references" href="http://en.wikipedia.org/wiki/Five-number_summary">five-number summary</a>, along with the <a rel="dct:references" href="http://en.wikipedia.org/wiki/Mean">mean</a> and <a rel="dct:references" href="http://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> of block sizes (in words) found in a given document.</p>
+        </section>
+      </section>
+      <section>
+        <p>The <a rel="dct:references" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_MeasureProperty">qb:MeasureProperties</a> are what define the data observed in a <a rel="dct:references" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a>. Here we are interested in a <a rel="dct:references" href="http://en.wikipedia.org/wiki/Five-number_summary">five-number summary</a>, along with the <a rel="dct:references" href="http://en.wikipedia.org/wiki/Mean">mean</a> and <a rel="dct:references" href="http://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> of block sizes (in words) found in a given document.</p>
         <h3>Measures</h3>
-        <div id="sections" about="[ci:sections]" typeof="qb:MeasureProperty">
+        <section id="sections" about="[ci:sections]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">sections</h4>
           <p property="rdfs:comment">For document types that have a concrete representation of sections, this property may be used to capture their sum.</p>
           <dl>
-            <dt>Domain</dt>
+            <dt>Domain:</dt>
             <dd><a rel="rdfs:domain" href="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
-            <dt>Range</dt>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="blocks" about="[ci:blocks]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="blocks" about="[ci:blocks]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">blocks</h4>
           <p property="rdfs:comment">A block count is conceptually similar to a word or section count, though it counts the total of elements in the document considered to be text blocks, such as paragraphs, tables, lists and figures. It is suited for document types that have no concept of (semantic) sections, such as HTML. The purpose of this measurement is to provide a sort of ratio to the word count, to glean how well-proportioned the document is.</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="words" about="[ci:words]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="words" about="[ci:words]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">words</h4>
           <p property="rdfs:comment">This indicates the number of words in a document, similar to the familiar function in a word processor. The exact method of counting words may vary by document type, language etc., and is thus out of scope from this document.</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="characters" about="[ci:characters]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="characters" about="[ci:characters]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">characters</h4>
           <p property="rdfs:comment">This indicates the number of characters in a document, with punctuation and the XPath normalize-space function applied. Note this is characters, not bytes.</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://www.w3.org/TR/xpath/#function-normalize-space"><samp>normalize-space</samp> in the XPath 1.0 specification</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="outdegree" about="[ci:outdegree]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="images" about="[ci:images]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">images</h4>
+          <p property="rdfs:comment">This indicates the number of images in the document.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="videos" about="[ci:videos]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">videos</h4>
+          <p property="rdfs:comment">The number of videos in the document.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="embeds" about="[ci:embeds]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">embeds</h4>
+          <p property="rdfs:comment">The number of embeds in the document.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="tables" about="[ci:tables]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">tables</h4>
+          <p property="rdfs:comment">The number of tables in the document.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="lists" about="[ci:lists]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">lists</h4>
+          <p property="rdfs:comment">The number of lists in the document.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="forms" about="[ci:forms]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">forms</h4>
+          <p property="rdfs:comment">The number of forms in the document.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="scripts" about="[ci:scripts]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">scripts</h4>
+          <p property="rdfs:comment">The number of scripts in the document.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="stylesheets" about="[ci:stylesheets]" typeof="qb:MeasureProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">stylesheets</h4>
+          <p property="rdfs:comment">The number of stylesheets in the document.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="outdegree" about="[ci:outdegree]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">outdegree</h4>
           <p property="rdfs:comment">The number of links emanating from the specified resource.</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">Directed graph (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="indegree" about="[ci:indegree]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="indegree" about="[ci:indegree]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">indegree</h4>
           <p property="rdfs:comment">The number of links pointing at the specified resource.</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree">Directed graph (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="min" about="[ci:min]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="min" about="[ci:min]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">min</h4>
           <p property="rdfs:comment">The smallest observation in the sample.</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Sample_minimum">Sample minimum (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="low-quartile" about="[ci:low-quartile]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="low-quartile" about="[ci:low-quartile]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">low-quartile</h4>
           <p property="rdfs:comment">Equivalent to the bottom quarter, or 25th percentile, of the observed data.</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Quartile">Quartile (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="median" about="[ci:median]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="median" about="[ci:median]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">median</h4>
           <p property="rdfs:comment">The median of a population </p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Median">Median (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="high-quartile" about="[ci:high-quartile]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="high-quartile" about="[ci:high-quartile]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">high-quartile</h4>
           <p property="rdfs:comment">Third Quartile</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Quartile">Quartile (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="max" about="[ci:max]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="max" about="[ci:max]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">max</h4>
           <p property="rdfs:comment">Maximum</p>
           <dl>
             <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Sample_maximum">Sample maximum (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="mean" about="[ci:mean]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="mean" about="[ci:mean]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">mean</h4>
           <p property="rdfs:comment">Mean</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Mean">Mean (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-        <div id="sd" about="[ci:sd]" typeof="qb:MeasureProperty">
+        </section>
+        <section id="sd" about="[ci:sd]" typeof="qb:MeasureProperty">
           <h4 property="rdfs:label" datatype="xsd:token">sd</h4>
           <p property="rdfs:comment">Standard Deviation</p>
           <dl>
-            <dt>Domain</dt>
-            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="http://publishing-statistical-data.googlecode.com/svn/trunk/specs/src/main/html/cube.html#ref_qb_Observation">qb:Observation</a></dd>
-            <dt>Range</dt>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="http://purl.org/linked-data/cube#Observation" href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation">qb:Observation</a></dd>
+            <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="http://www.w3.org/2001/XMLSchema#number" href="http://www.w3.org/TR/xmlschema-2/#number">xsd:number</a></dd>
-            <dt>See Also</dt>
+            <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="http://en.wikipedia.org/wiki/Standard_deviation">Standard deviation (Wikipedia)</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
-        </div>
-      </div>
-    </div>
-    <div about="#">
-      <p>This document is copyright 2010-2012 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
-    </div>
+        </section>
+      </section>
+    </section>
+    <section about="#">
+      <dl id="sec-changelog">
+        <dt>Changes</dt>
+        <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2012-12-11T22:22:00-08:00">December 11, 2012</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2014-02-06T14:10:00-08:00">February 6, 2014</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2015-02-03T14:39:00-08:00">February 8, 2015</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2017-04-06T15:24:00-07:00">April 6, 2017</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2018-10-06T16:23:52Z">October 6, 2018</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-03-05T23:38:59Z">March 5, 2019</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-04-07T16:36:10Z">April 7, 2019</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-04-18T01:01:09Z">April 17, 2019</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-07T22:10:55Z">July 7, 2019</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-10T22:28:06Z">July 10, 2019</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-07-21T23:05:32Z">July 21, 2019</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2019-09-04T20:27:32Z">September 4, 2019</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2020-01-26T05:02:30Z">January 25, 2020</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2020-04-24T23:16:20Z">April 24, 2020</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2020-04-30T01:05:51Z">April 29, 2020</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2020-06-29T02:24:58Z">June 28, 2020</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2020-07-04T01:24:22Z">July 3, 2020</dd>
+      </dl>
+      <p>This document is copyright 2010-2020 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
+    </section>
   </body>
 </html>

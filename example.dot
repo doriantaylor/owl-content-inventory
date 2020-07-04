@@ -18,11 +18,12 @@ digraph {
     ci_Merge -> foaf_Document [label="ci:target"];
     foaf_Document -> ci_Action [label="ci:action"];
 
-    foaf_Document -> skos_Concept [label="ci:mentions, ci:introduces,\nci:assumes"];
+    foaf_Document -> skos_Concept [label="ci:mentions, ci:introduces,\nci:assumes, ci:depicts, ci:evokes"];
     ci_Audience -> skos_Concept [label="ci:aware-of, ci:understands,\nci:values, ci:eschews"];
     foaf_Document -> dct_AgentClass [label="ci:non-audience"];
     foaf_Document -> owl_Thing [label="ci:desired-outcome"];
-    foaf_Document -> owl_Thing [label="ci:embeds, ci:links"];
+    foaf_Document -> owl_Thing [label="ci:embed, ci:link,\nci:include, ci:form"];
+    owl_Thing -> owl_Thing [label="ci:alias, ci:alias-for,\nci:canonical"]
     
     subgraph {
         edge [style=dashed, label="rdfs:subClassOf"];
