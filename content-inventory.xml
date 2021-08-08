@@ -27,11 +27,11 @@
         <dt>Author</dt>
         <dd><a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me"><span property="foaf:name">Dorian Taylor</span></a></dd>
         <dt>Version</dt>
-        <dd property="owl:versionInfo" datatype="xsd:string">0.13</dd>
+        <dd property="owl:versionInfo" datatype="xsd:string">0.14</dd>
         <dt>Created</dt>
         <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
         <dt><a href="#sec-changelog">Updated</a></dt>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2020-07-04T01:24:22Z">July 3, 2020</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2021-05-17T17:57:27Z">May 17, 2021</dd>
         <dt>Namespace <abbr>URI</abbr></dt>
         <dd><a href="#">https://privatealpha.com/ontology/content-inventory/1#</a></dd>
         <dt>Preferred Namespace Prefix</dt>
@@ -138,12 +138,43 @@
   dct:hasPart &lt;https://adtech.biz/assets/punch-the-monkey> .
 
 &lt;https://adtech.biz/assets/punch-the-monkey> a foaf:Image, <em>ci:Advertisement</em> ;
-  dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .
-            </pre>
+  dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .</pre>
           </figure>
           <dl>
             <dt>Subclass of:</dt>
             <dd><a rel="rdfs:subClassOf" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+      <section>
+        <h3>Variation</h3>
+        <p>This section is for classes that have to do with creating content that can vary. Currently the only class defined is <code>ci:Variable</code>, which is a way to refer to values which are defined elsewhere and thus can maintain their consistency across the document.</p>
+        <section id="Variable" about="[ci:Variable]" typeof="owl:Class">
+          <h4 property="rdfs:label" datatype="xsd:token">Variable</h4>
+          <p property="rdfs:comment">Identifies a variable which can be embedded into a document and assigned an <code>rdf:value</code>.</p>
+          <div property="skos:example">
+            <p>Consider the markup:</p>
+            <pre>&lt;p about="https://example.biz/ratecard#"&gt;Shingy's bill-out rate is &lt;span rel="dct:references"&gt;
+  &lt;var about="#rate" typeof="ci:Variable" property="rdf:value" datatype="xsd:decimal"&gt;100.00&lt;/var&gt;
+  &lt;var about="#unit" typeof="ci:Variable" property="rdf:value" datatype="xsd:token"&gt;USD&lt;/var&gt;
+&lt;/span&gt; per hour.&lt;/p&gt;</pre>
+            <p>&#x2026;which when parsed will produce the statements:</p>
+            <pre>@base &lt;https://example.biz/ratecard#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix dct: &lt;http://purl.org/dc/terms/&gt; .
+@prefix ci:  &lt;https://privatealpha.com/ontology/content-inventory/1#&gt; .
+
+&lt;&gt; dct:references &lt;#rate&gt;, &lt;#unit&gt; .
+
+&lt;#rate&gt; a ci:Variable ; rdf:value "100.00"^^xsd:decimal .
+&lt;#unit&gt; a ci:Variable ; rdf:value "USD"^^xsd:token .</pre>
+            <p></p>
+          </div>
+          <dl>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" resource="rdf:value" href="https://www.w3.org/TR/rdf-schema/#ch_value">rdf:value</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
@@ -542,6 +573,9 @@ eg:maximize-clicks a skos:Concept ;
         <section id="representation" about="[ci:representation]" typeof="owl:ObjectProperty">
           <h4 property="rdfs:label" datatype="xsd:token">representation</h4>
           <p property="rdfs:comment">Denotes a resource that is a concrete representation of the subject, which assumed to be more abstract.</p>
+          <aside role="note">
+            <p property="owl:deprecated" datatype="xsd:boolean" content="true">This property is deprecated in favour of <a href="#variant">ci:variant</a>.</p>
+          </aside>
           <dl>
             <dt>Sub-property of:</dt>
             <dd><a rel="rdfs:subPropertyOf" resource="dct:hasFormat" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat">dct:hasFormat</a></dd>
@@ -550,7 +584,7 @@ eg:maximize-clicks a skos:Concept ;
         </section>
         <section id="variant" about="[ci:variant]" typeof="owl:ObjectProperty">
           <h4 property="rdfs:label" datatype="xsd:token">variant</h4>
-          <p property="rdfs:comment">Denotes a resource that is a concrete representation of the subject, which assumed to be more abstract.</p>
+          <p property="rdfs:comment">Denotes a resource that is a variant of a concrete representation of the subject, which assumed to be more abstract.</p>
           <dl>
             <dt>Sub-property of:</dt>
             <dd><a rel="rdfs:subPropertyOf" resource="dct:hasFormat" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat">dct:hasFormat</a></dd>
@@ -594,6 +628,15 @@ eg:maximize-clicks a skos:Concept ;
             <dd><a rel="rdfs:subPropertyOf" href="#slug">ci:slug</a></dd>
             <dt>Range:</dt>
             <dd><a rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="fragment-of" about="[ci:fragment-of]" typeof="owl:ObjectProperty owl:FunctionalProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">fragment-of</h4>
+          <p property="rdfs:comment">This property asserts that the subject should be treated as a fragment of the document it relates to.</p>
+          <dl>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
@@ -722,10 +765,13 @@ eg:maximize-clicks a skos:Concept ;
           <p property="rdfs:comment">A set of descriptive statistics pertaining to the number of words per block of text in a given document.</p>
           <section rel="qb:component">
             <h5>Components</h5>
-            <h6>Dimensions</h6>
+            <section>
+              <h6>Dimensions</h6>
             <ul>
               <li typeof="qb:ComponentSpecification"><a rel="qb:dimension" href="#document">document</a></li>
             </ul>
+            </section>
+            <section>
             <h6>Counts</h6>
             <ul>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#sections">sections</a></li>
@@ -740,6 +786,8 @@ eg:maximize-clicks a skos:Concept ;
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#scripts">scripts</a></li>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#stylesheets">stylesheets</a></li>
             </ul>
+            </section>
+            <section>
             <h6>Five-number summary</h6>
             <ul>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#min">min</a></li>
@@ -748,11 +796,14 @@ eg:maximize-clicks a skos:Concept ;
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#high-quartile">high-quartile</a></li>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#max">max</a></li>
             </ul>
+            </section>
+            <section>
             <h6>Mean and Standard Deviation</h6>
             <ul>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#mean">mean</a></li>
               <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#sd">sd</a></li>
             </ul>
+            </section>
           </section>
         </section>
       </section>
@@ -1048,6 +1099,8 @@ eg:maximize-clicks a skos:Concept ;
         <dd property="dct:modified" datatype="xsd:dateTime" content="2020-04-30T01:05:51Z">April 29, 2020</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2020-06-29T02:24:58Z">June 28, 2020</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2020-07-04T01:24:22Z">July 3, 2020</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2020-11-13T03:27:35Z">November 12, 2020</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2021-05-17T17:57:27Z">May 17, 2021</dd>
       </dl>
       <p>This document is copyright 2010-2020 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
     </section>
