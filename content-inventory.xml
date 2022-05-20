@@ -13,11 +13,11 @@
       xmlns:qb="http://purl.org/linked-data/cube#"
       xmlns:vann="http://purl.org/vocab/vann/"
       xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
-      xmlns:ci="https://privatealpha.com/ontology/content-inventory/1#"
+      xmlns:ci="https://vocab.methodandstructure.com/content-inventory#"
       xml:lang="en">
   <head>
     <title about="#" property="dct:title">A Content Inventory Vocabulary</title>
-    <base href="https://privatealpha.com/ontology/content-inventory/1"/>
+    <base href="https://vocab.methodandstructure.com/content-inventory"/>
     <link about="#" rel="rdfs:isDefinedBy bibo:uri" href="#"/>
   </head>
   <body about="" typeof="bibo:Webpage" rel="dct:subject foaf:primaryTopic">
@@ -33,7 +33,7 @@
         <dt><a href="#sec-changelog">Updated</a></dt>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2021-05-17T17:57:27Z">May 17, 2021</dd>
         <dt>Namespace <abbr>URI</abbr></dt>
-        <dd><a href="#">https://privatealpha.com/ontology/content-inventory/1#</a></dd>
+        <dd><a href="#">https://vocab.methodandstructure.com/content-inventory#</a></dd>
         <dt>Preferred Namespace Prefix</dt>
         <dd><code about="#" property="vann:preferredNamespacePrefix" datatype="xsd:token">ci</code></dd>
         <dt>Imports</dt>
@@ -76,7 +76,7 @@
       <h2>Classes</h2>
       <p>There are currently only four classes in this vocabulary, as other vocabularies account for all other constructs.</p>
       <figure>
-        <object style="display: block; margin: auto; max-width: 100%; height: auto;" data="example.svg"><img src="example" alt=""/></object>
+        <object style="display: block; margin: auto; max-width: 100%; height: auto;" data="content-inventory-classes.svg"><img src="content-inventory-classes" alt=""/></object>
         <figcaption>
           <p>This diagram shows the classes and properties defined in this document using solid lines, and third-party classes and properties using dashed lines.</p>
         </figcaption>
@@ -131,7 +131,7 @@
             <pre property="skos:example">@prefix bibo: &lt;http://purl.org/ontology/bibo/> .
 @prefix dct:  &lt;http://purl.org/dc/terms/> .
 @prefix foaf: &lt;http://xmlns.com/foaf/0.1/> .
-@prefix ci:   &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#> .
 
 &lt;https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
   dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
@@ -164,7 +164,7 @@
 @prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 @prefix dct: &lt;http://purl.org/dc/terms/&gt; .
-@prefix ci:  &lt;https://privatealpha.com/ontology/content-inventory/1#&gt; .
+@prefix ci:  &lt;https://vocab.methodandstructure.com/content-inventory#&gt; .
 
 &lt;&gt; dct:references &lt;#rate&gt;, &lt;#unit&gt; .
 
@@ -214,7 +214,7 @@
             <pre property="skos:example">@prefix bibo: &lt;http://purl.org/ontology/bibo/> .
 @prefix dct:  &lt;http://purl.org/dc/terms/> .
 @prefix foaf: &lt;http://xmlns.com/foaf/0.1/> .
-@prefix ci:   &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#> .
 @prefix eg:   &lt;https://backoffice.example.club/concepts/> .
 
 # we can extend our article metadata the following way:
@@ -259,7 +259,7 @@ eg:maximize-clicks a skos:Concept ;
           <pre>
 @prefix bibo: &lt;http://purl.org/ontology/bibo/> .
 @prefix bs:   &lt;http://purl.org/ontology/bibo/status/> .
-@prefix ci:   &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#> .
 
 &lt;https://example.club/our-team> a bibo:Webpage ;
   bibo:status bs:published, <em>ci:obsolete</em> ;
@@ -379,7 +379,7 @@ eg:maximize-clicks a skos:Concept ;
         <figure>
           <pre>@prefix bibo: &lt;http://purl.org/ontology/bibo/> .
 @prefix dct:  &lt;http://purl.org/dc/terms/> .
-@prefix ci:   &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#> .
 @prefix dbc:  &lt;https://dbpedia.org/page/Category:> .
 
 &lt;https://example.news/2020/01/gruesome-car-accident> a bibo:Article ;
@@ -482,7 +482,7 @@ eg:maximize-clicks a skos:Concept ;
           <p>Note as well that these properties are intended to capture relations between documents read naïvely as hypermedia, <em>not</em> as embedded metadata such as Microdata or <abbr>RDFa</abbr>. Indeed, in <abbr>RDFa</abbr>, a construct like <code>&lt;a rel="some:relation" resource="some:object" href="/some/page"&gt;&#x2026;</code> would yield the contents of <code>resource=</code> whereas these properties (in this example, <code>ci:link</code>) are meant to capture the contents of <code>href=</code> (or <code>src=</code>, <code>action=</code>, etc.).</p>
         </aside>
         <figure>
-          <pre>@prefix ci: &lt;https://privatealpha.com/ontology/content-inventory/1#> .
+          <pre>@prefix ci: &lt;https://vocab.methodandstructure.com/content-inventory#> .
 
 # This statement relates a resource to its canonical address:
 
