@@ -9,10 +9,10 @@
     0.14
   - Created  
     January 23, 2012
-  - [Updated](https://privatealpha.com/ontology/content-inventory/1#sec-changelog)  
+  - [Updated](https://vocab.methodandstructure.com/content-inventory#sec-changelog)  
     May 17, 2021
   - Namespace URI  
-    <https://privatealpha.com/ontology/content-inventory/1#>
+    <https://vocab.methodandstructure.com/content-inventory#>
   - Preferred Namespace Prefix  
     `ci`
   - Imports  
@@ -52,11 +52,11 @@ Such vocabularies include, but are far from limited to:
     organizes quantitative and statistical data.
 
 This document is organized in terms of
-[Classes](https://privatealpha.com/ontology/content-inventory/1#sec-classes),
-[Properties](https://privatealpha.com/ontology/content-inventory/1#sec-properties),
-[Individuals](https://privatealpha.com/ontology/content-inventory/1#sec-individuals),
+[Classes](https://vocab.methodandstructure.com/content-inventory#sec-classes),
+[Properties](https://vocab.methodandstructure.com/content-inventory#sec-properties),
+[Individuals](https://vocab.methodandstructure.com/content-inventory#sec-individuals),
 and an appendix for the [Data Structure
-Definition](https://privatealpha.com/ontology/content-inventory/1#sec-dsd)
+Definition](https://vocab.methodandstructure.com/content-inventory#sec-dsd)
 for quantitative content analytics. Terms are organized topologically
 first, and alphabetically second.
 
@@ -97,7 +97,7 @@ vocabularies account for all other constructs.
 
 ![This diagram shows the classes and properties defined in this document
 using solid lines, and third-party classes and properties using dashed
-lines.](https://privatealpha.com/ontology/content-inventory/content-inventory-classes)
+lines.](https://vocab.methodandstructure.com/content-inventory-classes)
 
 <div class="section">
 
@@ -121,16 +121,16 @@ products, places and times ascribed to it.
 
   - Currently defined:
     
-      - [keep](https://privatealpha.com/ontology/content-inventory/1#keep)
-      - [split](https://privatealpha.com/ontology/content-inventory/1#split)
-      - [tentative-merge](https://privatealpha.com/ontology/content-inventory/1#tentative-merge)
-      - [update-metadata](https://privatealpha.com/ontology/content-inventory/1#update-metadata)
-      - [proofread](https://privatealpha.com/ontology/content-inventory/1#proofread)
-      - [revise](https://privatealpha.com/ontology/content-inventory/1#revise)
-      - [rewrite](https://privatealpha.com/ontology/content-inventory/1#rewrite)
-      - [retire](https://privatealpha.com/ontology/content-inventory/1#retire)
+      - [keep](https://vocab.methodandstructure.com/content-inventory#keep)
+      - [split](https://vocab.methodandstructure.com/content-inventory#split)
+      - [tentative-merge](https://vocab.methodandstructure.com/content-inventory#tentative-merge)
+      - [update-metadata](https://vocab.methodandstructure.com/content-inventory#update-metadata)
+      - [proofread](https://vocab.methodandstructure.com/content-inventory#proofread)
+      - [revise](https://vocab.methodandstructure.com/content-inventory#revise)
+      - [rewrite](https://vocab.methodandstructure.com/content-inventory#rewrite)
+      - [retire](https://vocab.methodandstructure.com/content-inventory#retire)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -143,11 +143,11 @@ ought to be merged. This class is identical to an Action, save for such
 a property.
 
   - Subclass of:  
-    [ci:Action](https://privatealpha.com/ontology/content-inventory/1#Action)
+    [ci:Action](https://vocab.methodandstructure.com/content-inventory#Action)
   - Properties:  
-    [ci:target](https://privatealpha.com/ontology/content-inventory/1#target)
+    [ci:target](https://vocab.methodandstructure.com/content-inventory#target)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -174,7 +174,7 @@ other classes such as `foaf:Image`, or `bibo:AudioVisualDocument`.
     @prefix bibo: <http://purl.org/ontology/bibo/> .
     @prefix dct:  <http://purl.org/dc/terms/> .
     @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-    @prefix ci:   <https://privatealpha.com/ontology/content-inventory/1#> .
+    @prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
     
     <https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
       dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
@@ -186,7 +186,7 @@ other classes such as `foaf:Image`, or `bibo:AudioVisualDocument`.
   - Subclass of:  
     [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -223,7 +223,7 @@ Consider the markup:
     @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
     @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
     @prefix dct: <http://purl.org/dc/terms/> .
-    @prefix ci:  <https://privatealpha.com/ontology/content-inventory/1#> .
+    @prefix ci:  <https://vocab.methodandstructure.com/content-inventory#> .
     
     <> dct:references <#rate>, <#unit> .
     
@@ -235,7 +235,7 @@ Consider the markup:
   - See also:  
     [rdf:value](https://www.w3.org/TR/rdf-schema/#ch_value)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -259,15 +259,15 @@ conceptual entity, capable of being mixed into a SKOS concept scheme.
     [dct:AgentClass](http://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-AgentClass)
     [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
   - Properties:  
-    [ci:aware-of](https://privatealpha.com/ontology/content-inventory/1#aware-of)
-    [ci:understands](https://privatealpha.com/ontology/content-inventory/1#understands)
-    [ci:values](https://privatealpha.com/ontology/content-inventory/1#values)
-    [ci:eschews](https://privatealpha.com/ontology/content-inventory/1#eschews)
+    [ci:aware-of](https://vocab.methodandstructure.com/content-inventory#aware-of)
+    [ci:understands](https://vocab.methodandstructure.com/content-inventory#understands)
+    [ci:values](https://vocab.methodandstructure.com/content-inventory#values)
+    [ci:eschews](https://vocab.methodandstructure.com/content-inventory#eschews)
   - See also:  
     [dct:audience](http://dublincore.org/documents/dcmi-terms/#terms-audience)
     [org:Role](https://www.w3.org/TR/vocab-org/#org:Role)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -300,7 +300,7 @@ another document, or a literal string of text describing the outcome.
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dct:  <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ci:   <https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
 @prefix eg:   <https://backoffice.example.club/concepts/> .
 
 # we can extend our article metadata the following way:
@@ -322,7 +322,7 @@ eg:maximize-clicks a skos:Concept ;
   - Sub-property of:  
     [dct:type](http://purl.org/dc/terms/type)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -341,7 +341,7 @@ intended audience of the document.
   - See also:  
     [dct:audience](http://dublincore.org/documents/dcmi-terms/#terms-audience)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -354,14 +354,14 @@ intended audience of the document.
 A content audit will generate actionable tasks on some subset of the
 inventoried documents. Use `ci:action` to relate a document to an
 action, including one or more of the actions [specified in this
-document](https://privatealpha.com/ontology/content-inventory/1#sec-actions).
+document](https://vocab.methodandstructure.com/content-inventory#sec-actions).
 A `ci:Merge` is a special kind of `ci:Action` that takes a `ci:target`,
 as in the following example:
 
 ``` 
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix bs:   <http://purl.org/ontology/bibo/status/> .
-@prefix ci:   <https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
 
 <https://example.club/our-team> a bibo:Webpage ;
   bibo:status bs:published, ci:obsolete ;
@@ -388,11 +388,11 @@ Relates a document to an action to take.
   - Domain:  
     [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
   - Range:  
-    [ci:Action](https://privatealpha.com/ontology/content-inventory/1#Action)
+    [ci:Action](https://vocab.methodandstructure.com/content-inventory#Action)
   - Sub-property of:  
     [ev:factor\_of](http://purl.org/NET/c4dm/event.owl#factor_of)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -404,11 +404,11 @@ Specify the URI of the target resource into which this document should
 be merged.
 
   - Domain:  
-    [ci:Merge](https://privatealpha.com/ontology/content-inventory/1#Merge)
+    [ci:Merge](https://vocab.methodandstructure.com/content-inventory#Merge)
   - Range:  
     [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -444,7 +444,7 @@ The document explicitly mentions this concept.
   - Sub-property of:  
     [dct:references](http://purl.org/dc/terms/references)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -466,7 +466,7 @@ accommodate any kind of resource being depicted.
   - See also:  
     [foaf:depicts](http://xmlns.com/foaf/spec/#term_depicts)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -482,9 +482,9 @@ this concept.
   - Range:  
     [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
   - Sub-property of:  
-    [ci:mentions](https://privatealpha.com/ontology/content-inventory/1#mentions)
+    [ci:mentions](https://vocab.methodandstructure.com/content-inventory#mentions)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -504,7 +504,7 @@ not mention it explicitly.
   - See also:  
     [dct:educationLevel](http://dublincore.org/documents/dcmi-terms/#terms-educationLevel)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -519,9 +519,9 @@ The document evokes the given concept without mentioning it explicitly.
   - Range:  
     [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
   - Sub-property of:  
-    [ci:assumes](https://privatealpha.com/ontology/content-inventory/1#assumes)
+    [ci:assumes](https://vocab.methodandstructure.com/content-inventory#assumes)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -551,7 +551,7 @@ audiences.
 ``` 
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dct:  <http://purl.org/dc/terms/> .
-@prefix ci:   <https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
 @prefix dbc:  <https://dbpedia.org/page/Category:> .
 
 <https://example.news/2020/01/gruesome-car-accident> a bibo:Article ;
@@ -595,13 +595,13 @@ in the orbit of the audience's members: they are *aware* that the
 concept *exists*, although they may not necessarily *understand* it.
 
   - Domain:  
-    [ci:Audience](https://privatealpha.com/ontology/content-inventory/1#Audience)
+    [ci:Audience](https://vocab.methodandstructure.com/content-inventory#Audience)
   - Range:  
     [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
   - Sub-property of:  
     [skos:related](https://www.w3.org/TR/skos-reference/#semantic-relations)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -614,15 +614,15 @@ audience are known to comprehend, and thereby do not need any additional
 explanation.
 
   - Domain:  
-    [ci:Audience](https://privatealpha.com/ontology/content-inventory/1#Audience)
+    [ci:Audience](https://vocab.methodandstructure.com/content-inventory#Audience)
   - Range:  
     [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
   - Sub-property of:  
-    [ci:aware-of](https://privatealpha.com/ontology/content-inventory/1#aware-of)
+    [ci:aware-of](https://vocab.methodandstructure.com/content-inventory#aware-of)
   - See also:  
     [dct:educationLevel](http://dublincore.org/documents/dcmi-terms/#terms-educationLevel)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -635,15 +635,15 @@ audience are known to *value*, that is, to find meaningful in an
 axiological sense.
 
   - Domain:  
-    [ci:Audience](https://privatealpha.com/ontology/content-inventory/1#Audience)
+    [ci:Audience](https://vocab.methodandstructure.com/content-inventory#Audience)
   - Range:  
     [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
   - Sub-property of:  
     [skos:related](https://www.w3.org/TR/skos-reference/#semantic-relations)
   - See also:  
-    [ci:eschews](https://privatealpha.com/ontology/content-inventory/1#eschews)
+    [ci:eschews](https://vocab.methodandstructure.com/content-inventory#eschews)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -656,15 +656,15 @@ audience are known to actively avoid or regard with contempt. This
 relation is intended to represent the complement of *values*.
 
   - Domain:  
-    [ci:Audience](https://privatealpha.com/ontology/content-inventory/1#Audience)
+    [ci:Audience](https://vocab.methodandstructure.com/content-inventory#Audience)
   - Range:  
     [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
   - Sub-property of:  
     [skos:related](https://www.w3.org/TR/skos-reference/#semantic-relations)
   - See also:  
-    [ci:values](https://privatealpha.com/ontology/content-inventory/1#values)
+    [ci:values](https://vocab.methodandstructure.com/content-inventory#values)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -694,7 +694,7 @@ example, `ci:link`) are meant to capture the contents of `href=` (or
 `src=`, `action=`, etc.).
 
 ``` 
-@prefix ci: <https://privatealpha.com/ontology/content-inventory/1#> .
+@prefix ci: <https://vocab.methodandstructure.com/content-inventory#> .
 
 # This statement relates a resource to its canonical address:
 
@@ -726,7 +726,7 @@ visible on the document's canvas.
   - Sub-property of:  
     [dct:hasPart](http://purl.org/dc/terms/hasPart)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -740,9 +740,9 @@ the user.
   - Domain:  
     [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
   - Sub-property of:  
-    [ci:link](https://privatealpha.com/ontology/content-inventory/1#link)
+    [ci:link](https://vocab.methodandstructure.com/content-inventory#link)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -758,7 +758,7 @@ visible to the user.
   - Sub-property of:  
     [dct:requires](http://purl.org/dc/terms/requires)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -774,7 +774,7 @@ document's canvas.
   - Sub-property of:  
     [dct:references](http://purl.org/dc/terms/references)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -796,9 +796,9 @@ canonical” than the subject.
   - Sub-property of:  
     [owl:sameAs](http://www.w3.org/2002/07/owl#sameAs)
   - Inverse of:  
-    [ci:alias-for](https://privatealpha.com/ontology/content-inventory/1#alias-for)
+    [ci:alias-for](https://vocab.methodandstructure.com/content-inventory#alias-for)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -812,11 +812,11 @@ canonical” (though not necessarily the *most* canonical).
   - Sub-property of:  
     [owl:sameAs](http://www.w3.org/2002/07/owl#sameAs)
   - Inverse of:  
-    [ci:alias](https://privatealpha.com/ontology/content-inventory/1#alias)
+    [ci:alias](https://vocab.methodandstructure.com/content-inventory#alias)
   - See also:  
-    [ci:canonical](https://privatealpha.com/ontology/content-inventory/1#canonical)
+    [ci:canonical](https://vocab.methodandstructure.com/content-inventory#canonical)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -828,12 +828,12 @@ Denotes a resource that is a concrete representation of the subject,
 which assumed to be more abstract.
 
 This property is deprecated in favour of
-[ci:variant](https://privatealpha.com/ontology/content-inventory/1#variant).
+[ci:variant](https://vocab.methodandstructure.com/content-inventory#variant).
 
   - Sub-property of:  
     [dct:hasFormat](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -847,9 +847,9 @@ subject, which assumed to be more abstract.
   - Sub-property of:  
     [dct:hasFormat](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat)
   - Equivalent to:  
-    [ci:representation](https://privatealpha.com/ontology/content-inventory/1#representation)
+    [ci:representation](https://vocab.methodandstructure.com/content-inventory#representation)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -860,9 +860,9 @@ subject, which assumed to be more abstract.
 Denotes the *primary* variant that concretely represents the resource.
 
   - Sub-property of:  
-    [ci:variant](https://privatealpha.com/ontology/content-inventory/1#variant)
+    [ci:variant](https://vocab.methodandstructure.com/content-inventory#variant)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -874,9 +874,9 @@ Asserts the canonical URI of the subject resource, i.e., the one you
 always want to publish in content or redirect Web requests to.
 
   - Sub-property of:  
-    [ci:alias-for](https://privatealpha.com/ontology/content-inventory/1#alias-for)
+    [ci:alias-for](https://vocab.methodandstructure.com/content-inventory#alias-for)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -893,7 +893,7 @@ generating URL rewriting maps.
   - Range:  
     [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -905,11 +905,11 @@ This is the canonical slug associated with the resource, and should be
 populated with the slug which is actually in use.
 
   - Sub-property of:  
-    [ci:slug](https://privatealpha.com/ontology/content-inventory/1#slug)
+    [ci:slug](https://vocab.methodandstructure.com/content-inventory#slug)
   - Range:  
     [xsd:string](http://www.w3.org/2001/XMLSchema#string)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -923,7 +923,7 @@ of the document it relates to.
   - Range:  
     [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -939,7 +939,7 @@ be indexed, but the *presence* of a *false* value probably should.
   - Range:  
     [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -967,7 +967,7 @@ statuses specified by the Bibliography Ontology.
 
 The document contains no content.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -977,7 +977,7 @@ The document contains no content.
 
 The document has been started, but is clearly not finished.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -987,7 +987,7 @@ The document has been started, but is clearly not finished.
 
 The content of this document is factually wrong.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -999,7 +999,7 @@ The content of this document was correct and relevant at one point, but
 external circumstances have caused it to lapse in relevance or factual
 accuracy.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1011,7 +1011,7 @@ The resource is a landing page from some other medium (e.g. e-mail,
 television, billboard). This status is a hint to automated systems which
 would otherwise orphan or retire a landing page with no inbound links.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1027,7 +1027,7 @@ links, or if it does, those links are from other resources that are in
 the same situation. Documents which are only linked from retired
 documents are also considered orphans.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1037,7 +1037,7 @@ documents are also considered orphans.
 
 The document is confidential and not for publication.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1048,7 +1048,7 @@ The document is confidential and not for publication.
 The document is available for select people to see, but not “published”
 in the strict literal sense.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1059,7 +1059,7 @@ in the strict literal sense.
 The document has been explicitly retired by an editor or curator, but
 still exists in the archive.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1070,7 +1070,7 @@ still exists in the archive.
 The resource at the subject address is unavailable for reasons other
 than explicit retirement, e.g. HTTP 404 or 403, or going out of print.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1081,9 +1081,9 @@ than explicit retirement, e.g. HTTP 404 or 403, or going out of print.
 ### Actions
 
 The following is a list of
-[`ci:Action`](https://privatealpha.com/ontology/content-inventory/1#Action)
+[`ci:Action`](https://vocab.methodandstructure.com/content-inventory#Action)
 entities to be used with the
-[`ci:action`](https://privatealpha.com/ontology/content-inventory/1#action)
+[`ci:action`](https://vocab.methodandstructure.com/content-inventory#action)
 property.
 
 <div id="keep" class="section" about="[ci:keep]" typeof="ci:Action">
@@ -1093,7 +1093,7 @@ property.
 Keep this document to which this is associated; make no changes to it at
 this time.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1103,7 +1103,7 @@ this time.
 
 Split this document into multiple pieces.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1114,7 +1114,7 @@ Split this document into multiple pieces.
 Merge this document into some other document, though unspecified at this
 time as to which.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1124,7 +1124,7 @@ time as to which.
 
 Update the metadata of this document, such as keywords, audience, etc.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1134,7 +1134,7 @@ Update the metadata of this document, such as keywords, audience, etc.
 
 Proofread this document.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1144,7 +1144,7 @@ Proofread this document.
 
 Revise or restructure this document.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1154,7 +1154,7 @@ Revise or restructure this document.
 
 Rewrite this document from scratch.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1164,7 +1164,7 @@ Rewrite this document from scratch.
 
 Remove all references to this document and consign it to the archive.
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1210,7 +1210,7 @@ block of text in a given document.
 
 ###### Dimensions
 
-  - [document](https://privatealpha.com/ontology/content-inventory/1#document)
+  - [document](https://vocab.methodandstructure.com/content-inventory#document)
 
 </div>
 
@@ -1218,17 +1218,17 @@ block of text in a given document.
 
 ###### Counts
 
-  - [sections](https://privatealpha.com/ontology/content-inventory/1#sections)
-  - [blocks](https://privatealpha.com/ontology/content-inventory/1#blocks)
-  - [words](https://privatealpha.com/ontology/content-inventory/1#words)
-  - [characters](https://privatealpha.com/ontology/content-inventory/1#characters)
-  - [images](https://privatealpha.com/ontology/content-inventory/1#images)
-  - [videos](https://privatealpha.com/ontology/content-inventory/1#videos)
-  - [embeds](https://privatealpha.com/ontology/content-inventory/1#embeds)
-  - [tables](https://privatealpha.com/ontology/content-inventory/1#tables)
-  - [forms](https://privatealpha.com/ontology/content-inventory/1#forms)
-  - [scripts](https://privatealpha.com/ontology/content-inventory/1#scripts)
-  - [stylesheets](https://privatealpha.com/ontology/content-inventory/1#stylesheets)
+  - [sections](https://vocab.methodandstructure.com/content-inventory#sections)
+  - [blocks](https://vocab.methodandstructure.com/content-inventory#blocks)
+  - [words](https://vocab.methodandstructure.com/content-inventory#words)
+  - [characters](https://vocab.methodandstructure.com/content-inventory#characters)
+  - [images](https://vocab.methodandstructure.com/content-inventory#images)
+  - [videos](https://vocab.methodandstructure.com/content-inventory#videos)
+  - [embeds](https://vocab.methodandstructure.com/content-inventory#embeds)
+  - [tables](https://vocab.methodandstructure.com/content-inventory#tables)
+  - [forms](https://vocab.methodandstructure.com/content-inventory#forms)
+  - [scripts](https://vocab.methodandstructure.com/content-inventory#scripts)
+  - [stylesheets](https://vocab.methodandstructure.com/content-inventory#stylesheets)
 
 </div>
 
@@ -1236,11 +1236,11 @@ block of text in a given document.
 
 ###### Five-number summary
 
-  - [min](https://privatealpha.com/ontology/content-inventory/1#min)
-  - [low-quartile](https://privatealpha.com/ontology/content-inventory/1#low-quartile)
-  - [median](https://privatealpha.com/ontology/content-inventory/1#median)
-  - [high-quartile](https://privatealpha.com/ontology/content-inventory/1#high-quartile)
-  - [max](https://privatealpha.com/ontology/content-inventory/1#max)
+  - [min](https://vocab.methodandstructure.com/content-inventory#min)
+  - [low-quartile](https://vocab.methodandstructure.com/content-inventory#low-quartile)
+  - [median](https://vocab.methodandstructure.com/content-inventory#median)
+  - [high-quartile](https://vocab.methodandstructure.com/content-inventory#high-quartile)
+  - [max](https://vocab.methodandstructure.com/content-inventory#max)
 
 </div>
 
@@ -1248,8 +1248,8 @@ block of text in a given document.
 
 ###### Mean and Standard Deviation
 
-  - [mean](https://privatealpha.com/ontology/content-inventory/1#mean)
-  - [sd](https://privatealpha.com/ontology/content-inventory/1#sd)
+  - [mean](https://vocab.methodandstructure.com/content-inventory#mean)
+  - [sd](https://vocab.methodandstructure.com/content-inventory#sd)
 
 </div>
 
@@ -1280,7 +1280,7 @@ Document Reference
   - Range:  
     [foaf:Document](http://xmlns.com/foaf/0.1/Document)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1312,7 +1312,7 @@ property may be used to capture their sum.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1332,7 +1332,7 @@ the word count, to glean how well-proportioned the document is.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1350,7 +1350,7 @@ from this document.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1370,7 +1370,7 @@ not bytes.
     [`normalize-space` in the XPath 1.0
     specification](http://www.w3.org/TR/xpath/#function-normalize-space)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1385,7 +1385,7 @@ This indicates the number of images in the document.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1400,7 +1400,7 @@ The number of videos in the document.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1415,7 +1415,7 @@ The number of embeds in the document.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1430,7 +1430,7 @@ The number of tables in the document.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1445,7 +1445,7 @@ The number of lists in the document.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1460,7 +1460,7 @@ The number of forms in the document.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1475,7 +1475,7 @@ The number of scripts in the document.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1490,7 +1490,7 @@ The number of stylesheets in the document.
   - Range:  
     [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1508,7 +1508,7 @@ The number of links emanating from the specified resource.
     [Directed graph
     (Wikipedia)](http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1526,7 +1526,7 @@ The number of links pointing at the specified resource.
     [Directed graph
     (Wikipedia)](http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1544,7 +1544,7 @@ The smallest observation in the sample.
     [Sample minimum
     (Wikipedia)](http://en.wikipedia.org/wiki/Sample_minimum)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1562,7 +1562,7 @@ data.
   - See also:  
     [Quartile (Wikipedia)](http://en.wikipedia.org/wiki/Quartile)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1579,7 +1579,7 @@ The median of a population
   - See also:  
     [Median (Wikipedia)](http://en.wikipedia.org/wiki/Median)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1596,7 +1596,7 @@ Third Quartile
   - See also:  
     [Quartile (Wikipedia)](http://en.wikipedia.org/wiki/Quartile)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1614,7 +1614,7 @@ Maximum
     [Sample maximum
     (Wikipedia)](http://en.wikipedia.org/wiki/Sample_maximum)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1631,7 +1631,7 @@ Mean
   - See also:  
     [Mean (Wikipedia)](http://en.wikipedia.org/wiki/Mean)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1649,7 +1649,7 @@ Standard Deviation
     [Standard deviation
     (Wikipedia)](http://en.wikipedia.org/wiki/Standard_deviation)
 
-[Back to Top](https://privatealpha.com/ontology/content-inventory/1#)
+[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
 
 </div>
 
@@ -1686,6 +1686,6 @@ Taylor](https://doriantaylor.com/person/dorian-taylor#me), available
 under a [Creative Commons Attribution 2.5
 Canada](http://creativecommons.org/licenses/by/2.5/ca/) license, where
 <span class="dfn">attribution</span> is defined as a link
-[here](https://privatealpha.com/ontology/content-inventory/1#).
+[here](https://vocab.methodandstructure.com/content-inventory#).
 
 </div>
