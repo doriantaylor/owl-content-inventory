@@ -22,7 +22,6 @@
   </head>
   <body about="" typeof="bibo:Webpage" rel="dct:subject foaf:primaryTopic">
     <section about="#" typeof="owl:Ontology">
-      <h2>A Content Inventory Vocabulary</h2>
       <dl>
         <dt>Author</dt>
         <dd><a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me"><span property="foaf:name">Dorian Taylor</span></a></dd>
@@ -31,7 +30,7 @@
         <dt>Created</dt>
         <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
         <dt><a href="#sec-changelog">Updated</a></dt>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2021-05-17T17:57:27Z">May 17, 2021</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2022-11-02T19:19:18Z">November 2, 2022</dd>
         <dt>Namespace <abbr>URI</abbr></dt>
         <dd><a href="#">https://vocab.methodandstructure.com/content-inventory#</a></dd>
         <dt>Preferred Namespace Prefix</dt>
@@ -40,41 +39,41 @@
         <dd><a about="#" rel="owl:imports" resource="http://www.w3.org/2002/07/owl#" href="https://www.w3.org/TR/owl2-overview/">OWL</a></dd>
         <dd><a about="#" rel="owl:imports" resource="http://www.w3.org/2001/XMLSchema#" href="https://www.w3.org/TR/xmlschema-2/">XML Schema Part 2: Datatypes</a></dd>
       </dl>
-      <section>
-        <p property="rdfs:comment" content="This vocabulary defines a number of concepts peculiar to content strategy which are not accounted for by other vocabularies."> This vocabulary defines a number of concepts peculiar to <a rel="dct:references" href="http://en.wikipedia.org/wiki/Content_strategy" title="Content strategy &#x2014; Wikipedia">content strategy</a> which are not accounted for by other vocabularies.</p>
-        <p>Such vocabularies include, but are far from limited to:</p>
-        <ul>
-          <li><a rel="owl:imports" href="http://purl.org/dc/terms/">Dublin Core Terms</a> provide basic bibliographic metadata,</li>
-          <li>The <a rel="owl:imports" href="http://purl.org/ontology/bibo/">Bibliography Ontology</a> provides additional bibliographic metadata plus dozens of useful document types,</li>
-          <li><abbr title="Functional Requirements for Bibliographic Records">FRBR</abbr> <a rel="dct:references" href="http://vocab.org/frbr/core" title="Expression of Core FRBR Concepts in RDF">Core</a> and <a rel="dct:references" href="http://vocab.org/frbr/extended" title="Expression of Extended FRBR Concepts in RDF">Extended</a> provides terms for modeling even more sophisticated intertextual relations,</li>
-          <li><a rel="owl:imports" resource="http://www.w3.org/2004/02/skos/core#" href="https://www.w3.org/TR/skos-reference/"><abbr title="Simple Knowledge Organization System">SKOS</abbr></a> provides a rich substrate for concept schemes and taxonomies,</li>
-          <li><a rel="owl:imports" href="http://xmlns.com/foaf/0.1/">Friend of a Friend</a> and <a href="https://www.w3.org/TR/vocab-org/">The Organization Ontology</a> give us models of people and business entities,</li>
-          <li>The <a rel="owl:imports" href="http://purl.org/NET/c4dm/event.owl#" title="The Event Ontology">Event Ontology</a> enables the modeling of processes, factors, and outcomes,</li>
-          <li><a rel="dct:references" href="https://www.w3.org/TR/prov-o/">The Provenance Ontology</a> gives us a vocabulary for recording the handling of content over time,</li>
-          <li>The <a rel="owl:imports" href="http://purl.org/linked-data/cube#">Data Cube Vocabulary</a> organizes quantitative and statistical data.</li>
-        </ul>
-        <p>This document is organized in terms of <a href="#sec-classes">Classes</a>, <a href="#sec-properties">Properties</a>, <a href="#sec-individuals">Individuals</a>, and an appendix for the <a href="#sec-dsd">Data Structure Definition</a> for quantitative content analytics. Terms are organized topologically first, and alphabetically second.</p>
-        <aside role="note">
-          <h3>Reading the Examples</h3>
-          <p>Examples are given in <a href="https://www.w3.org/TR/turtle/">the Turtle syntax</a>. The basic syntax reads like so:</p>
-          <figure>
-            <pre>&lt;subject> &lt;predicate> &lt;object> <strong>.</strong>
+    </section>
+    <section>
+      <p property="rdfs:comment" content="This vocabulary defines a number of concepts peculiar to content strategy which are not accounted for by other vocabularies."> This vocabulary defines a number of concepts peculiar to <a rel="dct:references" href="http://en.wikipedia.org/wiki/Content_strategy" title="Content strategy &#x2014; Wikipedia">content strategy</a> which are not accounted for by other vocabularies.</p>
+      <p>Such vocabularies include, but are far from limited to:</p>
+      <ul>
+        <li><a rel="owl:imports" href="http://purl.org/dc/terms/">Dublin Core Terms</a> provide basic bibliographic metadata,</li>
+        <li>The <a rel="owl:imports" href="http://purl.org/ontology/bibo/">Bibliography Ontology</a> provides additional bibliographic metadata plus dozens of useful document types,</li>
+        <li><abbr title="Functional Requirements for Bibliographic Records">FRBR</abbr> <a rel="dct:references" href="http://vocab.org/frbr/core" title="Expression of Core FRBR Concepts in RDF">Core</a> and <a rel="dct:references" href="http://vocab.org/frbr/extended" title="Expression of Extended FRBR Concepts in RDF">Extended</a> provides terms for modeling even more sophisticated intertextual relations,</li>
+        <li><a rel="owl:imports" resource="http://www.w3.org/2004/02/skos/core#" href="https://www.w3.org/TR/skos-reference/"><abbr title="Simple Knowledge Organization System">SKOS</abbr></a> provides a rich substrate for concept schemes and taxonomies,</li>
+        <li><a rel="owl:imports" href="http://xmlns.com/foaf/0.1/">Friend of a Friend</a> and <a href="https://www.w3.org/TR/vocab-org/">The Organization Ontology</a> give us models of people and business entities,</li>
+        <li>The <a rel="owl:imports" href="http://purl.org/NET/c4dm/event.owl#" title="The Event Ontology">Event Ontology</a> enables the modeling of processes, factors, and outcomes,</li>
+        <li><a rel="dct:references" href="https://www.w3.org/TR/prov-o/">The Provenance Ontology</a> gives us a vocabulary for recording the handling of content over time,</li>
+        <li>The <a rel="owl:imports" href="http://purl.org/linked-data/cube#">Data Cube Vocabulary</a> organizes quantitative and statistical data.</li>
+      </ul>
+      <p>This document is organized in terms of <a href="#sec-classes">Classes</a>, <a href="#sec-properties">Properties</a>, <a href="#sec-individuals">Individuals</a>, and an appendix for the <a href="#sec-dsd">Data Structure Definition</a> for quantitative content analytics. Terms are organized topologically first, and alphabetically second.</p>
+      <aside role="note">
+        <h3>Reading the Examples</h3>
+        <p>Examples are given in <a href="https://www.w3.org/TR/turtle/">the Turtle syntax</a>. The basic syntax reads like so:</p>
+        <figure>
+          <pre>&lt;subject> &lt;predicate> &lt;object> <strong>.</strong>
 
 &lt;subject> &lt;predicate> &lt;object> <strong>;</strong> &lt;predicate> &lt;object> <strong>.</strong>
 
 &lt;subject> &lt;predicate> &lt;object> <strong>,</strong> &lt;object> <strong>.</strong></pre>
-          </figure>
-          <p>That is, complete statements are separated by periods, predicate-object pairs are collated by semicolons, and sets of objects are separated by commas. Turtle also provides for <dfn>prefix mappings</dfn> to shorten the terms. This is denoted by:</p>
-          <figure>
-            <pre>@prefix p: &lt;https://example.club/long/uri/> .</pre>
-          </figure>
-          <p>and thus would map <code>p:<em>some-term</em></code> to <code>https://example.club/long/uri/<em>some-term</em></code>. Note that these strings are just concatenated together, in contrast to conventional relative <abbr>URI</abbr> resolution. Terms belonging to this specification have been emphasized to make them easier to pick out.</p>
-        </aside>
-      </section>
+        </figure>
+        <p>That is, complete statements are separated by periods, predicate-object pairs are collated by semicolons, and sets of objects are separated by commas. Turtle also provides for <dfn>prefix mappings</dfn> to shorten the terms. This is denoted by:</p>
+        <figure>
+          <pre>@prefix p: &lt;https://example.club/long/uri/> .</pre>
+        </figure>
+        <p>and thus would map <code>p:<em>some-term</em></code> to <code>https://example.club/long/uri/<em>some-term</em></code>. Note that these strings are just concatenated together, in contrast to conventional relative <abbr>URI</abbr> resolution. Terms belonging to this specification have been emphasized to make them easier to pick out.</p>
+      </aside>
     </section>
     <section id="sec-classes" about="#">
       <h2>Classes</h2>
-      <p>There are currently only four classes in this vocabulary, as other vocabularies account for all other constructs.</p>
+      <p>There are currently many extant vocabularies that deal with documents and related entities. The classes here are those that aren't otherwise accounted for.</p>
       <figure>
         <object style="display: block; margin: auto; max-width: 100%; height: auto;" data="content-inventory-classes.svg"><img src="content-inventory-classes" alt=""/></object>
         <figcaption>
@@ -123,7 +122,16 @@
       </section>
       <section>
         <h3>Document Classes/Decorators</h3>
-        <p>Ontologies like <abbr>BIBO</abbr> are far from exhaustive in their breadth of document types, so any additional salient document types will go here. Currently there is only the one.</p>
+        <p>Ontologies like <abbr>BIBO</abbr> are far from exhaustive in their breadth of document types, so any additional salient document types will go here.</p>
+        <section id="Abstract" about="[ci:Abstract]" typeof="owl:Class">
+          <h4 property="rdfs:label" datatype="xsd:token">Abstract</h4>
+          <p property="rdfs:comment">This is an explicit document abstract/executive summary class, intended to belong to <abbr>BIBO</abbr>, which appears to be abandonware.</p>
+          <dl>
+            <dt>Subclass of:</dt>
+            <dd><a rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/DocumentPart">bibo:DocumentPart</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
         <section id="Advertisement" about="[ci:Advertisement]" typeof="owl:Class">
           <h4 property="rdfs:label" datatype="xsd:token">Advertisement</h4>
           <p property="rdfs:comment">In general there is no programmatic way to tell whether a resource is an advertisement, since advertisements on the Web look (to a machine) like any other resource. This is intended to be a decorator class to indicate that the subject is an advertisement. It can therefore be combined with other classes such as <code>foaf:Image</code>, or <code>bibo:AudioVisualDocument</code>.</p>
@@ -134,15 +142,44 @@
 @prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#> .
 
 &lt;https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
-  dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
-  dct:hasPart &lt;https://adtech.biz/assets/punch-the-monkey> .
+dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
+dct:hasPart &lt;https://adtech.biz/assets/punch-the-monkey> .
 
 &lt;https://adtech.biz/assets/punch-the-monkey> a foaf:Image, <em>ci:Advertisement</em> ;
-  dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .</pre>
+dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .</pre>
           </figure>
           <dl>
             <dt>Subclass of:</dt>
             <dd><a rel="rdfs:subClassOf" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="Appendix" about="[ci:Appendix]" typeof="owl:Class">
+          <h4 property="rdfs:label" datatype="xsd:token">Appendix</h4>
+          <p property="rdfs:comment">This is an explicit document appendix class, intended to belong to <abbr>BIBO</abbr>, which appears to be abandonware.</p>
+          <dl>
+            <dt>Subclass of:</dt>
+            <dd><a rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/DocumentPart">bibo:DocumentPart</a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" href="https://github.com/structureddynamics/Bibliographic-Ontology-BIBO/pull/17">the 2018 pull request proposing the addition</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="Block" about="[ci:Block]" typeof="owl:Class">
+          <h4 property="rdfs:label" datatype="xsd:token">Block</h4>
+          <p property="rdfs:comment">This is intended to represent a generic block-level segment, such as a paragraph, list, figure, or table.</p>
+          <dl>
+            <dt>Subclass of:</dt>
+            <dd><a rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/DocumentPart">bibo:DocumentPart</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="Section" about="[ci:Section]" typeof="owl:Class">
+          <h4 property="rdfs:label" datatype="xsd:token">Section</h4>
+          <p property="rdfs:comment">This is an explicit document section (i.e., sub-chapter) class.</p>
+          <dl>
+            <dt>Subclass of:</dt>
+            <dd><a rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/DocumentPart">bibo:DocumentPart</a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
@@ -156,8 +193,8 @@
           <div property="skos:example">
             <p>Consider the markup:</p>
             <pre>&lt;p about="https://example.biz/ratecard#"&gt;Shingy's bill-out rate is &lt;span rel="dct:references"&gt;
-  &lt;var about="#rate" typeof="ci:Variable" property="rdf:value" datatype="xsd:decimal"&gt;100.00&lt;/var&gt;
-  &lt;var about="#unit" typeof="ci:Variable" property="rdf:value" datatype="xsd:token"&gt;USD&lt;/var&gt;
+&lt;var about="#rate" typeof="ci:Variable" property="rdf:value" datatype="xsd:decimal"&gt;100.00&lt;/var&gt;
+&lt;var about="#unit" typeof="ci:Variable" property="rdf:value" datatype="xsd:token"&gt;USD&lt;/var&gt;
 &lt;/span&gt; per hour.&lt;/p&gt;</pre>
             <p>&#x2026;which when parsed will produce the statements:</p>
             <pre>@base &lt;https://example.biz/ratecard#&gt; .
@@ -170,7 +207,6 @@
 
 &lt;#rate&gt; a ci:Variable ; rdf:value "100.00"^^xsd:decimal .
 &lt;#unit&gt; a ci:Variable ; rdf:value "USD"^^xsd:token .</pre>
-            <p></p>
           </div>
           <dl>
             <dt>See also:</dt>
@@ -194,6 +230,7 @@
             <dd><a rev="rdfs:domain" href="#understands">ci:understands</a></dd>
             <dd><a rev="rdfs:domain" href="#values">ci:values</a></dd>
             <dd><a rev="rdfs:domain" href="#eschews">ci:eschews</a></dd>
+            <dd><a rev="rdfs:domain" href="#exemplar">ci:exemplar</a></dd>
             <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" resource="http://purl.org/dc/terms/audience" href="http://dublincore.org/documents/dcmi-terms/#terms-audience">dct:audience</a></dd>
             <dd><a rel="rdfs:seeAlso" resource="http://www.w3.org/ns/org#Role" href="https://www.w3.org/TR/vocab-org/#org:Role">org:Role</a></dd>
@@ -220,14 +257,14 @@
 # we can extend our article metadata the following way:
 
 &lt;https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
-  dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
-  <em>ci:desired-outcome</em> eg:maximize-clicks .
+dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
+<em>ci:desired-outcome</em> eg:maximize-clicks .
 
 # and create a corresponding resource to unambiguously identify the goal:
 
 eg:maximize-clicks a skos:Concept ;
-  skos:prefLabel "Maximize Clicks"@en ;
-  skos:description "Moar clicks means moar monies."@en .
+skos:prefLabel "Maximize Clicks"@en ;
+skos:description "Moar clicks means moar monies."@en .
             </pre>
           </figure>
           <dl>
@@ -256,18 +293,16 @@ eg:maximize-clicks a skos:Concept ;
         <h3>Editing Tasks</h3>
         <p>A content audit will generate actionable tasks on some subset of the inventoried documents. Use <code>ci:action</code> to relate a document to an action, including one or more of the actions <a href="#sec-actions">specified in this document</a>. A <code>ci:Merge</code> is a special kind of <code>ci:Action</code> that takes a <code>ci:target</code>, as in the following example:</p>
         <figure>
-          <pre>
-@prefix bibo: &lt;http://purl.org/ontology/bibo/> .
+          <pre>@prefix bibo: &lt;http://purl.org/ontology/bibo/> .
 @prefix bs:   &lt;http://purl.org/ontology/bibo/status/> .
 @prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#> .
 
 &lt;https://example.club/our-team> a bibo:Webpage ;
-  bibo:status bs:published, <em>ci:obsolete</em> ;
-  <em>ci:action</em> &lt;tag:example.club,2020-01:content-inventory/merge/our-team> .
+bibo:status bs:published, <em>ci:obsolete</em> ;
+<em>ci:action</em> &lt;tag:example.club,2020-01:content-inventory/merge/our-team> .
 
-&lt;tag:example.club,2020-01:content-inventory:merge:our-team> a <em>ci:Merge</em> ; 
-  <em>ci:target</em> &lt;https://example.club/about> .
-          </pre>
+&lt;tag:example.club,2020-01:content-inventory:merge:our-team> a <em>ci:Merge</em> ;
+<em>ci:target</em> &lt;https://example.club/about> .</pre>
           <figcaption>
             <p>This example is in <a href="https://www.w3.org/TR/turtle/">Turtle syntax</a>. It is stating that the published document at <code>https://example.club/our-team</code> is obsolete and should be merged into <code>https://example.club/about</code>. A <a href="https://tools.ietf.org/html/rfc4151"><code>tag:</code> <abbr>URI</abbr></a> was chosen to identify the merge, to reinforce the idea that it is just a piece of data and not a Web page (although one could imagine representing it as one).</p>
           </figcaption>
@@ -383,13 +418,13 @@ eg:maximize-clicks a skos:Concept ;
 @prefix dbc:  &lt;https://dbpedia.org/page/Category:> .
 
 &lt;https://example.news/2020/01/gruesome-car-accident> a bibo:Article ;
-  dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
-  <em>ci:depicts</em> <a href="http://dbpedia.org/page/Category:Traffic_collisions">dbc:Traffic_collisions</a>, <a href="http://dbpedia.org/page/Category:Road_incident_deaths">dbc:Road_incident_deaths</a> .
+dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
+<em>ci:depicts</em> <a href="http://dbpedia.org/page/Category:Traffic_collisions">dbc:Traffic_collisions</a>, <a href="http://dbpedia.org/page/Category:Road_incident_deaths">dbc:Road_incident_deaths</a> .
 
 # we could define the following audience:
 
 &lt;https://example.news/audience/squeamish-person> a <em>ci:Audience</em> ;
-  <em>ci:eschews</em> <a href="http://dbpedia.org/page/Category:Accidents">dbc:Accidents</a>, <a href="http://dbpedia.org/page/Category:Injuries">dbc:Injuries</a>, <a href="http://dbpedia.org/page/Category:Death">dbc:Death</a>, <a href="http://dbpedia.org/page/Category:Violence">dbc:Violence</a> .
+<em>ci:eschews</em> <a href="http://dbpedia.org/page/Category:Accidents">dbc:Accidents</a>, <a href="http://dbpedia.org/page/Category:Injuries">dbc:Injuries</a>, <a href="http://dbpedia.org/page/Category:Death">dbc:Death</a>, <a href="http://dbpedia.org/page/Category:Violence">dbc:Violence</a> .
 
 # over at DBPedia, there is the following relation:
 
@@ -407,8 +442,7 @@ eg:maximize-clicks a skos:Concept ;
 # to the article's metadata:
 
 &lt;https://example.news/2020/01/gruesome-car-accident>
-  <em>ci:non-audience</em> &lt;https://example.news/audience/squeamish-person> .
-          </pre>
+<em>ci:non-audience</em> &lt;https://example.news/audience/squeamish-person> .</pre>
           <figcaption>
             <p>References to DBPedia concepts have been linked to demonstrate that concepts can also be rendered as Web pages, as well as cross domains.</p>
           </figcaption>
@@ -471,6 +505,19 @@ eg:maximize-clicks a skos:Concept ;
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
+        <section id="exemplar" about="[ci:exemplar]" typeof="owl:ObjectProperty">
+          <h4 property="rdfs:label" datatype="xsd:token">exemplar</h4>
+          <p property="rdfs:comment">This property relates an <code>Audience</code> to a specific <code>foaf:Person</code> who is an exemplar of the audience.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="#Audience">ci:Audience</a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="foaf:Person" href="http://xmlns.com/foaf/0.1/#term_Person">foaf:Person</a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#example" href="https://www.w3.org/TR/skos-reference/#notes">skos:example</a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
       </section>
       <section>
         <h3>Content Management Metadata</h3>
@@ -487,19 +534,18 @@ eg:maximize-clicks a skos:Concept ;
 # This statement relates a resource to its canonical address:
 
 &lt;https://example.club/seventeen-mindblowing-ways-to-write-listicles>
-  <em>ci:canonical</em> &lt;https://example.club/17-mindblowing-ways-to-write-listicles> .
+<em>ci:canonical</em> &lt;https://example.club/17-mindblowing-ways-to-write-listicles> .
 
 # here we define a slug and aliases:
 
 &lt;https://example.club/17-mindblowing-ways-to-write-listicles>
-  <em>ci:canonical-slug</em> "17-mindblowing-ways-to-write-listicles"^^xsd:token ;
-  <em>ci:alias</em> &lt;https://example.club/seventeen-mindblowing-ways-to-write-listicles>,
-    &lt;https://short.nr/aXbQ1> .
+<em>ci:canonical-slug</em> "17-mindblowing-ways-to-write-listicles"^^xsd:token ;
+<em>ci:alias</em> &lt;https://example.club/seventeen-mindblowing-ways-to-write-listicles>,
+&lt;https://short.nr/aXbQ1> .
 
 # one of these alias clauses is implied by the other statement, as
 # ci:canonical is a subproperty of ci:alias-for, which is the inverse
-# of ci:alias.
-          </pre>
+# of ci:alias.</pre>
         </figure>
         <section id="embed" about="[ci:embed]" typeof="owl:ObjectProperty">
           <h4 property="rdfs:label" datatype="xsd:token">embed</h4>
@@ -767,42 +813,42 @@ eg:maximize-clicks a skos:Concept ;
             <h5>Components</h5>
             <section>
               <h6>Dimensions</h6>
-            <ul>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:dimension" href="#document">document</a></li>
-            </ul>
+              <ul>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:dimension" href="#document">document</a></li>
+              </ul>
             </section>
             <section>
-            <h6>Counts</h6>
-            <ul>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#sections">sections</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#blocks">blocks</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#words">words</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#characters">characters</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#images">images</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#videos">videos</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#embeds">embeds</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#tables">tables</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#forms">forms</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#scripts">scripts</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#stylesheets">stylesheets</a></li>
-            </ul>
+              <h6>Counts</h6>
+              <ul>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#sections">sections</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#blocks">blocks</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#words">words</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#characters">characters</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#images">images</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#videos">videos</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#embeds">embeds</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#tables">tables</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#forms">forms</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#scripts">scripts</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#stylesheets">stylesheets</a></li>
+              </ul>
             </section>
             <section>
-            <h6>Five-number summary</h6>
-            <ul>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#min">min</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#low-quartile">low-quartile</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#median">median</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#high-quartile">high-quartile</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#max">max</a></li>
-            </ul>
+              <h6>Five-number summary</h6>
+              <ul>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#min">min</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#low-quartile">low-quartile</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#median">median</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#high-quartile">high-quartile</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#max">max</a></li>
+              </ul>
             </section>
             <section>
-            <h6>Mean and Standard Deviation</h6>
-            <ul>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#mean">mean</a></li>
-              <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#sd">sd</a></li>
-            </ul>
+              <h6>Mean and Standard Deviation</h6>
+              <ul>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#mean">mean</a></li>
+                <li typeof="qb:ComponentSpecification"><a rel="qb:measure" href="#sd">sd</a></li>
+              </ul>
             </section>
           </section>
         </section>
@@ -1101,8 +1147,10 @@ eg:maximize-clicks a skos:Concept ;
         <dd property="dct:modified" datatype="xsd:dateTime" content="2020-07-04T01:24:22Z">July 3, 2020</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2020-11-13T03:27:35Z">November 12, 2020</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2021-05-17T17:57:27Z">May 17, 2021</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2022-10-05T10:36:04Z">October 5, 2022</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2022-11-02T19:19:18Z">November 2, 2022</dd>
       </dl>
-      <p>This document is copyright 2010-2020 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
+      <p>This document is copyright 2010-2022 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
     </section>
   </body>
 </html>

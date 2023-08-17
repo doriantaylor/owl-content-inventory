@@ -1,55 +1,71 @@
 <div class="section" about="#" typeof="owl:Ontology">
 
-## A Content Inventory Vocabulary
+Author  
+<a href="https://doriantaylor.com/person/dorian-taylor#me"
+rel="dct:creator"><span property="foaf:name">Dorian Taylor</span></a>
 
-  - Author  
-    [<span property="foaf:name">Dorian
-    Taylor</span>](https://doriantaylor.com/person/dorian-taylor#me)
-  - Version  
-    0.14
-  - Created  
-    January 23, 2012
-  - [Updated](https://vocab.methodandstructure.com/content-inventory#sec-changelog)  
-    May 17, 2021
-  - Namespace URI  
-    <https://vocab.methodandstructure.com/content-inventory#>
-  - Preferred Namespace Prefix  
-    `ci`
-  - Imports  
-    [OWL](https://www.w3.org/TR/owl2-overview/)
-    [XML Schema Part 2: Datatypes](https://www.w3.org/TR/xmlschema-2/)
+Version  
+0.14
+
+Created  
+January 23, 2012
+
+[Updated](https://vocab.methodandstructure.com/content-inventory#sec-changelog)  
+November 2, 2022
+
+Namespace URI  
+<https://vocab.methodandstructure.com/content-inventory#>
+
+Preferred Namespace Prefix  
+`ci`
+
+Imports  
+<a href="https://www.w3.org/TR/owl2-overview/" about="#"
+rel="owl:imports" resource="http://www.w3.org/2002/07/owl#">OWL</a>
+
+<a href="https://www.w3.org/TR/xmlschema-2/" about="#" rel="owl:imports"
+resource="http://www.w3.org/2001/XMLSchema#">XML Schema Part 2:
+Datatypes</a>
+
+</div>
 
 <div class="section">
 
-This vocabulary defines a number of concepts peculiar to [content
-strategy](http://en.wikipedia.org/wiki/Content_strategy "Content strategy — Wikipedia")
-which are not accounted for by other vocabularies.
+This vocabulary defines a number of concepts peculiar to
+<a href="http://en.wikipedia.org/wiki/Content_strategy"
+rel="dct:references" title="Content strategy — Wikipedia">content
+strategy</a> which are not accounted for by other vocabularies.
 
 Such vocabularies include, but are far from limited to:
 
-  - [Dublin Core Terms](http://purl.org/dc/terms/) provide basic
-    bibliographic metadata,
-  - The [Bibliography Ontology](http://purl.org/ontology/bibo/) provides
-    additional bibliographic metadata plus dozens of useful document
-    types,
-  - FRBR
-    [Core](http://vocab.org/frbr/core "Expression of Core FRBR Concepts in RDF")
-    and
-    [Extended](http://vocab.org/frbr/extended "Expression of Extended FRBR Concepts in RDF")
+-   <a href="http://purl.org/dc/terms/" rel="owl:imports">Dublin Core
+    Terms</a> provide basic bibliographic metadata,
+-   The
+    <a href="http://purl.org/ontology/bibo/" rel="owl:imports">Bibliography
+    Ontology</a> provides additional bibliographic metadata plus dozens
+    of useful document types,
+-   FRBR <a href="http://vocab.org/frbr/core" rel="dct:references"
+    title="Expression of Core FRBR Concepts in RDF">Core</a> and
+    <a href="http://vocab.org/frbr/extended" rel="dct:references"
+    title="Expression of Extended FRBR Concepts in RDF">Extended</a>
     provides terms for modeling even more sophisticated intertextual
     relations,
-  - [SKOS](https://www.w3.org/TR/skos-reference/) provides a rich
-    substrate for concept schemes and taxonomies,
-  - [Friend of a Friend](http://xmlns.com/foaf/0.1/) and [The
-    Organization Ontology](https://www.w3.org/TR/vocab-org/) give us
-    models of people and business entities,
-  - The [Event
-    Ontology](http://purl.org/NET/c4dm/event.owl# "The Event Ontology")
-    enables the modeling of processes, factors, and outcomes,
-  - [The Provenance Ontology](https://www.w3.org/TR/prov-o/) gives us a
-    vocabulary for recording the handling of content over time,
-  - The [Data Cube Vocabulary](http://purl.org/linked-data/cube#)
-    organizes quantitative and statistical data.
+-   <a href="https://www.w3.org/TR/skos-reference/" rel="owl:imports"
+    resource="http://www.w3.org/2004/02/skos/core#">SKOS</a> provides a
+    rich substrate for concept schemes and taxonomies,
+-   <a href="http://xmlns.com/foaf/0.1/" rel="owl:imports">Friend of a
+    Friend</a> and [The Organization
+    Ontology](https://www.w3.org/TR/vocab-org/) give us models of people
+    and business entities,
+-   The <a href="http://purl.org/NET/c4dm/event.owl#" rel="owl:imports"
+    title="The Event Ontology">Event Ontology</a> enables the modeling
+    of processes, factors, and outcomes,
+-   <a href="https://www.w3.org/TR/prov-o/" rel="dct:references">The
+    Provenance Ontology</a> gives us a vocabulary for recording the
+    handling of content over time,
+-   The
+    <a href="http://purl.org/linked-data/cube#" rel="owl:imports">Data Cube
+    Vocabulary</a> organizes quantitative and statistical data.
 
 This document is organized in terms of
 [Classes](https://vocab.methodandstructure.com/content-inventory#sec-classes),
@@ -66,9 +82,9 @@ Examples are given in [the Turtle
 syntax](https://www.w3.org/TR/turtle/). The basic syntax reads like so:
 
     <subject> <predicate> <object> .
-    
+
     <subject> <predicate> <object> ; <predicate> <object> .
-    
+
     <subject> <predicate> <object> , <object> .
 
 That is, complete statements are separated by periods, predicate-object
@@ -86,14 +102,13 @@ to make them easier to pick out.
 
 </div>
 
-</div>
-
 <div id="sec-classes" class="section" about="#">
 
 ## Classes
 
-There are currently only four classes in this vocabulary, as other
-vocabularies account for all other constructs.
+There are currently many extant vocabularies that deal with documents
+and related entities. The classes here are those that aren't otherwise
+accounted for.
 
 ![This diagram shows the classes and properties defined in this document
 using solid lines, and third-party classes and properties using dashed
@@ -116,21 +131,23 @@ or other agent ought to do to a document.
 Being a subclass of an event, a `ci:Action` can have agents, factors,
 products, places and times ascribed to it.
 
-  - Subclass of:  
-    [ev:Event](http://motools.sourceforge.net/event/event.html#term_Event)
+Subclass of:  
+<a href="http://motools.sourceforge.net/event/event.html#term_Event"
+rel="rdfs:subClassOf"
+resource="http://purl.org/NET/c4dm/event.owl#Event">ev:Event</a>
 
-  - Currently defined:
-    
-      - [keep](https://vocab.methodandstructure.com/content-inventory#keep)
-      - [split](https://vocab.methodandstructure.com/content-inventory#split)
-      - [tentative-merge](https://vocab.methodandstructure.com/content-inventory#tentative-merge)
-      - [update-metadata](https://vocab.methodandstructure.com/content-inventory#update-metadata)
-      - [proofread](https://vocab.methodandstructure.com/content-inventory#proofread)
-      - [revise](https://vocab.methodandstructure.com/content-inventory#revise)
-      - [rewrite](https://vocab.methodandstructure.com/content-inventory#rewrite)
-      - [retire](https://vocab.methodandstructure.com/content-inventory#retire)
+Currently defined:  
+-   [keep](https://vocab.methodandstructure.com/content-inventory#keep)
+-   [split](https://vocab.methodandstructure.com/content-inventory#split)
+-   [tentative-merge](https://vocab.methodandstructure.com/content-inventory#tentative-merge)
+-   [update-metadata](https://vocab.methodandstructure.com/content-inventory#update-metadata)
+-   [proofread](https://vocab.methodandstructure.com/content-inventory#proofread)
+-   [revise](https://vocab.methodandstructure.com/content-inventory#revise)
+-   [rewrite](https://vocab.methodandstructure.com/content-inventory#rewrite)
+-   [retire](https://vocab.methodandstructure.com/content-inventory#retire)
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -142,12 +159,16 @@ In order to merge a document, we must define the target to which it
 ought to be merged. This class is identical to an Action, save for such
 a property.
 
-  - Subclass of:  
-    [ci:Action](https://vocab.methodandstructure.com/content-inventory#Action)
-  - Properties:  
-    [ci:target](https://vocab.methodandstructure.com/content-inventory#target)
+Subclass of:  
+<a href="https://vocab.methodandstructure.com/content-inventory#Action"
+rel="rdfs:subClassOf">ci:Action</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Properties:  
+<a href="https://vocab.methodandstructure.com/content-inventory#target"
+rev="rdfs:domain">ci:target</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -159,9 +180,26 @@ a property.
 
 Ontologies like BIBO are far from exhaustive in their breadth of
 document types, so any additional salient document types will go here.
-Currently there is only the one.
 
-<div id="Advertisement" class="section" about="[ci:Advertisement]" typeof="owl:Class">
+<div id="Abstract" class="section" about="[ci:Abstract]"
+typeof="owl:Class">
+
+#### Abstract
+
+This is an explicit document abstract/executive summary class, intended
+to belong to BIBO, which appears to be abandonware.
+
+Subclass of:  
+<a href="http://purl.org/ontology/bibo/DocumentPart"
+rel="rdfs:subClassOf">bibo:DocumentPart</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="Advertisement" class="section" about="[ci:Advertisement]"
+typeof="owl:Class">
 
 #### Advertisement
 
@@ -171,22 +209,81 @@ any other resource. This is intended to be a decorator class to indicate
 that the subject is an advertisement. It can therefore be combined with
 other classes such as `foaf:Image`, or `bibo:AudioVisualDocument`.
 
-    @prefix bibo: <http://purl.org/ontology/bibo/> .
-    @prefix dct:  <http://purl.org/dc/terms/> .
-    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-    @prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
-    
-    <https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
-      dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
-      dct:hasPart <https://adtech.biz/assets/punch-the-monkey> .
-    
-    <https://adtech.biz/assets/punch-the-monkey> a foaf:Image, ci:Advertisement ;
-      dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .
+```
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
 
-  - Subclass of:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
+<https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
+dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
+dct:hasPart <https://adtech.biz/assets/punch-the-monkey> .
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<https://adtech.biz/assets/punch-the-monkey> a foaf:Image, ci:Advertisement ;
+dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .
+```
+
+Subclass of:  
+<a href="http://xmlns.com/foaf/spec/#term_Document"
+rel="rdfs:subClassOf"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="Appendix" class="section" about="[ci:Appendix]"
+typeof="owl:Class">
+
+#### Appendix
+
+This is an explicit document appendix class, intended to belong to BIBO,
+which appears to be abandonware.
+
+Subclass of:  
+<a href="http://purl.org/ontology/bibo/DocumentPart"
+rel="rdfs:subClassOf">bibo:DocumentPart</a>
+
+See also:  
+<a
+href="https://github.com/structureddynamics/Bibliographic-Ontology-BIBO/pull/17"
+rel="rdfs:seeAlso">the 2018 pull request proposing the addition</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="Block" class="section" about="[ci:Block]" typeof="owl:Class">
+
+#### Block
+
+This is intended to represent a generic block-level segment, such as a
+paragraph, list, figure, or table.
+
+Subclass of:  
+<a href="http://purl.org/ontology/bibo/DocumentPart"
+rel="rdfs:subClassOf">bibo:DocumentPart</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="Section" class="section" about="[ci:Section]"
+typeof="owl:Class">
+
+#### Section
+
+This is an explicit document section (i.e., sub-chapter) class.
+
+Subclass of:  
+<a href="http://purl.org/ontology/bibo/DocumentPart"
+rel="rdfs:subClassOf">bibo:DocumentPart</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -201,7 +298,8 @@ can vary. Currently the only class defined is `ci:Variable`, which is a
 way to refer to values which are defined elsewhere and thus can maintain
 their consistency across the document.
 
-<div id="Variable" class="section" about="[ci:Variable]" typeof="owl:Class">
+<div id="Variable" class="section" about="[ci:Variable]"
+typeof="owl:Class">
 
 #### Variable
 
@@ -213,8 +311,8 @@ an `rdf:value`.
 Consider the markup:
 
     <p about="https://example.biz/ratecard#">Shingy's bill-out rate is <span rel="dct:references">
-      <var about="#rate" typeof="ci:Variable" property="rdf:value" datatype="xsd:decimal">100.00</var>
-      <var about="#unit" typeof="ci:Variable" property="rdf:value" datatype="xsd:token">USD</var>
+    <var about="#rate" typeof="ci:Variable" property="rdf:value" datatype="xsd:decimal">100.00</var>
+    <var about="#unit" typeof="ci:Variable" property="rdf:value" datatype="xsd:token">USD</var>
     </span> per hour.</p>
 
 …which when parsed will produce the statements:
@@ -224,18 +322,20 @@ Consider the markup:
     @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
     @prefix dct: <http://purl.org/dc/terms/> .
     @prefix ci:  <https://vocab.methodandstructure.com/content-inventory#> .
-    
+
     <> dct:references <#rate>, <#unit> .
-    
+
     <#rate> a ci:Variable ; rdf:value "100.00"^^xsd:decimal .
     <#unit> a ci:Variable ; rdf:value "USD"^^xsd:token .
 
 </div>
 
-  - See also:  
-    [rdf:value](https://www.w3.org/TR/rdf-schema/#ch_value)
+See also:  
+<a href="https://www.w3.org/TR/rdf-schema/#ch_value" rel="rdfs:seeAlso"
+resource="rdf:value">rdf:value</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -247,7 +347,8 @@ Consider the markup:
 
 Classes involved in describing audiences will go here.
 
-<div id="Audience" class="section" about="[ci:Audience]" typeof="owl:Class">
+<div id="Audience" class="section" about="[ci:Audience]"
+typeof="owl:Class">
 
 #### Audience
 
@@ -255,19 +356,45 @@ An audience represents the set of people who are the intended recipients
 of the resource. This class is at once an agent class as well as a
 conceptual entity, capable of being mixed into a SKOS concept scheme.
 
-  - Subclass of:  
-    [dct:AgentClass](http://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-AgentClass)
-    [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
-  - Properties:  
-    [ci:aware-of](https://vocab.methodandstructure.com/content-inventory#aware-of)
-    [ci:understands](https://vocab.methodandstructure.com/content-inventory#understands)
-    [ci:values](https://vocab.methodandstructure.com/content-inventory#values)
-    [ci:eschews](https://vocab.methodandstructure.com/content-inventory#eschews)
-  - See also:  
-    [dct:audience](http://dublincore.org/documents/dcmi-terms/#terms-audience)
-    [org:Role](https://www.w3.org/TR/vocab-org/#org:Role)
+Subclass of:  
+<a
+href="http://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-AgentClass"
+rel="rdfs:subClassOf"
+resource="http://purl.org/dc/terms/AgentClass">dct:AgentClass</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:subClassOf"
+resource="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+
+Properties:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#aware-of"
+rev="rdfs:domain">ci:aware-of</a>
+
+<a
+href="https://vocab.methodandstructure.com/content-inventory#understands"
+rev="rdfs:domain">ci:understands</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#values"
+rev="rdfs:domain">ci:values</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#eschews"
+rev="rdfs:domain">ci:eschews</a>
+
+<a
+href="https://vocab.methodandstructure.com/content-inventory#exemplar"
+rev="rdfs:domain">ci:exemplar</a>
+
+See also:  
+<a href="http://dublincore.org/documents/dcmi-terms/#terms-audience"
+rel="rdfs:seeAlso"
+resource="http://purl.org/dc/terms/audience">dct:audience</a>
+
+<a href="https://www.w3.org/TR/vocab-org/#org:Role" rel="rdfs:seeAlso"
+resource="http://www.w3.org/ns/org#Role">org:Role</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -287,7 +414,8 @@ After a content inventory comes an audit, wherein we figure out what we
 want to do with the content. The following properties govern *who* the
 document is (not) for and *what outcome* it is supposed to accomplish.
 
-<div id="desired-outcome" class="section" about="[ci:desired-outcome]" typeof="owl:ObjectProperty">
+<div id="desired-outcome" class="section" about="[ci:desired-outcome]"
+typeof="owl:ObjectProperty">
 
 #### desired-outcome
 
@@ -296,7 +424,7 @@ do—what material effect it is supposed to produce. It is intentionally
 open-ended, and as such can point to something like a `skos:Concept`,
 another document, or a literal string of text describing the outcome.
 
-``` 
+```
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix dct:  <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -306,27 +434,32 @@ another document, or a literal string of text describing the outcome.
 # we can extend our article metadata the following way:
 
 <https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
-  dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
-  ci:desired-outcome eg:maximize-clicks .
+dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
+ci:desired-outcome eg:maximize-clicks .
 
 # and create a corresponding resource to unambiguously identify the goal:
 
 eg:maximize-clicks a skos:Concept ;
-  skos:prefLabel "Maximize Clicks"@en ;
-  skos:description "Moar clicks means moar monies."@en .
+skos:prefLabel "Maximize Clicks"@en ;
+skos:description "Moar clicks means moar monies."@en .
             
 ```
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Sub-property of:  
-    [dct:type](http://purl.org/dc/terms/type)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Sub-property of:  
+<a href="http://purl.org/dc/terms/type"
+rel="rdfs:subPropertyOf">dct:type</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="non-audience" class="section" about="[ci:non-audience]" typeof="owl:ObjectProperty">
+<div id="non-audience" class="section" about="[ci:non-audience]"
+typeof="owl:ObjectProperty">
 
 #### non-audience
 
@@ -334,14 +467,21 @@ This property complements `dct:audience` insofar as enabling the author
 or editor to designate a set of entities who are explicitly *not* the
 intended audience of the document.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Range:  
-    [dct:AgentClass](http://purl.org/dc/terms/AgentClass)
-  - See also:  
-    [dct:audience](http://dublincore.org/documents/dcmi-terms/#terms-audience)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://purl.org/dc/terms/AgentClass"
+rel="rdfs:range">dct:AgentClass</a>
+
+See also:  
+<a href="http://dublincore.org/documents/dcmi-terms/#terms-audience"
+rel="rdfs:seeAlso"
+resource="http://purl.org/dc/terms/audience">dct:audience</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -358,19 +498,16 @@ document](https://vocab.methodandstructure.com/content-inventory#sec-actions).
 A `ci:Merge` is a special kind of `ci:Action` that takes a `ci:target`,
 as in the following example:
 
-``` 
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix bs:   <http://purl.org/ontology/bibo/status/> .
-@prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
+    @prefix bibo: <http://purl.org/ontology/bibo/> .
+    @prefix bs:   <http://purl.org/ontology/bibo/status/> .
+    @prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
 
-<https://example.club/our-team> a bibo:Webpage ;
-  bibo:status bs:published, ci:obsolete ;
-  ci:action <tag:example.club,2020-01:content-inventory/merge/our-team> .
+    <https://example.club/our-team> a bibo:Webpage ;
+    bibo:status bs:published, ci:obsolete ;
+    ci:action <tag:example.club,2020-01:content-inventory/merge/our-team> .
 
-<tag:example.club,2020-01:content-inventory:merge:our-team> a ci:Merge ; 
-  ci:target <https://example.club/about> .
-          
-```
+    <tag:example.club,2020-01:content-inventory:merge:our-team> a ci:Merge ;
+    ci:target <https://example.club/about> .
 
 This example is in [Turtle syntax](https://www.w3.org/TR/turtle/). It is
 stating that the published document at `https://example.club/our-team`
@@ -379,36 +516,48 @@ is obsolete and should be merged into `https://example.club/about`. A
 the merge, to reinforce the idea that it is just a piece of data and not
 a Web page (although one could imagine representing it as one).
 
-<div id="action" class="section" about="[ci:action]" typeof="owl:ObjectProperty">
+<div id="action" class="section" about="[ci:action]"
+typeof="owl:ObjectProperty">
 
 #### action
 
 Relates a document to an action to take.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Range:  
-    [ci:Action](https://vocab.methodandstructure.com/content-inventory#Action)
-  - Sub-property of:  
-    [ev:factor\_of](http://purl.org/NET/c4dm/event.owl#factor_of)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="https://vocab.methodandstructure.com/content-inventory#Action"
+rel="rdfs:range">ci:Action</a>
+
+Sub-property of:  
+<a href="http://purl.org/NET/c4dm/event.owl#factor_of"
+rel="rdfs:subPropertyOf">ev:factor_of</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="target" class="section" about="[ci:target]" typeof="owl:ObjectProperty">
+<div id="target" class="section" about="[ci:target]"
+typeof="owl:ObjectProperty">
 
 #### target
 
 Specify the URI of the target resource into which this document should
 be merged.
 
-  - Domain:  
-    [ci:Merge](https://vocab.methodandstructure.com/content-inventory#Merge)
-  - Range:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
+Domain:  
+<a href="https://vocab.methodandstructure.com/content-inventory#Merge"
+rel="rdfs:domain">ci:Merge</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:range"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -431,24 +580,33 @@ The concepts themselves belong to an ordinary SKOS concept scheme, and
 can be reasoned over using their ordinary semantic relations
 (`skos:broader`, `skos:narrower`, `skos:related`).
 
-<div id="mentions" class="section" about="[ci:mentions]" typeof="owl:ObjectProperty">
+<div id="mentions" class="section" about="[ci:mentions]"
+typeof="owl:ObjectProperty">
 
 #### mentions
 
 The document explicitly mentions this concept.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Range:  
-    [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
-  - Sub-property of:  
-    [dct:references](http://purl.org/dc/terms/references)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:range"
+resource="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+
+Sub-property of:  
+<a href="http://purl.org/dc/terms/references"
+rel="rdfs:subPropertyOf">dct:references</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="depicts" class="section" about="[ci:depicts]" typeof="owl:ObjectProperty">
+<div id="depicts" class="section" about="[ci:depicts]"
+typeof="owl:ObjectProperty">
 
 #### depicts
 
@@ -459,69 +617,104 @@ latter constrains its domain to images only, whereas this can relate any
 kind of document. The range of this property is also left open, to
 accommodate any kind of resource being depicted.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Sub-property of:  
-    [dct:references](http://purl.org/dc/terms/references)
-  - See also:  
-    [foaf:depicts](http://xmlns.com/foaf/spec/#term_depicts)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Sub-property of:  
+<a href="http://purl.org/dc/terms/references"
+rel="rdfs:subPropertyOf">dct:references</a>
+
+See also:  
+<a href="http://xmlns.com/foaf/spec/#term_depicts" rel="rdfs:seeAlso"
+resource="foaf:depicts">foaf:depicts</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="introduces" class="section" about="[ci:introduces]" typeof="owl:ObjectProperty">
+<div id="introduces" class="section" about="[ci:introduces]"
+typeof="owl:ObjectProperty">
 
 #### introduces
 
 The document defines, describes, or otherwise introduces the audience to
 this concept.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Range:  
-    [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
-  - Sub-property of:  
-    [ci:mentions](https://vocab.methodandstructure.com/content-inventory#mentions)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:range"
+resource="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+
+Sub-property of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#mentions"
+rel="rdfs:subPropertyOf">ci:mentions</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="assumes" class="section" about="[ci:assumes]" typeof="owl:ObjectProperty">
+<div id="assumes" class="section" about="[ci:assumes]"
+typeof="owl:ObjectProperty">
 
 #### assumes
 
 The document assumes the audience is familiar with this concept, and may
 not mention it explicitly.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Range:  
-    [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
-  - Sub-property of:  
-    [dct:references](http://purl.org/dc/terms/references)
-  - See also:  
-    [dct:educationLevel](http://dublincore.org/documents/dcmi-terms/#terms-educationLevel)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:range"
+resource="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+
+Sub-property of:  
+<a href="http://purl.org/dc/terms/references"
+rel="rdfs:subPropertyOf">dct:references</a>
+
+See also:  
+<a
+href="http://dublincore.org/documents/dcmi-terms/#terms-educationLevel"
+rel="rdfs:seeAlso"
+resource="http://purl.org/dc/terms/educationLevel">dct:educationLevel</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="evokes" class="section" about="[ci:evokes]" typeof="owl:ObjectProperty">
+<div id="evokes" class="section" about="[ci:evokes]"
+typeof="owl:ObjectProperty">
 
 #### evokes
 
 The document evokes the given concept without mentioning it explicitly.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Range:  
-    [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
-  - Sub-property of:  
-    [ci:assumes](https://vocab.methodandstructure.com/content-inventory#assumes)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:range"
+resource="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+
+Sub-property of:  
+<a href="https://vocab.methodandstructure.com/content-inventory#assumes"
+rel="rdfs:subPropertyOf">ci:assumes</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -548,45 +741,43 @@ enable us to construct appropriate pairings of content to audiences,
 and/or root out gaps in our assumptions about both our content *and* our
 audiences.
 
-``` 
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix dct:  <http://purl.org/dc/terms/> .
-@prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
-@prefix dbc:  <https://dbpedia.org/page/Category:> .
+    @prefix bibo: <http://purl.org/ontology/bibo/> .
+    @prefix dct:  <http://purl.org/dc/terms/> .
+    @prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
+    @prefix dbc:  <https://dbpedia.org/page/Category:> .
 
-<https://example.news/2020/01/gruesome-car-accident> a bibo:Article ;
-  dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
-  ci:depicts dbc:Traffic_collisions, dbc:Road_incident_deaths .
+    <https://example.news/2020/01/gruesome-car-accident> a bibo:Article ;
+    dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
+    ci:depicts dbc:Traffic_collisions, dbc:Road_incident_deaths .
 
-# we could define the following audience:
+    # we could define the following audience:
 
-<https://example.news/audience/squeamish-person> a ci:Audience ;
-  ci:eschews dbc:Accidents, dbc:Injuries, dbc:Death, dbc:Violence .
+    <https://example.news/audience/squeamish-person> a ci:Audience ;
+    ci:eschews dbc:Accidents, dbc:Injuries, dbc:Death, dbc:Violence .
 
-# over at DBPedia, there is the following relation:
+    # over at DBPedia, there is the following relation:
 
-dbc:Traffic_collisions skos:broader dbc:Accidents .
+    dbc:Traffic_collisions skos:broader dbc:Accidents .
 
-# that statement is enough to match the audience, but this chain
-# would match it too:
+    # that statement is enough to match the audience, but this chain
+    # would match it too:
 
-dbc:Road_incident_deaths skos:broader dbc:Deaths_by_cause .
-dbc:Deaths_by_cause skos:broader dbc:Causes_of_death .
-dbc:Causes_of_death skos:broader dbc:Death .
+    dbc:Road_incident_deaths skos:broader dbc:Deaths_by_cause .
+    dbc:Deaths_by_cause skos:broader dbc:Causes_of_death .
+    dbc:Causes_of_death skos:broader dbc:Death .
 
-# from this we can reason (programmatically) that the article is not
-# appropriate for the given audience and append the following statement
-# to the article's metadata:
+    # from this we can reason (programmatically) that the article is not
+    # appropriate for the given audience and append the following statement
+    # to the article's metadata:
 
-<https://example.news/2020/01/gruesome-car-accident>
-  ci:non-audience <https://example.news/audience/squeamish-person> .
-          
-```
+    <https://example.news/2020/01/gruesome-car-accident>
+    ci:non-audience <https://example.news/audience/squeamish-person> .
 
 References to DBPedia concepts have been linked to demonstrate that
 concepts can also be rendered as Web pages, as well as cross domains.
 
-<div id="aware-of" class="section" about="[ci:aware-of]" typeof="owl:ObjectProperty">
+<div id="aware-of" class="section" about="[ci:aware-of]"
+typeof="owl:ObjectProperty">
 
 #### aware-of
 
@@ -594,18 +785,28 @@ This property relates an Audience to a SKOS concept that is likely to be
 in the orbit of the audience's members: they are *aware* that the
 concept *exists*, although they may not necessarily *understand* it.
 
-  - Domain:  
-    [ci:Audience](https://vocab.methodandstructure.com/content-inventory#Audience)
-  - Range:  
-    [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
-  - Sub-property of:  
-    [skos:related](https://www.w3.org/TR/skos-reference/#semantic-relations)
+Domain:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:domain">ci:Audience</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:range"
+resource="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+
+Sub-property of:  
+<a href="https://www.w3.org/TR/skos-reference/#semantic-relations"
+rel="rdfs:subPropertyOf"
+resource="http://www.w3.org/2004/02/skos/core#related">skos:related</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="understands" class="section" about="[ci:understands]" typeof="owl:ObjectProperty">
+<div id="understands" class="section" about="[ci:understands]"
+typeof="owl:ObjectProperty">
 
 #### understands
 
@@ -613,20 +814,34 @@ This property relates an Audience to a SKOS concept that members of the
 audience are known to comprehend, and thereby do not need any additional
 explanation.
 
-  - Domain:  
-    [ci:Audience](https://vocab.methodandstructure.com/content-inventory#Audience)
-  - Range:  
-    [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
-  - Sub-property of:  
-    [ci:aware-of](https://vocab.methodandstructure.com/content-inventory#aware-of)
-  - See also:  
-    [dct:educationLevel](http://dublincore.org/documents/dcmi-terms/#terms-educationLevel)
+Domain:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:domain">ci:Audience</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:range"
+resource="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+
+Sub-property of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#aware-of"
+rel="rdfs:subPropertyOf">ci:aware-of</a>
+
+See also:  
+<a
+href="http://dublincore.org/documents/dcmi-terms/#terms-educationLevel"
+rel="rdfs:seeAlso"
+resource="http://purl.org/dc/terms/educationLevel">dct:educationLevel</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="values" class="section" about="[ci:values]" typeof="owl:ObjectProperty">
+<div id="values" class="section" about="[ci:values]"
+typeof="owl:ObjectProperty">
 
 #### values
 
@@ -634,20 +849,32 @@ This property relates an Audience to a SKOS concept that members of the
 audience are known to *value*, that is, to find meaningful in an
 axiological sense.
 
-  - Domain:  
-    [ci:Audience](https://vocab.methodandstructure.com/content-inventory#Audience)
-  - Range:  
-    [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
-  - Sub-property of:  
-    [skos:related](https://www.w3.org/TR/skos-reference/#semantic-relations)
-  - See also:  
-    [ci:eschews](https://vocab.methodandstructure.com/content-inventory#eschews)
+Domain:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:domain">ci:Audience</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:range"
+resource="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+
+Sub-property of:  
+<a href="https://www.w3.org/TR/skos-reference/#semantic-relations"
+rel="rdfs:subPropertyOf"
+resource="http://www.w3.org/2004/02/skos/core#related">skos:related</a>
+
+See also:  
+<a href="https://vocab.methodandstructure.com/content-inventory#eschews"
+rel="rdfs:seeAlso">ci:eschews</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="eschews" class="section" about="[ci:eschews]" typeof="owl:ObjectProperty">
+<div id="eschews" class="section" about="[ci:eschews]"
+typeof="owl:ObjectProperty">
 
 #### eschews
 
@@ -655,16 +882,54 @@ This property relates an Audience to a SKOS concept that members of the
 audience are known to actively avoid or regard with contempt. This
 relation is intended to represent the complement of *values*.
 
-  - Domain:  
-    [ci:Audience](https://vocab.methodandstructure.com/content-inventory#Audience)
-  - Range:  
-    [skos:Concept](https://www.w3.org/TR/skos-reference/#concepts)
-  - Sub-property of:  
-    [skos:related](https://www.w3.org/TR/skos-reference/#semantic-relations)
-  - See also:  
-    [ci:values](https://vocab.methodandstructure.com/content-inventory#values)
+Domain:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:domain">ci:Audience</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:range"
+resource="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>
+
+Sub-property of:  
+<a href="https://www.w3.org/TR/skos-reference/#semantic-relations"
+rel="rdfs:subPropertyOf"
+resource="http://www.w3.org/2004/02/skos/core#related">skos:related</a>
+
+See also:  
+<a href="https://vocab.methodandstructure.com/content-inventory#values"
+rel="rdfs:seeAlso">ci:values</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="exemplar" class="section" about="[ci:exemplar]"
+typeof="owl:ObjectProperty">
+
+#### exemplar
+
+This property relates an `Audience` to a specific `foaf:Person` who is
+an exemplar of the audience.
+
+Domain:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:domain">ci:Audience</a>
+
+Range:  
+<a href="http://xmlns.com/foaf/0.1/#term_Person" rel="rdfs:range"
+resource="foaf:Person">foaf:Person</a>
+
+Sub-property of:  
+<a href="https://www.w3.org/TR/skos-reference/#notes"
+rel="rdfs:subPropertyOf"
+resource="http://www.w3.org/2004/02/skos/core#example">skos:example</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -687,94 +952,111 @@ the document's metadata.
 
 Note as well that these properties are intended to capture relations
 between documents read naïvely as hypermedia, *not* as embedded metadata
-such as Microdata or RDFa. Indeed, in RDFa, a construct like `<a
-rel="some:relation" resource="some:object" href="/some/page">…` would
-yield the contents of `resource=` whereas these properties (in this
-example, `ci:link`) are meant to capture the contents of `href=` (or
-`src=`, `action=`, etc.).
+such as Microdata or RDFa. Indeed, in RDFa, a construct like
+`<a rel="some:relation" resource="some:object" href="/some/page">…`
+would yield the contents of `resource=` whereas these properties (in
+this example, `ci:link`) are meant to capture the contents of `href=`
+(or `src=`, `action=`, etc.).
 
-``` 
-@prefix ci: <https://vocab.methodandstructure.com/content-inventory#> .
+    @prefix ci: <https://vocab.methodandstructure.com/content-inventory#> .
 
-# This statement relates a resource to its canonical address:
+    # This statement relates a resource to its canonical address:
 
-<https://example.club/seventeen-mindblowing-ways-to-write-listicles>
-  ci:canonical <https://example.club/17-mindblowing-ways-to-write-listicles> .
+    <https://example.club/seventeen-mindblowing-ways-to-write-listicles>
+    ci:canonical <https://example.club/17-mindblowing-ways-to-write-listicles> .
 
-# here we define a slug and aliases:
+    # here we define a slug and aliases:
 
-<https://example.club/17-mindblowing-ways-to-write-listicles>
-  ci:canonical-slug "17-mindblowing-ways-to-write-listicles"^^xsd:token ;
-  ci:alias <https://example.club/seventeen-mindblowing-ways-to-write-listicles>,
+    <https://example.club/17-mindblowing-ways-to-write-listicles>
+    ci:canonical-slug "17-mindblowing-ways-to-write-listicles"^^xsd:token ;
+    ci:alias <https://example.club/seventeen-mindblowing-ways-to-write-listicles>,
     <https://short.nr/aXbQ1> .
 
-# one of these alias clauses is implied by the other statement, as
-# ci:canonical is a subproperty of ci:alias-for, which is the inverse
-# of ci:alias.
-          
-```
+    # one of these alias clauses is implied by the other statement, as
+    # ci:canonical is a subproperty of ci:alias-for, which is the inverse
+    # of ci:alias.
 
-<div id="embed" class="section" about="[ci:embed]" typeof="owl:ObjectProperty">
+<div id="embed" class="section" about="[ci:embed]"
+typeof="owl:ObjectProperty">
 
 #### embed
 
 This property specifies an embedded resource, such as an image, which is
 visible on the document's canvas.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Sub-property of:  
-    [dct:hasPart](http://purl.org/dc/terms/hasPart)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Sub-property of:  
+<a href="http://purl.org/dc/terms/hasPart"
+rel="rdfs:subPropertyOf">dct:hasPart</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="form" class="section" about="[ci:form]" typeof="owl:ObjectProperty">
+<div id="form" class="section" about="[ci:form]"
+typeof="owl:ObjectProperty">
 
 #### form
 
 This property specifies form target, which may or may not be visible to
 the user.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Sub-property of:  
-    [ci:link](https://vocab.methodandstructure.com/content-inventory#link)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Sub-property of:  
+<a href="https://vocab.methodandstructure.com/content-inventory#link"
+rel="rdfs:subPropertyOf">ci:link</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="include" class="section" about="[ci:include]" typeof="owl:ObjectProperty">
+<div id="include" class="section" about="[ci:include]"
+typeof="owl:ObjectProperty">
 
 #### include
 
 This property specifies a related resource which is *not* directly
 visible to the user.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Sub-property of:  
-    [dct:requires](http://purl.org/dc/terms/requires)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Sub-property of:  
+<a href="http://purl.org/dc/terms/requires"
+rel="rdfs:subPropertyOf">dct:requires</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="link" class="section" about="[ci:link]" typeof="owl:ObjectProperty">
+<div id="link" class="section" about="[ci:link]"
+typeof="owl:ObjectProperty">
 
 #### link
 
 This property specifies an ordinary hyperlink, which is visible on the
 document's canvas.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
-  - Sub-property of:  
-    [dct:references](http://purl.org/dc/terms/references)
+Domain:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Sub-property of:  
+<a href="http://purl.org/dc/terms/references"
+rel="rdfs:subPropertyOf">dct:references</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -785,7 +1067,8 @@ properties to capture the same idea for the terminal “slug” of the URI
 path, i.e., `/this/thing/here`. An example use case for these properties
 is the generation of <span class="dfn">rewrite maps</span>.
 
-<div id="alias" class="section" about="[ci:alias]" typeof="owl:ObjectProperty">
+<div id="alias" class="section" about="[ci:alias]"
+typeof="owl:ObjectProperty">
 
 #### alias
 
@@ -793,34 +1076,48 @@ Denotes an alternate URI for the subject resource. It extends
 `owl:sameAs` insofar as asserting that the object is somehow “less
 canonical” than the subject.
 
-  - Sub-property of:  
-    [owl:sameAs](http://www.w3.org/2002/07/owl#sameAs)
-  - Inverse of:  
-    [ci:alias-for](https://vocab.methodandstructure.com/content-inventory#alias-for)
+Sub-property of:  
+<a href="http://www.w3.org/2002/07/owl#sameAs"
+rel="rdfs:subPropertyOf">owl:sameAs</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#alias-for"
+rel="owl:inverseOf">ci:alias-for</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="alias-for" class="section" about="[ci:alias-for]" typeof="owl:ObjectProperty">
+<div id="alias-for" class="section" about="[ci:alias-for]"
+typeof="owl:ObjectProperty">
 
 #### alias-for
 
 Denotes that the *subject* is the alias URI, and the object is “more
 canonical” (though not necessarily the *most* canonical).
 
-  - Sub-property of:  
-    [owl:sameAs](http://www.w3.org/2002/07/owl#sameAs)
-  - Inverse of:  
-    [ci:alias](https://vocab.methodandstructure.com/content-inventory#alias)
-  - See also:  
-    [ci:canonical](https://vocab.methodandstructure.com/content-inventory#canonical)
+Sub-property of:  
+<a href="http://www.w3.org/2002/07/owl#sameAs"
+rel="rdfs:subPropertyOf">owl:sameAs</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Inverse of:  
+<a href="https://vocab.methodandstructure.com/content-inventory#alias"
+rel="owl:inverseOf">ci:alias</a>
+
+See also:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#canonical"
+rel="rdfs:seeAlso">ci:canonical</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="representation" class="section" about="[ci:representation]" typeof="owl:ObjectProperty">
+<div id="representation" class="section" about="[ci:representation]"
+typeof="owl:ObjectProperty">
 
 #### representation
 
@@ -830,57 +1127,75 @@ which assumed to be more abstract.
 This property is deprecated in favour of
 [ci:variant](https://vocab.methodandstructure.com/content-inventory#variant).
 
-  - Sub-property of:  
-    [dct:hasFormat](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat)
+Sub-property of:  
+<a
+href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat"
+rel="rdfs:subPropertyOf" resource="dct:hasFormat">dct:hasFormat</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="variant" class="section" about="[ci:variant]" typeof="owl:ObjectProperty">
+<div id="variant" class="section" about="[ci:variant]"
+typeof="owl:ObjectProperty">
 
 #### variant
 
 Denotes a resource that is a variant of a concrete representation of the
 subject, which assumed to be more abstract.
 
-  - Sub-property of:  
-    [dct:hasFormat](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat)
-  - Equivalent to:  
-    [ci:representation](https://vocab.methodandstructure.com/content-inventory#representation)
+Sub-property of:  
+<a
+href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/hasFormat"
+rel="rdfs:subPropertyOf" resource="dct:hasFormat">dct:hasFormat</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Equivalent to:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#representation"
+rel="owl:equivalentProperty">ci:representation</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="primary" class="section" about="[ci:primary]" typeof="owl:ObjectProperty owl:FunctionalProperty">
+<div id="primary" class="section" about="[ci:primary]"
+typeof="owl:ObjectProperty owl:FunctionalProperty">
 
 #### primary
 
 Denotes the *primary* variant that concretely represents the resource.
 
-  - Sub-property of:  
-    [ci:variant](https://vocab.methodandstructure.com/content-inventory#variant)
+Sub-property of:  
+<a href="https://vocab.methodandstructure.com/content-inventory#variant"
+rel="rdfs:subPropertyOf">ci:variant</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="canonical" class="section" about="[ci:canonical]" typeof="owl:ObjectProperty owl:FunctionalProperty">
+<div id="canonical" class="section" about="[ci:canonical]"
+typeof="owl:ObjectProperty owl:FunctionalProperty">
 
 #### canonical
 
 Asserts the canonical URI of the subject resource, i.e., the one you
 always want to publish in content or redirect Web requests to.
 
-  - Sub-property of:  
-    [ci:alias-for](https://vocab.methodandstructure.com/content-inventory#alias-for)
+Sub-property of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#alias-for"
+rel="rdfs:subPropertyOf">ci:alias-for</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="slug" class="section" about="[ci:slug]" typeof="owl:DatatypeProperty">
+<div id="slug" class="section" about="[ci:slug]"
+typeof="owl:DatatypeProperty">
 
 #### slug
 
@@ -890,44 +1205,55 @@ located. This property is mainly for the purpose of archiving old or
 alternative URL paths in a content inventory, for such tasks as
 generating URL rewriting maps.
 
-  - Range:  
-    [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+Range:  
+<a href="http://www.w3.org/2001/XMLSchema#string"
+rel="rdfs:range">xsd:string</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="canonical-slug" class="section" about="[ci:canonical-slug]" typeof="owl:DatatypeProperty owl:FunctionalProperty">
+<div id="canonical-slug" class="section" about="[ci:canonical-slug]"
+typeof="owl:DatatypeProperty owl:FunctionalProperty">
 
 #### canonical-slug
 
 This is the canonical slug associated with the resource, and should be
 populated with the slug which is actually in use.
 
-  - Sub-property of:  
-    [ci:slug](https://vocab.methodandstructure.com/content-inventory#slug)
-  - Range:  
-    [xsd:string](http://www.w3.org/2001/XMLSchema#string)
+Sub-property of:  
+<a href="https://vocab.methodandstructure.com/content-inventory#slug"
+rel="rdfs:subPropertyOf">ci:slug</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/2001/XMLSchema#string"
+rel="rdfs:range">xsd:string</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="fragment-of" class="section" about="[ci:fragment-of]" typeof="owl:ObjectProperty owl:FunctionalProperty">
+<div id="fragment-of" class="section" about="[ci:fragment-of]"
+typeof="owl:ObjectProperty owl:FunctionalProperty">
 
 #### fragment-of
 
 This property asserts that the subject should be treated as a fragment
 of the document it relates to.
 
-  - Range:  
-    [foaf:Document](http://xmlns.com/foaf/spec/#term_Document)
+Range:  
+<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:range"
+resource="http://xmlns.com/foaf/0.1/Document">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="indexed" class="section" about="[ci:indexed]" typeof="owl:DatatypeProperty owl:FunctionalProperty">
+<div id="indexed" class="section" about="[ci:indexed]"
+typeof="owl:DatatypeProperty owl:FunctionalProperty">
 
 #### indexed
 
@@ -936,10 +1262,12 @@ be indexed. It does not necessarily ascribe a policy: an absence of an
 explicit *true* value does not necessarily imply the resource ought not
 be indexed, but the *presence* of a *false* value probably should.
 
-  - Range:  
-    [xsd:boolean](http://www.w3.org/2001/XMLSchema#boolean)
+Range:  
+<a href="http://www.w3.org/2001/XMLSchema#boolean"
+rel="rdfs:range">xsd:boolean</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -961,37 +1289,44 @@ of documents and actions to take with them.
 The following bibo:DocumentStatuses are supplied in addition to the
 statuses specified by the Bibliography Ontology.
 
-<div id="empty" class="section" about="[ci:empty]" typeof="bibo:DocumentStatus">
+<div id="empty" class="section" about="[ci:empty]"
+typeof="bibo:DocumentStatus">
 
 #### empty
 
 The document contains no content.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="incomplete" class="section" about="[ci:incomplete]" typeof="bibo:DocumentStatus">
+<div id="incomplete" class="section" about="[ci:incomplete]"
+typeof="bibo:DocumentStatus">
 
 #### incomplete
 
 The document has been started, but is clearly not finished.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="incorrect" class="section" about="[ci:incorrect]" typeof="bibo:DocumentStatus">
+<div id="incorrect" class="section" about="[ci:incorrect]"
+typeof="bibo:DocumentStatus">
 
 #### incorrect
 
 The content of this document is factually wrong.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="obsolete" class="section" about="[ci:obsolete]" typeof="bibo:DocumentStatus">
+<div id="obsolete" class="section" about="[ci:obsolete]"
+typeof="bibo:DocumentStatus">
 
 #### obsolete
 
@@ -999,11 +1334,13 @@ The content of this document was correct and relevant at one point, but
 external circumstances have caused it to lapse in relevance or factual
 accuracy.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="landing" class="section" about="[ci:landing]" typeof="bibo:DocumentStatus">
+<div id="landing" class="section" about="[ci:landing]"
+typeof="bibo:DocumentStatus">
 
 #### landing
 
@@ -1011,11 +1348,13 @@ The resource is a landing page from some other medium (e.g. e-mail,
 television, billboard). This status is a hint to automated systems which
 would otherwise orphan or retire a landing page with no inbound links.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="orphan" class="section" about="[ci:orphan]" typeof="bibo:DocumentStatus">
+<div id="orphan" class="section" about="[ci:orphan]"
+typeof="bibo:DocumentStatus">
 
 #### orphan
 
@@ -1027,50 +1366,59 @@ links, or if it does, those links are from other resources that are in
 the same situation. Documents which are only linked from retired
 documents are also considered orphans.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="confidential" class="section" about="[ci:confidential]" typeof="bibo:DocumentStatus">
+<div id="confidential" class="section" about="[ci:confidential]"
+typeof="bibo:DocumentStatus">
 
 #### confidential
 
 The document is confidential and not for publication.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="circulated" class="section" about="[ci:circulated]" typeof="bibo:DocumentStatus">
+<div id="circulated" class="section" about="[ci:circulated]"
+typeof="bibo:DocumentStatus">
 
 #### circulated
 
 The document is available for select people to see, but not “published”
 in the strict literal sense.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="retired" class="section" about="[ci:retired]" typeof="bibo:DocumentStatus">
+<div id="retired" class="section" about="[ci:retired]"
+typeof="bibo:DocumentStatus">
 
 #### retired
 
 The document has been explicitly retired by an editor or curator, but
 still exists in the archive.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="unavailable" class="section" about="[ci:unavailable]" typeof="bibo:DocumentStatus">
+<div id="unavailable" class="section" about="[ci:unavailable]"
+typeof="bibo:DocumentStatus">
 
 #### unavailable
 
 The resource at the subject address is unavailable for reasons other
 than explicit retirement, e.g. HTTP 404 or 403, or going out of print.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -1093,7 +1441,8 @@ property.
 Keep this document to which this is associated; make no changes to it at
 this time.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -1103,38 +1452,45 @@ this time.
 
 Split this document into multiple pieces.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="tentative-merge" class="section" about="[ci:tentative-merge]" typeof="ci:Merge">
+<div id="tentative-merge" class="section" about="[ci:tentative-merge]"
+typeof="ci:Merge">
 
 #### tentative-merge
 
 Merge this document into some other document, though unspecified at this
 time as to which.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="update-metadata" class="section" about="[ci:update-metadata]" typeof="ci:Action">
+<div id="update-metadata" class="section" about="[ci:update-metadata]"
+typeof="ci:Action">
 
 #### update-metadata
 
 Update the metadata of this document, such as keywords, audience, etc.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="proofread" class="section" about="[ci:proofread]" typeof="ci:Action">
+<div id="proofread" class="section" about="[ci:proofread]"
+typeof="ci:Action">
 
 #### proofread
 
 Proofread this document.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -1144,17 +1500,20 @@ Proofread this document.
 
 Revise or restructure this document.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="rewrite" class="section" about="[ci:rewrite]" typeof="ci:Action">
+<div id="rewrite" class="section" about="[ci:rewrite]"
+typeof="ci:Action">
 
 #### rewrite
 
 Rewrite this document from scratch.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -1164,7 +1523,8 @@ Rewrite this document from scratch.
 
 Remove all references to this document and consign it to the archive.
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -1180,22 +1540,26 @@ There are many ways to measure a set of Web pages that give valuable
 insight into not only the individual character of each page, but also
 the character of an entire site.
 
-We use the [RDF Data Cube
-vocabulary](http://www.w3.org/TR/vocab-data-cube/) to specify the
-quantitative metrics we gather over our documents.
+We use the
+<a href="http://www.w3.org/TR/vocab-data-cube/" rel="dct:references">RDF
+Data Cube vocabulary</a> to specify the quantitative metrics we gather
+over our documents.
 
 <div class="section">
 
 ### Data Structure Definitions
 
-The following object is an instance of
-[qb:DataStructureDefinition](https://www.w3.org/TR/vocab-data-cube/#ref_qb_DataStructureDefinition).
-It depicts the dimensions, measures and attributes for
-[qb:DataSets](http://www.w3.org/TR/vocab-data-cube/#ref_qb_DataSet) that
-carry the relevant statistical data. (This particular data structure
-only contains dimensions and measures.)
+The following object is an instance of <a
+href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_DataStructureDefinition"
+rel="dct:references">qb:DataStructureDefinition</a>. It depicts the
+dimensions, measures and attributes for
+<a href="http://www.w3.org/TR/vocab-data-cube/#ref_qb_DataSet"
+rel="dct:references">qb:DataSets</a> that carry the relevant statistical
+data. (This particular data structure only contains dimensions and
+measures.)
 
-<div id="words-and-blocks" class="section" about="[ci:words-and-blocks]" typeof="qb:DataStructureDefinition">
+<div id="words-and-blocks" class="section" about="[ci:words-and-blocks]"
+typeof="qb:DataStructureDefinition">
 
 #### words-and-blocks
 
@@ -1210,7 +1574,9 @@ block of text in a given document.
 
 ###### Dimensions
 
-  - [document](https://vocab.methodandstructure.com/content-inventory#document)
+-   <a
+    href="https://vocab.methodandstructure.com/content-inventory#document"
+    rel="qb:dimension">document</a>
 
 </div>
 
@@ -1218,17 +1584,31 @@ block of text in a given document.
 
 ###### Counts
 
-  - [sections](https://vocab.methodandstructure.com/content-inventory#sections)
-  - [blocks](https://vocab.methodandstructure.com/content-inventory#blocks)
-  - [words](https://vocab.methodandstructure.com/content-inventory#words)
-  - [characters](https://vocab.methodandstructure.com/content-inventory#characters)
-  - [images](https://vocab.methodandstructure.com/content-inventory#images)
-  - [videos](https://vocab.methodandstructure.com/content-inventory#videos)
-  - [embeds](https://vocab.methodandstructure.com/content-inventory#embeds)
-  - [tables](https://vocab.methodandstructure.com/content-inventory#tables)
-  - [forms](https://vocab.methodandstructure.com/content-inventory#forms)
-  - [scripts](https://vocab.methodandstructure.com/content-inventory#scripts)
-  - [stylesheets](https://vocab.methodandstructure.com/content-inventory#stylesheets)
+-   <a
+    href="https://vocab.methodandstructure.com/content-inventory#sections"
+    rel="qb:measure">sections</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#blocks"
+    rel="qb:measure">blocks</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#words"
+    rel="qb:measure">words</a>
+-   <a
+    href="https://vocab.methodandstructure.com/content-inventory#characters"
+    rel="qb:measure">characters</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#images"
+    rel="qb:measure">images</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#videos"
+    rel="qb:measure">videos</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#embeds"
+    rel="qb:measure">embeds</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#tables"
+    rel="qb:measure">tables</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#forms"
+    rel="qb:measure">forms</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#scripts"
+    rel="qb:measure">scripts</a>
+-   <a
+    href="https://vocab.methodandstructure.com/content-inventory#stylesheets"
+    rel="qb:measure">stylesheets</a>
 
 </div>
 
@@ -1236,11 +1616,18 @@ block of text in a given document.
 
 ###### Five-number summary
 
-  - [min](https://vocab.methodandstructure.com/content-inventory#min)
-  - [low-quartile](https://vocab.methodandstructure.com/content-inventory#low-quartile)
-  - [median](https://vocab.methodandstructure.com/content-inventory#median)
-  - [high-quartile](https://vocab.methodandstructure.com/content-inventory#high-quartile)
-  - [max](https://vocab.methodandstructure.com/content-inventory#max)
+-   <a href="https://vocab.methodandstructure.com/content-inventory#min"
+    rel="qb:measure">min</a>
+-   <a
+    href="https://vocab.methodandstructure.com/content-inventory#low-quartile"
+    rel="qb:measure">low-quartile</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#median"
+    rel="qb:measure">median</a>
+-   <a
+    href="https://vocab.methodandstructure.com/content-inventory#high-quartile"
+    rel="qb:measure">high-quartile</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#max"
+    rel="qb:measure">max</a>
 
 </div>
 
@@ -1248,8 +1635,10 @@ block of text in a given document.
 
 ###### Mean and Standard Deviation
 
-  - [mean](https://vocab.methodandstructure.com/content-inventory#mean)
-  - [sd](https://vocab.methodandstructure.com/content-inventory#sd)
+-   <a href="https://vocab.methodandstructure.com/content-inventory#mean"
+    rel="qb:measure">mean</a>
+-   <a href="https://vocab.methodandstructure.com/content-inventory#sd"
+    rel="qb:measure">sd</a>
 
 </div>
 
@@ -1263,24 +1652,30 @@ block of text in a given document.
 
 ### Dimensions
 
-The set of all
-[qb:DimensionProperties](https://www.w3.org/TR/vocab-data-cube/#ref_qb_DimensionProperty)
-for a given data structure can positively identify an observation. We
-currently only specify one dimension, the URI of the document in
-question.
+The set of all <a
+href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_DimensionProperty"
+rel="dct:references">qb:DimensionProperties</a> for a given data
+structure can positively identify an observation. We currently only
+specify one dimension, the URI of the document in question.
 
-<div id="document" class="section" about="[ci:document]" typeof="qb:DimensionProperty">
+<div id="document" class="section" about="[ci:document]"
+typeof="qb:DimensionProperty">
 
 #### document
 
 Document Reference
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [foaf:Document](http://xmlns.com/foaf/0.1/Document)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://xmlns.com/foaf/0.1/Document"
+rel="rdfs:range">foaf:Document</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -1289,34 +1684,45 @@ Document Reference
 <div class="section">
 
 The
-[qb:MeasureProperties](https://www.w3.org/TR/vocab-data-cube/#ref_qb_MeasureProperty)
-are what define the data observed in a
-[qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation).
-Here we are interested in a [five-number
-summary](http://en.wikipedia.org/wiki/Five-number_summary), along with
-the [mean](http://en.wikipedia.org/wiki/Mean) and [standard
-deviation](http://en.wikipedia.org/wiki/Standard_deviation) of block
-sizes (in words) found in a given document.
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_MeasureProperty"
+rel="dct:references">qb:MeasureProperties</a> are what define the data
+observed in a
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="dct:references">qb:Observation</a>. Here we are interested in a
+<a href="http://en.wikipedia.org/wiki/Five-number_summary"
+rel="dct:references">five-number summary</a>, along with the
+<a href="http://en.wikipedia.org/wiki/Mean"
+rel="dct:references">mean</a> and
+<a href="http://en.wikipedia.org/wiki/Standard_deviation"
+rel="dct:references">standard deviation</a> of block sizes (in words)
+found in a given document.
 
 ### Measures
 
-<div id="sections" class="section" about="[ci:sections]" typeof="qb:MeasureProperty">
+<div id="sections" class="section" about="[ci:sections]"
+typeof="qb:MeasureProperty">
 
 #### sections
 
 For document types that have a concrete representation of sections, this
 property may be used to capture their sum.
 
-  - Domain:  
-    [foaf:Document](http://xmlns.com/foaf/0.1/Document)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="http://xmlns.com/foaf/0.1/Document"
+rel="rdfs:domain">foaf:Document</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="blocks" class="section" about="[ci:blocks]" typeof="qb:MeasureProperty">
+<div id="blocks" class="section" about="[ci:blocks]"
+typeof="qb:MeasureProperty">
 
 #### blocks
 
@@ -1327,16 +1733,23 @@ document types that have no concept of (semantic) sections, such as
 HTML. The purpose of this measurement is to provide a sort of ratio to
 the word count, to glean how well-proportioned the document is.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="words" class="section" about="[ci:words]" typeof="qb:MeasureProperty">
+<div id="words" class="section" about="[ci:words]"
+typeof="qb:MeasureProperty">
 
 #### words
 
@@ -1345,16 +1758,23 @@ familiar function in a word processor. The exact method of counting
 words may vary by document type, language etc., and is thus out of scope
 from this document.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="characters" class="section" about="[ci:characters]" typeof="qb:MeasureProperty">
+<div id="characters" class="section" about="[ci:characters]"
+typeof="qb:MeasureProperty">
 
 #### characters
 
@@ -1362,294 +1782,427 @@ This indicates the number of characters in a document, with punctuation
 and the XPath normalize-space function applied. Note this is characters,
 not bytes.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
-  - See also:  
-    [`normalize-space` in the XPath 1.0
-    specification](http://www.w3.org/TR/xpath/#function-normalize-space)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+See also:  
+<a href="http://www.w3.org/TR/xpath/#function-normalize-space"
+rel="rdfs:seeAlso"><samp>normalize-space</samp> in the XPath 1.0
+specification</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="images" class="section" about="[ci:images]" typeof="qb:MeasureProperty">
+<div id="images" class="section" about="[ci:images]"
+typeof="qb:MeasureProperty">
 
 #### images
 
 This indicates the number of images in the document.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="videos" class="section" about="[ci:videos]" typeof="qb:MeasureProperty">
+<div id="videos" class="section" about="[ci:videos]"
+typeof="qb:MeasureProperty">
 
 #### videos
 
 The number of videos in the document.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="embeds" class="section" about="[ci:embeds]" typeof="qb:MeasureProperty">
+<div id="embeds" class="section" about="[ci:embeds]"
+typeof="qb:MeasureProperty">
 
 #### embeds
 
 The number of embeds in the document.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="tables" class="section" about="[ci:tables]" typeof="qb:MeasureProperty">
+<div id="tables" class="section" about="[ci:tables]"
+typeof="qb:MeasureProperty">
 
 #### tables
 
 The number of tables in the document.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="lists" class="section" about="[ci:lists]" typeof="qb:MeasureProperty">
+<div id="lists" class="section" about="[ci:lists]"
+typeof="qb:MeasureProperty">
 
 #### lists
 
 The number of lists in the document.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="forms" class="section" about="[ci:forms]" typeof="qb:MeasureProperty">
+<div id="forms" class="section" about="[ci:forms]"
+typeof="qb:MeasureProperty">
 
 #### forms
 
 The number of forms in the document.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="scripts" class="section" about="[ci:scripts]" typeof="qb:MeasureProperty">
+<div id="scripts" class="section" about="[ci:scripts]"
+typeof="qb:MeasureProperty">
 
 #### scripts
 
 The number of scripts in the document.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="stylesheets" class="section" about="[ci:stylesheets]" typeof="qb:MeasureProperty">
+<div id="stylesheets" class="section" about="[ci:stylesheets]"
+typeof="qb:MeasureProperty">
 
 #### stylesheets
 
 The number of stylesheets in the document.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:nonNegativeInteger](http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger"
+rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="outdegree" class="section" about="[ci:outdegree]" typeof="qb:MeasureProperty">
+<div id="outdegree" class="section" about="[ci:outdegree]"
+typeof="qb:MeasureProperty">
 
 #### outdegree
 
 The number of links emanating from the specified resource.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:number](http://www.w3.org/TR/xmlschema-2/#number)
-  - See also:  
-    [Directed graph
-    (Wikipedia)](http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#number" rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#number">xsd:number</a>
+
+See also:  
+<a
+href="http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree"
+rel="rdfs:seeAlso">Directed graph (Wikipedia)</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="indegree" class="section" about="[ci:indegree]" typeof="qb:MeasureProperty">
+<div id="indegree" class="section" about="[ci:indegree]"
+typeof="qb:MeasureProperty">
 
 #### indegree
 
 The number of links pointing at the specified resource.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:number](http://www.w3.org/TR/xmlschema-2/#number)
-  - See also:  
-    [Directed graph
-    (Wikipedia)](http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#number" rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#number">xsd:number</a>
+
+See also:  
+<a
+href="http://en.wikipedia.org/wiki/Directed_graph#Indegree_and_outdegree"
+rel="rdfs:seeAlso">Directed graph (Wikipedia)</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="min" class="section" about="[ci:min]" typeof="qb:MeasureProperty">
+<div id="min" class="section" about="[ci:min]"
+typeof="qb:MeasureProperty">
 
 #### min
 
 The smallest observation in the sample.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:number](http://www.w3.org/TR/xmlschema-2/#number)
-  - See also:  
-    [Sample minimum
-    (Wikipedia)](http://en.wikipedia.org/wiki/Sample_minimum)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#number" rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#number">xsd:number</a>
+
+See also:  
+<a href="http://en.wikipedia.org/wiki/Sample_minimum"
+rel="rdfs:seeAlso">Sample minimum (Wikipedia)</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="low-quartile" class="section" about="[ci:low-quartile]" typeof="qb:MeasureProperty">
+<div id="low-quartile" class="section" about="[ci:low-quartile]"
+typeof="qb:MeasureProperty">
 
 #### low-quartile
 
 Equivalent to the bottom quarter, or 25th percentile, of the observed
 data.
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:number](http://www.w3.org/TR/xmlschema-2/#number)
-  - See also:  
-    [Quartile (Wikipedia)](http://en.wikipedia.org/wiki/Quartile)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#number" rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#number">xsd:number</a>
+
+See also:  
+<a href="http://en.wikipedia.org/wiki/Quartile"
+rel="rdfs:seeAlso">Quartile (Wikipedia)</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="median" class="section" about="[ci:median]" typeof="qb:MeasureProperty">
+<div id="median" class="section" about="[ci:median]"
+typeof="qb:MeasureProperty">
 
 #### median
 
 The median of a population
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:number](http://www.w3.org/TR/xmlschema-2/#number)
-  - See also:  
-    [Median (Wikipedia)](http://en.wikipedia.org/wiki/Median)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#number" rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#number">xsd:number</a>
+
+See also:  
+<a href="http://en.wikipedia.org/wiki/Median" rel="rdfs:seeAlso">Median
+(Wikipedia)</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="high-quartile" class="section" about="[ci:high-quartile]" typeof="qb:MeasureProperty">
+<div id="high-quartile" class="section" about="[ci:high-quartile]"
+typeof="qb:MeasureProperty">
 
 #### high-quartile
 
 Third Quartile
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:number](http://www.w3.org/TR/xmlschema-2/#number)
-  - See also:  
-    [Quartile (Wikipedia)](http://en.wikipedia.org/wiki/Quartile)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#number" rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#number">xsd:number</a>
+
+See also:  
+<a href="http://en.wikipedia.org/wiki/Quartile"
+rel="rdfs:seeAlso">Quartile (Wikipedia)</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="max" class="section" about="[ci:max]" typeof="qb:MeasureProperty">
+<div id="max" class="section" about="[ci:max]"
+typeof="qb:MeasureProperty">
 
 #### max
 
 Maximum
 
-  - Domain  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:number](http://www.w3.org/TR/xmlschema-2/#number)
-  - See also:  
-    [Sample maximum
-    (Wikipedia)](http://en.wikipedia.org/wiki/Sample_maximum)
+Domain  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#number" rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#number">xsd:number</a>
+
+See also:  
+<a href="http://en.wikipedia.org/wiki/Sample_maximum"
+rel="rdfs:seeAlso">Sample maximum (Wikipedia)</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="mean" class="section" about="[ci:mean]" typeof="qb:MeasureProperty">
+<div id="mean" class="section" about="[ci:mean]"
+typeof="qb:MeasureProperty">
 
 #### mean
 
 Mean
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:number](http://www.w3.org/TR/xmlschema-2/#number)
-  - See also:  
-    [Mean (Wikipedia)](http://en.wikipedia.org/wiki/Mean)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#number" rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#number">xsd:number</a>
+
+See also:  
+<a href="http://en.wikipedia.org/wiki/Mean" rel="rdfs:seeAlso">Mean
+(Wikipedia)</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="sd" class="section" about="[ci:sd]" typeof="qb:MeasureProperty">
+<div id="sd" class="section" about="[ci:sd]"
+typeof="qb:MeasureProperty">
 
 #### sd
 
 Standard Deviation
 
-  - Domain:  
-    [qb:Observation](https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation)
-  - Range:  
-    [xsd:number](http://www.w3.org/TR/xmlschema-2/#number)
-  - See also:  
-    [Standard deviation
-    (Wikipedia)](http://en.wikipedia.org/wiki/Standard_deviation)
+Domain:  
+<a href="https://www.w3.org/TR/vocab-data-cube/#ref_qb_Observation"
+rel="rdfs:domain"
+resource="http://purl.org/linked-data/cube#Observation">qb:Observation</a>
 
-[Back to Top](https://vocab.methodandstructure.com/content-inventory#)
+Range:  
+<a href="http://www.w3.org/TR/xmlschema-2/#number" rel="rdfs:range"
+resource="http://www.w3.org/2001/XMLSchema#number">xsd:number</a>
+
+See also:  
+<a href="http://en.wikipedia.org/wiki/Standard_deviation"
+rel="rdfs:seeAlso">Standard deviation (Wikipedia)</a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
@@ -1659,32 +2212,56 @@ Standard Deviation
 
 <div class="section" about="#">
 
-  - Changes  
-    January 23, 2012
-    December 11, 2012
-    February 6, 2014
-    February 8, 2015
-    April 6, 2017
-    October 6, 2018
-    March 5, 2019
-    April 7, 2019
-    April 17, 2019
-    July 7, 2019
-    July 10, 2019
-    July 21, 2019
-    September 4, 2019
-    January 25, 2020
-    April 24, 2020
-    April 29, 2020
-    June 28, 2020
-    July 3, 2020
-    November 12, 2020
-    May 17, 2021
+Changes  
+January 23, 2012
 
-This document is copyright 2010-2020 [Dorian
-Taylor](https://doriantaylor.com/person/dorian-taylor#me), available
-under a [Creative Commons Attribution 2.5
-Canada](http://creativecommons.org/licenses/by/2.5/ca/) license, where
+December 11, 2012
+
+February 6, 2014
+
+February 8, 2015
+
+April 6, 2017
+
+October 6, 2018
+
+March 5, 2019
+
+April 7, 2019
+
+April 17, 2019
+
+July 7, 2019
+
+July 10, 2019
+
+July 21, 2019
+
+September 4, 2019
+
+January 25, 2020
+
+April 24, 2020
+
+April 29, 2020
+
+June 28, 2020
+
+July 3, 2020
+
+November 12, 2020
+
+May 17, 2021
+
+October 5, 2022
+
+November 2, 2022
+
+This document is copyright 2010-2022
+<a href="https://doriantaylor.com/person/dorian-taylor#me"
+rel="dct:creator">Dorian Taylor</a>, available under a
+<a href="http://creativecommons.org/licenses/by/2.5/ca/"
+rel="license">Creative Commons Attribution 2.5 Canada</a> license, where
 <span class="dfn">attribution</span> is defined as a link
 [here](https://vocab.methodandstructure.com/content-inventory#).
 

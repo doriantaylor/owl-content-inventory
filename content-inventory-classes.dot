@@ -1,4 +1,4 @@
-digraph {
+digraph classes {
     graph [bgcolor=transparent,rankdir=LR];
     node [shape=box,color="#000000",fontcolor="#000000",fontname="Lucida Grande, Lucida Sans Unicode, sans-serif",target="_top"];
     edge [fontsize=10,concentrate=true,color="#000000",fontcolor="#000000",fontname="Lucida Grande, Lucida Sans Unicode, sans-serif"];
@@ -9,12 +9,17 @@ digraph {
         dct_AgentClass [label="dct:AgentClass",href="http://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-AgentClass"];
         skos_Concept [label="skos:Concept",href="https://www.w3.org/TR/skos-reference/#concepts"];
         foaf_Document [label="foaf:Document",href="http://xmlns.com/foaf/spec/#term_Document"];
+        bibo_DocumentPart [label="bibo:DocumentPart",href="http://purl.org/ontology/bibo/DocumentPart"];
     }
 
-    ci_Action [label="ci:Action",href="https://privatealpha.com/ontology/content-inventory/1#Action"];
-    ci_Advertisement [label="ci:Advertisement",href="https://privatealpha.com/ontology/content-inventory/1#Advertisement"];
-    ci_Audience [label="ci:Audience",href="https://privatealpha.com/ontology/content-inventory/1#Audience"];
-    ci_Merge [label="ci:Merge",href="https://privatealpha.com/ontology/content-inventory/1#Merge"];
+    ci_Action [label="ci:Action",href="https://vocab.methodandstructure.com/content-inventory#Action"];
+    ci_Advertisement [label="ci:Advertisement",href="https://vocab.methodandstructure.com/content-inventory#Advertisement"];
+    ci_Audience [label="ci:Audience",href="https://vocab.methodandstructure.com/content-inventory#Audience"];
+    ci_Merge [label="ci:Merge",href="https://vocab.methodandstructure.com/content-inventory#Merge"];
+    ci_Appendix [label="ci:Appendix",href="https://vocab.methodandstructure.com/content-inventory#Appendix"];
+    ci_Block [label="ci:Block",href="https://vocab.methodandstructure.com/content-inventory#Block"];
+    ci_Section [label="ci:Section",href="https://vocab.methodandstructure.com/content-inventory#Section"];
+
     ci_Merge -> foaf_Document [label="ci:target"];
     foaf_Document -> ci_Action [label="ci:action"];
 
@@ -24,13 +29,16 @@ digraph {
     foaf_Document -> owl_Thing [label="ci:desired-outcome"];
     foaf_Document -> owl_Thing [label="ci:embed, ci:link,\nci:include, ci:form"];
     owl_Thing -> owl_Thing [label="ci:alias, ci:alias-for,\nci:canonical"]
-    
+
     subgraph {
         edge [style=dashed, label="rdfs:subClassOf"];
         ci_Merge -> ci_Action -> ev_Event;
         ci_Audience -> dct_AgentClass;
         ci_Audience -> skos_Concept;
         ci_Advertisement -> foaf_Document;
+        ci_Appendix -> bibo_DocumentPart -> foaf_Document;
+        ci_Block -> bibo_DocumentPart;
+        ci_Section -> bibo_DocumentPart;
     }
     subgraph {
         edge [style=dashed];
