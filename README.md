@@ -23,9 +23,19 @@ Imports
 <a href="https://www.w3.org/TR/owl2-overview/" about="#"
 rel="owl:imports" resource="http://www.w3.org/2002/07/owl#">OWL</a>
 
+<a
+href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+about="#" rel="owl:imports" resource="http://purl.org/dc/terms/">Dublin
+Core Terms</a>
+
 <a href="https://www.w3.org/TR/xmlschema-2/" about="#" rel="owl:imports"
 resource="http://www.w3.org/2001/XMLSchema#">XML Schema Part 2:
 Datatypes</a>
+
+<a
+href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+about="#" rel="owl:imports" resource="http://purl.org/dc/terms/">Dublin
+Core Terms</a>
 
 </div>
 
@@ -1204,6 +1214,11 @@ terminal path segment of an HTTP(S) URL by which a resource can be
 located. This property is mainly for the purpose of archiving old or
 alternative URL paths in a content inventory, for such tasks as
 generating URL rewriting maps.
+
+Sub-property of:  
+<a
+href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/identifier"
+rel="rdfs:subPropertyOf" resource="dct:identifier">dct:identifier</a>
 
 Range:  
 <a href="http://www.w3.org/2001/XMLSchema#string"

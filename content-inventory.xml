@@ -37,7 +37,9 @@
         <dd><code about="#" property="vann:preferredNamespacePrefix" datatype="xsd:token">ci</code></dd>
         <dt>Imports</dt>
         <dd><a about="#" rel="owl:imports" resource="http://www.w3.org/2002/07/owl#" href="https://www.w3.org/TR/owl2-overview/">OWL</a></dd>
+        <dd><a about="#" rel="owl:imports" resource="http://purl.org/dc/terms/" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core Terms</a></dd>
         <dd><a about="#" rel="owl:imports" resource="http://www.w3.org/2001/XMLSchema#" href="https://www.w3.org/TR/xmlschema-2/">XML Schema Part 2: Datatypes</a></dd>
+        <dd><a about="#" rel="owl:imports" resource="http://purl.org/dc/terms/" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core Terms</a></dd>
       </dl>
     </section>
     <section>
@@ -48,7 +50,7 @@
         <li>The <a rel="owl:imports" href="http://purl.org/ontology/bibo/">Bibliography Ontology</a> provides additional bibliographic metadata plus dozens of useful document types,</li>
         <li><abbr title="Functional Requirements for Bibliographic Records">FRBR</abbr> <a rel="dct:references" href="http://vocab.org/frbr/core" title="Expression of Core FRBR Concepts in RDF">Core</a> and <a rel="dct:references" href="http://vocab.org/frbr/extended" title="Expression of Extended FRBR Concepts in RDF">Extended</a> provides terms for modeling even more sophisticated intertextual relations,</li>
         <li><a rel="owl:imports" resource="http://www.w3.org/2004/02/skos/core#" href="https://www.w3.org/TR/skos-reference/"><abbr title="Simple Knowledge Organization System">SKOS</abbr></a> provides a rich substrate for concept schemes and taxonomies,</li>
-        <li><a rel="owl:imports" href="http://xmlns.com/foaf/0.1/">Friend of a Friend</a> and <a href="https://www.w3.org/TR/vocab-org/">The Organization Ontology</a> give us models of people and business entities,</li>
+        <li><a rel="owl:imports" href="http://xmlns.com/foaf/0.1/">Friend of a Friend</a> and <a rel="owl:imports" href="https://www.w3.org/TR/vocab-org/">The Organization Ontology</a> give us models of people and business entities,</li>
         <li>The <a rel="owl:imports" href="http://purl.org/NET/c4dm/event.owl#" title="The Event Ontology">Event Ontology</a> enables the modeling of processes, factors, and outcomes,</li>
         <li><a rel="dct:references" href="https://www.w3.org/TR/prov-o/">The Provenance Ontology</a> gives us a vocabulary for recording the handling of content over time,</li>
         <li>The <a rel="owl:imports" href="http://purl.org/linked-data/cube#">Data Cube Vocabulary</a> organizes quantitative and statistical data.</li>
@@ -84,7 +86,7 @@
         <h3>Editorial Action</h3>
         <p>These classes enable the assignment of specific things to <em>do</em> to a document.</p>
         <section id="Action" about="[ci:Action]" typeof="owl:Class">
-          <h4 property="rdfs:label" datatype="xsd:token">Action</h4>
+          <h4><code property="rdfs:label" datatype="xsd:token">Action</code></h4>
           <p property="rdfs:comment">An action, as its name implies, is meant to represent something a person or other agent ought to do to a document.</p>
           <aside role="note">
             <p property="skos:usageNote">Being a subclass of an event, a <code>ci:Action</code> can have agents, factors, products, places and times ascribed to it.</p>
@@ -95,9 +97,9 @@
             <dt>Currently defined:</dt>
             <dd>
               <ul rev="rdf:type">
-                <li><a href="#keep">keep</a></li>
-                <li><a href="#split">split</a></li>
-                <li><a href="#tentative-merge">tentative-merge</a></li>
+                <li><a href="#keep"><code>keep</code></a></li>
+                <li><a href="#split"><code>split</code></a></li>
+                <li><a href="#tentative-merge"><code>tentative-merge</code></a></li>
                 <li><a href="#update-metadata">update-metadata</a></li>
                 <li><a href="#proofread">proofread</a></li>
                 <li><a href="#revise">revise</a></li>
@@ -661,6 +663,8 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
           <h4 property="rdfs:label" datatype="xsd:token">slug</h4>
           <p property="rdfs:comment">The slug is a text token which represents either the full path or terminal path segment of an HTTP(S) URL by which a resource can be located. This property is mainly for the purpose of archiving old or alternative URL paths in a content inventory, for such tasks as generating URL rewriting maps.</p>
           <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" resource="dct:identifier" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/identifier">dct:identifier</a></dd>
             <dt>Range:</dt>
             <dd><a rel="rdfs:range" href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a></dd>
           </dl>
