@@ -1305,8 +1305,8 @@ of documents and actions to take with them.
 
 ### Statuses
 
-The following bibo:DocumentStatuses are supplied in addition to the
-statuses specified by the Bibliography Ontology.
+The following `bibo:DocumentStatus` entities are supplied in addition to
+the statuses specified by the Bibliography Ontology.
 
 <div id="empty" class="section" about="[ci:empty]"
 typeof="bibo:DocumentStatus">

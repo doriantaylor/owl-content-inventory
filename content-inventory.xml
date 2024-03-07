@@ -705,7 +705,7 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
       <p>This document defines a set of values useful for describing the status of documents and actions to take with them.</p>
       <section>
         <h3>Statuses</h3>
-        <p>The following bibo:DocumentStatuses are supplied in addition to the statuses specified by the Bibliography Ontology.</p>
+        <p>The following <code>bibo:DocumentStatus</code> entities are supplied in addition to the statuses specified by the Bibliography Ontology.</p>
         <section id="empty" about="[ci:empty]" typeof="bibo:DocumentStatus">
           <h4><code property="rdfs:label" datatype="xsd:token">empty</code></h4>
           <p property="rdfs:comment">The document contains no content.</p>
