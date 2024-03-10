@@ -1,9 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="/transform"?>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
       xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
       xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
       xmlns:owl="http://www.w3.org/2002/07/owl#"
+      xmlns:sh="http://www.w3.org/ns/shacl#"
+      xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
       xmlns:dct="http://purl.org/dc/terms/"
       xmlns:bibo="http://purl.org/ontology/bibo/"
       xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -11,13 +15,13 @@
       xmlns:ev="http://purl.org/NET/c4dm/event.owl#"
       xmlns:qb="http://purl.org/linked-data/cube#"
       xmlns:vann="http://purl.org/vocab/vann/"
-      xmlns:xhv="http://www.w3.org/1999/xhtml/vocab#"
       xmlns:ci="https://vocab.methodandstructure.com/content-inventory#"
-      xml:lang="en">
+      vocab="http://www.w3.org/1999/xhtml/vocab#" xml:lang="en">
   <head>
     <title about="#" property="dct:title">A Content Inventory Vocabulary</title>
     <base href="https://vocab.methodandstructure.com/content-inventory"/>
     <link about="#" rel="rdfs:isDefinedBy bibo:uri" href="#"/>
+    <link rel="up top contents index" href="/"/>
   </head>
   <body about="" typeof="bibo:Webpage" rel="dct:subject foaf:primaryTopic">
     <section about="#" typeof="owl:Ontology">
