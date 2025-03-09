@@ -5,13 +5,13 @@ Author
 rel="dct:creator"><span property="foaf:name">Dorian Taylor</span></a>
 
 Version  
-0.14
+0.16
 
 Created  
 January 23, 2012
 
 [Updated](https://vocab.methodandstructure.com/content-inventory#sec-changelog)  
-November 2, 2022
+March 9, 2025
 
 Namespace URI  
 [`https://vocab.methodandstructure.com/content-inventory#`](https://vocab.methodandstructure.com/content-inventory#)
@@ -48,35 +48,35 @@ strategy</a> which are not accounted for by other vocabularies.
 
 Such vocabularies include, but are far from limited to:
 
--   <a href="http://purl.org/dc/terms/" rel="owl:imports">Dublin Core
-    Terms</a> provide basic bibliographic metadata,
--   The
-    <a href="http://purl.org/ontology/bibo/" rel="owl:imports">Bibliography
-    Ontology</a> provides additional bibliographic metadata plus dozens
-    of useful document types,
--   FRBR <a href="http://vocab.org/frbr/core" rel="dct:references"
-    title="Expression of Core FRBR Concepts in RDF">Core</a> and
-    <a href="http://vocab.org/frbr/extended" rel="dct:references"
-    title="Expression of Extended FRBR Concepts in RDF">Extended</a>
-    provides terms for modeling even more sophisticated intertextual
-    relations,
--   <a href="https://www.w3.org/TR/skos-reference/" rel="owl:imports"
-    resource="http://www.w3.org/2004/02/skos/core#">SKOS</a> provides a
-    rich substrate for concept schemes and taxonomies,
--   <a href="http://xmlns.com/foaf/0.1/" rel="owl:imports">Friend of a
-    Friend</a> and
-    <a href="https://www.w3.org/TR/vocab-org/" rel="owl:imports">The
-    Organization Ontology</a> give us models of people and business
-    entities,
--   The <a href="http://purl.org/NET/c4dm/event.owl#" rel="owl:imports"
-    title="The Event Ontology">Event Ontology</a> enables the modeling
-    of processes, factors, and outcomes,
--   <a href="https://www.w3.org/TR/prov-o/" rel="dct:references">The
-    Provenance Ontology</a> gives us a vocabulary for recording the
-    handling of content over time,
--   The
-    <a href="http://purl.org/linked-data/cube#" rel="owl:imports">Data Cube
-    Vocabulary</a> organizes quantitative and statistical data.
+- <a href="http://purl.org/dc/terms/" rel="owl:imports">Dublin Core
+  Terms</a> provide basic bibliographic metadata,
+- The
+  <a href="http://purl.org/ontology/bibo/" rel="owl:imports">Bibliography
+  Ontology</a> provides additional bibliographic metadata plus dozens of
+  useful document types,
+- FRBR <a href="http://vocab.org/frbr/core" rel="dct:references"
+  title="Expression of Core FRBR Concepts in RDF">Core</a> and
+  <a href="http://vocab.org/frbr/extended" rel="dct:references"
+  title="Expression of Extended FRBR Concepts in RDF">Extended</a>
+  provides terms for modeling even more sophisticated intertextual
+  relations,
+- <a href="https://www.w3.org/TR/skos-reference/" rel="owl:imports"
+  resource="http://www.w3.org/2004/02/skos/core#">SKOS</a> provides a
+  rich substrate for concept schemes and taxonomies,
+- <a href="http://xmlns.com/foaf/0.1/" rel="owl:imports">Friend of a
+  Friend</a> and
+  <a href="https://www.w3.org/TR/vocab-org/" rel="owl:imports">The
+  Organization Ontology</a> give us models of people and business
+  entities,
+- The <a href="http://purl.org/NET/c4dm/event.owl#" rel="owl:imports"
+  title="The Event Ontology">Event Ontology</a> enables the modeling of
+  processes, factors, and outcomes,
+- <a href="https://www.w3.org/TR/prov-o/" rel="dct:references">The
+  Provenance Ontology</a> gives us a vocabulary for recording the
+  handling of content over time,
+- The
+  <a href="http://purl.org/linked-data/cube#" rel="owl:imports">Data Cube
+  Vocabulary</a> organizes quantitative and statistical data.
 
 This document is organized in terms of
 [Classes](https://vocab.methodandstructure.com/content-inventory#sec-classes),
@@ -92,22 +92,26 @@ first, and alphabetically second.
 Examples are given in [the Turtle
 syntax](https://www.w3.org/TR/turtle/). The basic syntax reads like so:
 
-    <subject> <predicate> <object> .
+<figure>
+<pre><code>&lt;subject&gt; &lt;predicate&gt; &lt;object&gt; .
 
-    <subject> <predicate> <object> ; <predicate> <object> .
+&lt;subject&gt; &lt;predicate&gt; &lt;object&gt; ; &lt;predicate&gt; &lt;object&gt; .
 
-    <subject> <predicate> <object> , <object> .
+&lt;subject&gt; &lt;predicate&gt; &lt;object&gt; , &lt;object&gt; .</code></pre>
+</figure>
 
 That is, complete statements are separated by periods, predicate-object
 pairs are collated by semicolons, and sets of objects are separated by
 commas. Turtle also provides for <span class="dfn">prefix
 mappings</span> to shorten the terms. This is denoted by:
 
-    @prefix p: <https://example.club/long/uri/> .
+<figure>
+<pre><code>@prefix p: &lt;https://example.club/long/uri/&gt; .</code></pre>
+</figure>
 
-and thus would map `p:some-term` to
-`https://example.club/long/uri/some-term`. Note that these strings are
-just concatenated together, in contrast to conventional relative URI
+and thus would map `p:`*`some-term`* to
+`https://example.club/long/uri/`*`some-term`*. Note that these strings
+are just concatenated together, in contrast to conventional relative URI
 resolution. Terms belonging to this specification have been emphasized
 to make them easier to pick out.
 
@@ -121,9 +125,13 @@ There are currently many extant vocabularies that deal with documents
 and related entities. The classes here are those that aren't otherwise
 accounted for.
 
-![This diagram shows the classes and properties defined in this document
-using solid lines, and third-party classes and properties using dashed
-lines.](https://vocab.methodandstructure.com/content-inventory-classes)
+<figure>
+<img
+src="https://vocab.methodandstructure.com/content-inventory-classes" />
+<figcaption><p>This diagram shows the classes and properties defined in
+this document using solid lines, and third-party classes and properties
+using dashed lines.</p></figcaption>
+</figure>
 
 <div class="section">
 
@@ -148,14 +156,14 @@ rel="rdfs:subClassOf"
 resource="http://purl.org/NET/c4dm/event.owl#Event"><code>ev:Event</code></a>
 
 Currently defined:  
--   [`keep`](https://vocab.methodandstructure.com/content-inventory#keep)
--   [`split`](https://vocab.methodandstructure.com/content-inventory#split)
--   [`tentative-merge`](https://vocab.methodandstructure.com/content-inventory#tentative-merge)
--   [`update-metadata`](https://vocab.methodandstructure.com/content-inventory#update-metadata)
--   [`proofread`](https://vocab.methodandstructure.com/content-inventory#proofread)
--   [`revise`](https://vocab.methodandstructure.com/content-inventory#revise)
--   [`rewrite`](https://vocab.methodandstructure.com/content-inventory#rewrite)
--   [`retire`](https://vocab.methodandstructure.com/content-inventory#retire)
+- [`keep`](https://vocab.methodandstructure.com/content-inventory#keep)
+- [`split`](https://vocab.methodandstructure.com/content-inventory#split)
+- [`tentative-merge`](https://vocab.methodandstructure.com/content-inventory#tentative-merge)
+- [`update-metadata`](https://vocab.methodandstructure.com/content-inventory#update-metadata)
+- [`proofread`](https://vocab.methodandstructure.com/content-inventory#proofread)
+- [`revise`](https://vocab.methodandstructure.com/content-inventory#revise)
+- [`rewrite`](https://vocab.methodandstructure.com/content-inventory#rewrite)
+- [`retire`](https://vocab.methodandstructure.com/content-inventory#retire)
 
 <a href="https://vocab.methodandstructure.com/content-inventory#"
 rel="rdfs:isDefinedBy">Back to Top</a>
@@ -220,19 +228,19 @@ any other resource. This is intended to be a decorator class to indicate
 that the subject is an advertisement. It can therefore be combined with
 other classes such as `foaf:Image`, or `bibo:AudioVisualDocument`.
 
-```
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix dct:  <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
+<figure>
+<pre property="skos:example"><code>@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; .
+@prefix dct:  &lt;http://purl.org/dc/terms/&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#&gt; .
 
-<https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
-dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
-dct:hasPart <https://adtech.biz/assets/punch-the-monkey> .
+&lt;https://example.club/17-mindblowing-ways-to-write-listicles&gt; a bibo:Article ;
+dct:title &quot;17 Mindblowing Ways to Write Listicles!&quot;@en ;
+dct:hasPart &lt;https://adtech.biz/assets/punch-the-monkey&gt; .
 
-<https://adtech.biz/assets/punch-the-monkey> a foaf:Image, ci:Advertisement ;
-dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .
-```
+&lt;https://adtech.biz/assets/punch-the-monkey&gt; a foaf:Image, ci:Advertisement ;
+dct:title &quot;Punch The Monkey And WIN!#@$!%%^!&quot;@en .</code></pre>
+</figure>
 
 Subclass of:  
 <a href="http://xmlns.com/foaf/spec/#term_Document"
@@ -435,26 +443,26 @@ do—what material effect it is supposed to produce. It is intentionally
 open-ended, and as such can point to something like a `skos:Concept`,
 another document, or a literal string of text describing the outcome.
 
-```
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix dct:  <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
-@prefix eg:   <https://backoffice.example.club/concepts/> .
+<figure>
+<pre property="skos:example"><code>@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; .
+@prefix dct:  &lt;http://purl.org/dc/terms/&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+@prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#&gt; .
+@prefix eg:   &lt;https://backoffice.example.club/concepts/&gt; .
 
 # we can extend our article metadata the following way:
 
-<https://example.club/17-mindblowing-ways-to-write-listicles> a bibo:Article ;
-dct:title "17 Mindblowing Ways to Write Listicles!"@en ;
+&lt;https://example.club/17-mindblowing-ways-to-write-listicles&gt; a bibo:Article ;
+dct:title &quot;17 Mindblowing Ways to Write Listicles!&quot;@en ;
 ci:desired-outcome eg:maximize-clicks .
 
 # and create a corresponding resource to unambiguously identify the goal:
 
 eg:maximize-clicks a skos:Concept ;
-skos:prefLabel "Maximize Clicks"@en ;
-skos:description "Moar clicks means moar monies."@en .
-            
-```
+skos:prefLabel &quot;Maximize Clicks&quot;@en ;
+skos:description &quot;Moar clicks means moar monies.&quot;@en .
+            </code></pre>
+</figure>
 
 Domain:  
 <a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:domain"
@@ -509,23 +517,27 @@ document](https://vocab.methodandstructure.com/content-inventory#sec-actions).
 A `ci:Merge` is a special kind of `ci:Action` that takes a `ci:target`,
 as in the following example:
 
-    @prefix bibo: <http://purl.org/ontology/bibo/> .
-    @prefix bs:   <http://purl.org/ontology/bibo/status/> .
-    @prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
+<figure>
+<pre><code>@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; .
+@prefix bs:   &lt;http://purl.org/ontology/bibo/status/&gt; .
+@prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#&gt; .
 
-    <https://example.club/our-team> a bibo:Webpage ;
-    bibo:status bs:published, ci:obsolete ;
-    ci:action <tag:example.club,2020-01:content-inventory/merge/our-team> .
+&lt;https://example.club/our-team&gt; a bibo:Webpage ;
+bibo:status bs:published, ci:obsolete ;
+ci:action &lt;tag:example.club,2020-01:content-inventory/merge/our-team&gt; .
 
-    <tag:example.club,2020-01:content-inventory:merge:our-team> a ci:Merge ;
-    ci:target <https://example.club/about> .
-
-This example is in [Turtle syntax](https://www.w3.org/TR/turtle/). It is
-stating that the published document at `https://example.club/our-team`
-is obsolete and should be merged into `https://example.club/about`. A
-[`tag:` URI](https://tools.ietf.org/html/rfc4151) was chosen to identify
-the merge, to reinforce the idea that it is just a piece of data and not
-a Web page (although one could imagine representing it as one).
+&lt;tag:example.club,2020-01:content-inventory:merge:our-team&gt; a ci:Merge ;
+ci:target &lt;https://example.club/about&gt; .</code></pre>
+<figcaption><p>This example is in <a
+href="https://www.w3.org/TR/turtle/">Turtle syntax</a>. It is stating
+that the published document at
+<code>https://example.club/our-team</code> is obsolete and should be
+merged into <code>https://example.club/about</code>. A <a
+href="https://tools.ietf.org/html/rfc4151"><code>tag:</code> URI</a> was
+chosen to identify the merge, to reinforce the idea that it is just a
+piece of data and not a Web page (although one could imagine
+representing it as one).</p></figcaption>
+</figure>
 
 <div id="action" class="section" about="[ci:action]"
 typeof="owl:ObjectProperty">
@@ -752,40 +764,42 @@ enable us to construct appropriate pairings of content to audiences,
 and/or root out gaps in our assumptions about both our content *and* our
 audiences.
 
-    @prefix bibo: <http://purl.org/ontology/bibo/> .
-    @prefix dct:  <http://purl.org/dc/terms/> .
-    @prefix ci:   <https://vocab.methodandstructure.com/content-inventory#> .
-    @prefix dbc:  <https://dbpedia.org/page/Category:> .
+<figure>
+<pre><code>@prefix bibo: &lt;http://purl.org/ontology/bibo/&gt; .
+@prefix dct:  &lt;http://purl.org/dc/terms/&gt; .
+@prefix ci:   &lt;https://vocab.methodandstructure.com/content-inventory#&gt; .
+@prefix dbc:  &lt;https://dbpedia.org/page/Category:&gt; .
 
-    <https://example.news/2020/01/gruesome-car-accident> a bibo:Article ;
-    dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
-    ci:depicts dbc:Traffic_collisions, dbc:Road_incident_deaths .
+&lt;https://example.news/2020/01/gruesome-car-accident&gt; a bibo:Article ;
+dct:title &quot;Gruesome Car Accident Gruesomely Kills 42&quot; ;
+ci:depicts dbc:Traffic_collisions, dbc:Road_incident_deaths .
 
-    # we could define the following audience:
+# we could define the following audience:
 
-    <https://example.news/audience/squeamish-person> a ci:Audience ;
-    ci:eschews dbc:Accidents, dbc:Injuries, dbc:Death, dbc:Violence .
+&lt;https://example.news/audience/squeamish-person&gt; a ci:Audience ;
+ci:eschews dbc:Accidents, dbc:Injuries, dbc:Death, dbc:Violence .
 
-    # over at DBPedia, there is the following relation:
+# over at DBPedia, there is the following relation:
 
-    dbc:Traffic_collisions skos:broader dbc:Accidents .
+dbc:Traffic_collisions skos:broader dbc:Accidents .
 
-    # that statement is enough to match the audience, but this chain
-    # would match it too:
+# that statement is enough to match the audience, but this chain
+# would match it too:
 
-    dbc:Road_incident_deaths skos:broader dbc:Deaths_by_cause .
-    dbc:Deaths_by_cause skos:broader dbc:Causes_of_death .
-    dbc:Causes_of_death skos:broader dbc:Death .
+dbc:Road_incident_deaths skos:broader dbc:Deaths_by_cause .
+dbc:Deaths_by_cause skos:broader dbc:Causes_of_death .
+dbc:Causes_of_death skos:broader dbc:Death .
 
-    # from this we can reason (programmatically) that the article is not
-    # appropriate for the given audience and append the following statement
-    # to the article's metadata:
+# from this we can reason (programmatically) that the article is not
+# appropriate for the given audience and append the following statement
+# to the article&#39;s metadata:
 
-    <https://example.news/2020/01/gruesome-car-accident>
-    ci:non-audience <https://example.news/audience/squeamish-person> .
-
-References to DBPedia concepts have been linked to demonstrate that
-concepts can also be rendered as Web pages, as well as cross domains.
+&lt;https://example.news/2020/01/gruesome-car-accident&gt;
+ci:non-audience &lt;https://example.news/audience/squeamish-person&gt; .</code></pre>
+<figcaption><p>References to DBPedia concepts have been linked to
+demonstrate that concepts can also be rendered as Web pages, as well as
+cross domains.</p></figcaption>
+</figure>
 
 <div id="aware-of" class="section" about="[ci:aware-of]"
 typeof="owl:ObjectProperty">
@@ -969,23 +983,25 @@ would yield the contents of `resource=` whereas these properties (in
 this example, `ci:link`) are meant to capture the contents of `href=`
 (or `src=`, `action=`, etc.).
 
-    @prefix ci: <https://vocab.methodandstructure.com/content-inventory#> .
+<figure>
+<pre><code>@prefix ci: &lt;https://vocab.methodandstructure.com/content-inventory#&gt; .
 
-    # This statement relates a resource to its canonical address:
+# This statement relates a resource to its canonical address:
 
-    <https://example.club/seventeen-mindblowing-ways-to-write-listicles>
-    ci:canonical <https://example.club/17-mindblowing-ways-to-write-listicles> .
+&lt;https://example.club/seventeen-mindblowing-ways-to-write-listicles&gt;
+ci:canonical &lt;https://example.club/17-mindblowing-ways-to-write-listicles&gt; .
 
-    # here we define a slug and aliases:
+# here we define a slug and aliases:
 
-    <https://example.club/17-mindblowing-ways-to-write-listicles>
-    ci:canonical-slug "17-mindblowing-ways-to-write-listicles"^^xsd:token ;
-    ci:alias <https://example.club/seventeen-mindblowing-ways-to-write-listicles>,
-    <https://short.nr/aXbQ1> .
+&lt;https://example.club/17-mindblowing-ways-to-write-listicles&gt;
+ci:canonical-slug &quot;17-mindblowing-ways-to-write-listicles&quot;^^xsd:token ;
+ci:alias &lt;https://example.club/seventeen-mindblowing-ways-to-write-listicles&gt;,
+&lt;https://short.nr/aXbQ1&gt; .
 
-    # one of these alias clauses is implied by the other statement, as
-    # ci:canonical is a subproperty of ci:alias-for, which is the inverse
-    # of ci:alias.
+# one of these alias clauses is implied by the other statement, as
+# ci:canonical is a subproperty of ci:alias-for, which is the inverse
+# of ci:alias.</code></pre>
+</figure>
 
 <div id="embed" class="section" about="[ci:embed]"
 typeof="owl:ObjectProperty">
@@ -1075,8 +1091,8 @@ Resources on the Web tend to be identified by more than one URI. The
 following properties extend the `owl:sameAs` property to indicate a
 definite direction of canonicality, and throw in another couple of
 properties to capture the same idea for the terminal “slug” of the URI
-path, i.e., `/this/thing/here`. An example use case for these properties
-is the generation of <span class="dfn">rewrite maps</span>.
+path, i.e., `/this/thing/`**`here`**. An example use case for these
+properties is the generation of <span class="dfn">rewrite maps</span>.
 
 <div id="alias" class="section" about="[ci:alias]"
 typeof="owl:ObjectProperty">
@@ -1254,6 +1270,27 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
+<div id="fragment" class="section" about="[ci:fragment]"
+typeof="owl:ObjectProperty owl:InverseFunctionalProperty">
+
+#### `fragment`
+
+This property relates a subject to one of its fragments.
+
+Sub-property of:  
+<a href="http://purl.org/dc/terms/hasPart"
+rel="rdfs:subPropertyOf"><code>dct:hasPart</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#fragment-of"
+rel="owl:inverseOf"><code>ci:fragment-of</code></a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
 <div id="fragment-of" class="section" about="[ci:fragment-of]"
 typeof="owl:ObjectProperty owl:FunctionalProperty">
 
@@ -1262,9 +1299,14 @@ typeof="owl:ObjectProperty owl:FunctionalProperty">
 This property asserts that the subject should be treated as a fragment
 of the document it relates to.
 
-Range:  
-<a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:range"
-resource="http://xmlns.com/foaf/0.1/Document"><code>foaf:Document</code></a>
+Sub-property of:  
+<a href="http://purl.org/dc/terms/isPartOf"
+rel="rdfs:subPropertyOf"><code>dct:isPartOf</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#fragment"
+rel="owl:inverseOf"><code>ci:fragment</code></a>
 
 <a href="https://vocab.methodandstructure.com/content-inventory#"
 rel="rdfs:isDefinedBy">Back to Top</a>
@@ -1549,6 +1591,29 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
+<div id="sec-roles" class="section">
+
+### WAI-ARIA Roles
+
+[ARIA roles](https://www.w3.org/TR/wai-aria/) are for demarcating the
+semantics of elements in HTML/XML markup using [the `role`
+attribute](https://www.w3.org/TR/role-attribute/).
+
+<div id="backlinks" class="section" about="[ci:backlinks]"
+typeof="rdf:Property">
+
+#### `backlinks`
+
+This a role to identify a particular HTML element (e.g. a `<nav>`
+element) as a designated container for backlinks.
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+</div>
+
 </div>
 
 <div id="#sec-dsd" class="section" about="#">
@@ -1593,9 +1658,9 @@ block of text in a given document.
 
 ###### Dimensions
 
--   <a
-    href="https://vocab.methodandstructure.com/content-inventory#document"
-    rel="qb:dimension"><code>document</code></a>
+- <a
+  href="https://vocab.methodandstructure.com/content-inventory#document"
+  rel="qb:dimension"><code>document</code></a>
 
 </div>
 
@@ -1603,31 +1668,31 @@ block of text in a given document.
 
 ###### Counts
 
--   <a
-    href="https://vocab.methodandstructure.com/content-inventory#sections"
-    rel="qb:measure"><code>sections</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#blocks"
-    rel="qb:measure"><code>blocks</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#words"
-    rel="qb:measure"><code>words</code></a>
--   <a
-    href="https://vocab.methodandstructure.com/content-inventory#characters"
-    rel="qb:measure"><code>characters</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#images"
-    rel="qb:measure"><code>images</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#videos"
-    rel="qb:measure"><code>videos</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#embeds"
-    rel="qb:measure"><code>embeds</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#tables"
-    rel="qb:measure"><code>tables</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#forms"
-    rel="qb:measure"><code>forms</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#scripts"
-    rel="qb:measure"><code>scripts</code></a>
--   <a
-    href="https://vocab.methodandstructure.com/content-inventory#stylesheets"
-    rel="qb:measure"><code>stylesheets</code></a>
+- <a
+  href="https://vocab.methodandstructure.com/content-inventory#sections"
+  rel="qb:measure"><code>sections</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#blocks"
+  rel="qb:measure"><code>blocks</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#words"
+  rel="qb:measure"><code>words</code></a>
+- <a
+  href="https://vocab.methodandstructure.com/content-inventory#characters"
+  rel="qb:measure"><code>characters</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#images"
+  rel="qb:measure"><code>images</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#videos"
+  rel="qb:measure"><code>videos</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#embeds"
+  rel="qb:measure"><code>embeds</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#tables"
+  rel="qb:measure"><code>tables</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#forms"
+  rel="qb:measure"><code>forms</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#scripts"
+  rel="qb:measure"><code>scripts</code></a>
+- <a
+  href="https://vocab.methodandstructure.com/content-inventory#stylesheets"
+  rel="qb:measure"><code>stylesheets</code></a>
 
 </div>
 
@@ -1635,18 +1700,18 @@ block of text in a given document.
 
 ###### Five-number summary
 
--   <a href="https://vocab.methodandstructure.com/content-inventory#min"
-    rel="qb:measure"><code>min</code></a>
--   <a
-    href="https://vocab.methodandstructure.com/content-inventory#low-quartile"
-    rel="qb:measure"><code>low-quartile</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#median"
-    rel="qb:measure"><code>median</code></a>
--   <a
-    href="https://vocab.methodandstructure.com/content-inventory#high-quartile"
-    rel="qb:measure"><code>high-quartile</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#max"
-    rel="qb:measure"><code>max</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#min"
+  rel="qb:measure"><code>min</code></a>
+- <a
+  href="https://vocab.methodandstructure.com/content-inventory#low-quartile"
+  rel="qb:measure"><code>low-quartile</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#median"
+  rel="qb:measure"><code>median</code></a>
+- <a
+  href="https://vocab.methodandstructure.com/content-inventory#high-quartile"
+  rel="qb:measure"><code>high-quartile</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#max"
+  rel="qb:measure"><code>max</code></a>
 
 </div>
 
@@ -1654,10 +1719,10 @@ block of text in a given document.
 
 ###### Mean and Standard Deviation
 
--   <a href="https://vocab.methodandstructure.com/content-inventory#mean"
-    rel="qb:measure"><code>mean</code></a>
--   <a href="https://vocab.methodandstructure.com/content-inventory#sd"
-    rel="qb:measure"><code>sd</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#mean"
+  rel="qb:measure"><code>mean</code></a>
+- <a href="https://vocab.methodandstructure.com/content-inventory#sd"
+  rel="qb:measure"><code>sd</code></a>
 
 </div>
 
@@ -2275,6 +2340,10 @@ May 17, 2021
 October 5, 2022
 
 November 2, 2022
+
+July 22, 2024
+
+March 9, 2025
 
 This document is copyright 2010-2022
 <a href="https://doriantaylor.com/person/dorian-taylor#me"

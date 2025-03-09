@@ -29,11 +29,11 @@
         <dt>Author</dt>
         <dd><a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me"><span property="foaf:name">Dorian Taylor</span></a></dd>
         <dt>Version</dt>
-        <dd property="owl:versionInfo" datatype="xsd:string">0.14</dd>
+        <dd property="owl:versionInfo" datatype="xsd:string">0.16</dd>
         <dt>Created</dt>
         <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
         <dt><a href="#sec-changelog">Updated</a></dt>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2022-11-02T19:19:18Z">November 2, 2022</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-03-09T20:46:09Z">March 9, 2025</dd>
         <dt>Namespace <abbr>URI</abbr></dt>
         <dd><a href="#"><code>https://vocab.methodandstructure.com/content-inventory#</code></a></dd>
         <dt>Preferred Namespace Prefix</dt>
@@ -684,12 +684,25 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
+        <section id="fragment" about="[ci:fragment]" typeof="owl:ObjectProperty owl:InverseFunctionalProperty">
+          <h4><code property="rdfs:label" datatype="xsd:token">fragment</code></h4>
+          <p property="rdfs:comment">This property relates a subject to one of its fragments.</p>
+          <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/hasPart"><code>dct:hasPart</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#fragment-of"><code>ci:fragment-of</code></a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
         <section id="fragment-of" about="[ci:fragment-of]" typeof="owl:ObjectProperty owl:FunctionalProperty">
           <h4><code property="rdfs:label" datatype="xsd:token">fragment-of</code></h4>
           <p property="rdfs:comment">This property asserts that the subject should be treated as a fragment of the document it relates to.</p>
           <dl>
-            <dt>Range:</dt>
-            <dd><a rel="rdfs:range" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document"><code>foaf:Document</code></a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="http://purl.org/dc/terms/isPartOf"><code>dct:isPartOf</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#fragment"><code>ci:fragment</code></a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
@@ -802,6 +815,15 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
         <section id="retire" about="[ci:retire]" typeof="ci:Action">
           <h4><code property="rdfs:label" datatype="xsd:token">retire</code></h4>
           <p property="rdfs:comment">Remove all references to this document and consign it to the archive.</p>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+      <section id="sec-roles">
+	<h3><abbr title="Web Accessibility Initiative">WAI</abbr>-<abbr title="Accessible Rich Internet Applications">ARIA</abbr> Roles</h3>
+	<p><a href="https://www.w3.org/TR/wai-aria/"><abbr>ARIA</abbr> roles</a> are for demarcating the semantics of elements in <abbr>HTML</abbr>/<abbr>XML</abbr> markup using <a href="https://www.w3.org/TR/role-attribute/">the <code>role</code> attribute</a>.</p>
+        <section id="backlinks" about="[ci:backlinks]" typeof="rdf:Property">
+          <h4><code property="rdfs:label" datatype="xsd:token">backlinks</code></h4>
+          <p property="rdfs:comment">This a role to identify a particular <abbr>HTML</abbr> element (e.g. a  <code>&lt;nav&gt;</code> element) as a designated container for backlinks.</p>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
       </section>
@@ -1156,6 +1178,8 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
         <dd property="dct:modified" datatype="xsd:dateTime" content="2021-05-17T17:57:27Z">May 17, 2021</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2022-10-05T10:36:04Z">October 5, 2022</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2022-11-02T19:19:18Z">November 2, 2022</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2024-07-22T20:52:29Z">July 22, 2024</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-03-09T20:46:09Z">March 9, 2025</dd>
       </dl>
       <p>This document is copyright 2010-2022 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
     </section>
