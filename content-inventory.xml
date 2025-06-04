@@ -33,7 +33,7 @@
         <dt>Created</dt>
         <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
         <dt><a href="#sec-changelog">Updated</a></dt>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-03-09T20:46:09Z">March 9, 2025</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-06-04T11:19:06Z">June 4, 2025</dd>
         <dt>Namespace <abbr>URI</abbr></dt>
         <dd><a href="#"><code>https://vocab.methodandstructure.com/content-inventory#</code></a></dd>
         <dt>Preferred Namespace Prefix</dt>
@@ -45,7 +45,7 @@
         <dd><a about="#" rel="owl:imports" resource="http://purl.org/dc/terms/" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core Terms</a></dd>
       </dl>
     </section>
-    <section>
+    <section about="#">
       <p property="rdfs:comment" content="This vocabulary defines a number of concepts peculiar to content strategy which are not accounted for by other vocabularies."> This vocabulary defines a number of concepts peculiar to <a rel="dct:references" href="http://en.wikipedia.org/wiki/Content_strategy" title="Content strategy — Wikipedia">content strategy</a> which are not accounted for by other vocabularies.</p>
       <p>Such vocabularies include, but are far from limited to:</p>
       <ul>
@@ -185,6 +185,21 @@ dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .</pre>
           <dl>
             <dt>Subclass of:</dt>
             <dd><a rel="rdfs:subClassOf" href="http://purl.org/ontology/bibo/DocumentPart"><code>bibo:DocumentPart</code></a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="Template" about="[ci:Template]" typeof="owl:Class">
+          <h4><code property="rdfs:label" datatype="xsd:token">Template</code></h4>
+          <p property="rdfs:comment">A template operates over some input format.</p>
+          <aside role="note" rel="skos:note">
+            <p>This class is provisional and is likely to be moved.</p>
+          </aside>
+          <dl>
+            <dt>Subclass of:</dt>
+            <dd><a rel="rdfs:subClassOf" href="http://xmlns.com/foaf/spec/#term_Document" resource="foaf:Document"><code>foaf:Document</code></a></dd>
+            <dt>Properties:</dt>
+            <dd><a href="#class"><code>class</code></a></dd>
+            <dd><a href="#resource"><code>resource</code></a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
@@ -333,6 +348,32 @@ bibo:status bs:published, <em>ci:obsolete</em> ;
             <dd><a rel="rdfs:domain" href="#Merge"><code>ci:Merge</code></a></dd>
             <dt>Range:</dt>
             <dd><a rel="rdfs:range" href="http://xmlns.com/foaf/spec/#term_Document" resource="http://xmlns.com/foaf/0.1/Document"><code>foaf:Document</code></a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+      </section>
+      <section>
+        <h3>Template Description</h3>
+        <p>These properties have to do with mapping templates to the resources that they transform.</p>
+        <section id="class" about="[ci:class]" typeof="owl:ObjectProperty">
+          <h4><code property="rdfs:label" datatype="xsd:token">class</code></h4>
+          <p property="rdfs:comment">An <code>rdfs:Class</code> associated with a <code>ci:Template</code>.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="#Template"><code>ci:Template</code></a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="rdfs:Class" href="https://www.w3.org/TR/rdf-schema/#ch_class"><code>rdfs:Class</code></a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="resource" about="[ci:resource]" typeof="owl:ObjectProperty">
+          <h4><code property="rdfs:label" datatype="xsd:token">resource</code></h4>
+          <p property="rdfs:comment">A particular <code>rdfs:Resource</code> to be transformed by a <code>ci:Template</code>.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" href="#Template"><code>ci:Template</code></a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" resource="rdfs:Resource" href="https://www.w3.org/TR/rdf-schema/#ch_resource"><code>rdfs:Resource</code></a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
@@ -1180,8 +1221,9 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
         <dd property="dct:modified" datatype="xsd:dateTime" content="2022-11-02T19:19:18Z">November 2, 2022</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2024-07-22T20:52:29Z">July 22, 2024</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2025-03-09T20:46:09Z">March 9, 2025</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-06-04T11:19:06Z">June 4, 2025</dd>
       </dl>
-      <p>This document is copyright 2010-2022 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
+      <p>This document is copyright 2010-2025 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
     </section>
   </body>
 </html>

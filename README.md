@@ -11,7 +11,7 @@ Created
 January 23, 2012
 
 [Updated](https://vocab.methodandstructure.com/content-inventory#sec-changelog)  
-March 9, 2025
+June 4, 2025
 
 Namespace URI  
 [`https://vocab.methodandstructure.com/content-inventory#`](https://vocab.methodandstructure.com/content-inventory#)
@@ -39,7 +39,7 @@ Core Terms</a>
 
 </div>
 
-<div class="section">
+<div class="section" about="#">
 
 This vocabulary defines a number of concepts peculiar to
 <a href="http://en.wikipedia.org/wiki/Content_strategy"
@@ -300,6 +300,30 @@ This is an explicit document section (i.e., sub-chapter) class.
 Subclass of:  
 <a href="http://purl.org/ontology/bibo/DocumentPart"
 rel="rdfs:subClassOf"><code>bibo:DocumentPart</code></a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="Template" class="section" about="[ci:Template]"
+typeof="owl:Class">
+
+#### `Template`
+
+A template operates over some input format.
+
+This class is provisional and is likely to be moved.
+
+Subclass of:  
+<a href="http://xmlns.com/foaf/spec/#term_Document"
+rel="rdfs:subClassOf"
+resource="foaf:Document"><code>foaf:Document</code></a>
+
+Properties:  
+[`class`](https://vocab.methodandstructure.com/content-inventory#class)
+
+[`resource`](https://vocab.methodandstructure.com/content-inventory#resource)
 
 <a href="https://vocab.methodandstructure.com/content-inventory#"
 rel="rdfs:isDefinedBy">Back to Top</a>
@@ -578,6 +602,57 @@ rel="rdfs:domain"><code>ci:Merge</code></a>
 Range:  
 <a href="http://xmlns.com/foaf/spec/#term_Document" rel="rdfs:range"
 resource="http://xmlns.com/foaf/0.1/Document"><code>foaf:Document</code></a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+</div>
+
+<div class="section">
+
+### Template Description
+
+These properties have to do with mapping templates to the resources that
+they transform.
+
+<div id="class" class="section" about="[ci:class]"
+typeof="owl:ObjectProperty">
+
+#### `class`
+
+An `rdfs:Class` associated with a `ci:Template`.
+
+Domain:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Template"
+rel="rdfs:domain"><code>ci:Template</code></a>
+
+Range:  
+<a href="https://www.w3.org/TR/rdf-schema/#ch_class" rel="rdfs:range"
+resource="rdfs:Class"><code>rdfs:Class</code></a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="resource" class="section" about="[ci:resource]"
+typeof="owl:ObjectProperty">
+
+#### `resource`
+
+A particular `rdfs:Resource` to be transformed by a `ci:Template`.
+
+Domain:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Template"
+rel="rdfs:domain"><code>ci:Template</code></a>
+
+Range:  
+<a href="https://www.w3.org/TR/rdf-schema/#ch_resource" rel="rdfs:range"
+resource="rdfs:Resource"><code>rdfs:Resource</code></a>
 
 <a href="https://vocab.methodandstructure.com/content-inventory#"
 rel="rdfs:isDefinedBy">Back to Top</a>
@@ -2344,6 +2419,8 @@ November 2, 2022
 July 22, 2024
 
 March 9, 2025
+
+June 4, 2025
 
 This document is copyright 2010-2022
 <a href="https://doriantaylor.com/person/dorian-taylor#me"
