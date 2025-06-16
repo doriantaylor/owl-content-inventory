@@ -33,7 +33,7 @@
         <dt>Created</dt>
         <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
         <dt><a href="#sec-changelog">Updated</a></dt>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-06-04T11:19:06Z">June 4, 2025</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-06-16T03:15:29Z">June 15, 2025</dd>
         <dt>Namespace <abbr>URI</abbr></dt>
         <dd><a href="#"><code>https://vocab.methodandstructure.com/content-inventory#</code></a></dd>
         <dt>Preferred Namespace Prefix</dt>
@@ -862,9 +862,18 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
       <section id="sec-roles">
 	<h3><abbr title="Web Accessibility Initiative">WAI</abbr>-<abbr title="Accessible Rich Internet Applications">ARIA</abbr> Roles</h3>
 	<p><a href="https://www.w3.org/TR/wai-aria/"><abbr>ARIA</abbr> roles</a> are for demarcating the semantics of elements in <abbr>HTML</abbr>/<abbr>XML</abbr> markup using <a href="https://www.w3.org/TR/role-attribute/">the <code>role</code> attribute</a>.</p>
+        <section id="links" about="[ci:links]" typeof="rdf:Property">
+          <h4><code property="rdfs:label" datatype="xsd:token">links</code></h4>
+          <p property="rdfs:comment">This a role to identify a particular <abbr>HTML</abbr> element (e.g. a  <code>&lt;nav&gt;</code> element) as a designated container for additional links that are not represented in the markup.</p>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
         <section id="backlinks" about="[ci:backlinks]" typeof="rdf:Property">
           <h4><code property="rdfs:label" datatype="xsd:token">backlinks</code></h4>
           <p property="rdfs:comment">This a role to identify a particular <abbr>HTML</abbr> element (e.g. a  <code>&lt;nav&gt;</code> element) as a designated container for backlinks.</p>
+          <dl>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#links"><code>ci:links</code></a></dd>
+          </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
       </section>
@@ -1222,6 +1231,7 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
         <dd property="dct:modified" datatype="xsd:dateTime" content="2024-07-22T20:52:29Z">July 22, 2024</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2025-03-09T20:46:09Z">March 9, 2025</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2025-06-04T11:19:06Z">June 4, 2025</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-06-16T03:15:29Z">June 15, 2025</dd>
       </dl>
       <p>This document is copyright 2010-2025 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
     </section>

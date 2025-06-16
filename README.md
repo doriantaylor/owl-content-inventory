@@ -11,7 +11,7 @@ Created
 January 23, 2012
 
 [Updated](https://vocab.methodandstructure.com/content-inventory#sec-changelog)  
-June 4, 2025
+June 15, 2025
 
 Namespace URI  
 [`https://vocab.methodandstructure.com/content-inventory#`](https://vocab.methodandstructure.com/content-inventory#)
@@ -1674,6 +1674,20 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 semantics of elements in HTML/XML markup using [the `role`
 attribute](https://www.w3.org/TR/role-attribute/).
 
+<div id="links" class="section" about="[ci:links]"
+typeof="rdf:Property">
+
+#### `links`
+
+This a role to identify a particular HTML element (e.g. a `<nav>`
+element) as a designated container for additional links that are not
+represented in the markup.
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
 <div id="backlinks" class="section" about="[ci:backlinks]"
 typeof="rdf:Property">
 
@@ -1681,6 +1695,10 @@ typeof="rdf:Property">
 
 This a role to identify a particular HTML element (e.g. a `<nav>`
 element) as a designated container for backlinks.
+
+Sub-property of:  
+<a href="https://vocab.methodandstructure.com/content-inventory#links"
+rel="rdfs:subPropertyOf"><code>ci:links</code></a>
 
 <a href="https://vocab.methodandstructure.com/content-inventory#"
 rel="rdfs:isDefinedBy">Back to Top</a>
@@ -2422,7 +2440,9 @@ March 9, 2025
 
 June 4, 2025
 
-This document is copyright 2010-2022
+June 15, 2025
+
+This document is copyright 2010-2025
 <a href="https://doriantaylor.com/person/dorian-taylor#me"
 rel="dct:creator">Dorian Taylor</a>, available under a
 <a href="http://creativecommons.org/licenses/by/2.5/ca/"
