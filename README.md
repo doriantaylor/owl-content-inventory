@@ -1,17 +1,18 @@
-<div class="section" about="#" typeof="owl:Ontology">
+<div rel="dct:subject foaf:primaryTopic" resource="#"
+typeof="owl:Ontology">
 
 Author  
 <a href="https://doriantaylor.com/person/dorian-taylor#me"
 rel="dct:creator"><span property="foaf:name">Dorian Taylor</span></a>
 
 Version  
-0.16
+0.17
 
 Created  
 January 23, 2012
 
 [Updated](https://vocab.methodandstructure.com/content-inventory#sec-changelog)  
-June 15, 2025
+July 6, 2025
 
 Namespace URI  
 [`https://vocab.methodandstructure.com/content-inventory#`](https://vocab.methodandstructure.com/content-inventory#)
@@ -36,10 +37,6 @@ Datatypes</a>
 href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
 about="#" rel="owl:imports" resource="http://purl.org/dc/terms/">Dublin
 Core Terms</a>
-
-</div>
-
-<div class="section" about="#">
 
 This vocabulary defines a number of concepts peculiar to
 <a href="http://en.wikipedia.org/wiki/Content_strategy"
@@ -117,7 +114,7 @@ to make them easier to pick out.
 
 </div>
 
-<div id="sec-classes" class="section" about="#">
+<div id="ch-classes" class="section">
 
 ## Classes
 
@@ -133,7 +130,7 @@ this document using solid lines, and third-party classes and properties
 using dashed lines.</p></figcaption>
 </figure>
 
-<div class="section">
+<div id="sec-editorial" class="section">
 
 ### Editorial Action
 
@@ -193,7 +190,7 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div class="section">
+<div id="sec-decorators" class="section">
 
 ### Document Classes/Decorators
 
@@ -332,7 +329,7 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div class="section">
+<div id="sec-variation" class="section">
 
 ### Variation
 
@@ -384,7 +381,7 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div class="section">
+<div id="sec-audiences" class="section">
 
 ### Audience Modelling
 
@@ -445,7 +442,7 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div id="sec-properties" class="section" about="#">
+<div id="sec-properties" class="section" about="#sec-properties">
 
 ## Properties
 
@@ -610,7 +607,7 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div class="section">
+<div id="sec-templates" class="section">
 
 ### Template Description
 
@@ -661,7 +658,7 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
-<div class="section">
+<div id="sec-concepts" class="section">
 
 ### Conceptual Relations
 
@@ -876,13 +873,13 @@ demonstrate that concepts can also be rendered as Web pages, as well as
 cross domains.</p></figcaption>
 </figure>
 
-<div id="aware-of" class="section" about="[ci:aware-of]"
+<div id="recognizes" class="section" about="[ci:recognizes]"
 typeof="owl:ObjectProperty">
 
-#### `aware-of`
+#### `recognizes`
 
-This property relates an Audience to a SKOS concept that is likely to be
-in the orbit of the audience's members: they are *aware* that the
+This property relates a `ci:Audience` to a `skos:Concept` that is likely
+to be in the orbit of the audience's members: they are *aware* that the
 concept *exists*, although they may not necessarily *understand* it.
 
 Domain:  
@@ -892,13 +889,51 @@ rel="rdfs:domain"><code>ci:Audience</code></a>
 
 Range:  
 <a href="https://www.w3.org/TR/skos-reference/#concepts"
-rel="rdfs:range"
-resource="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a>
+rel="rdfs:range" resource="skos:Concept"><code>skos:Concept</code></a>
 
 Sub-property of:  
 <a href="https://www.w3.org/TR/skos-reference/#semantic-relations"
 rel="rdfs:subPropertyOf"
-resource="http://www.w3.org/2004/02/skos/core#related"><code>skos:related</code></a>
+resource="skos:semanticRelation"><code>skos:semanticRelation</code></a>
+
+Equivalent to:  
+`ci:aware-of`
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#recognized-by"
+rel="owl:inverseOf"><code>ci:recognized-by</code></a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="recognized-by" class="section" about="[ci:recognized-by]"
+typeof="owl:ObjectProperty">
+
+#### `recognized-by`
+
+Relates a `skos:Concept` to a `ci:Audience` that recognizes it.
+
+Domain:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:domain" resource="skos:Concept"><code>skos:Concept</code></a>
+
+Range:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:range"><code>ci:Audience</code></a>
+
+Sub-property of:  
+<a href="https://www.w3.org/TR/skos-reference/#semantic-relations"
+rel="rdfs:subPropertyOf"
+resource="skos:semanticRelation"><code>skos:semanticRelation</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#recognizes"
+rel="owl:inverseOf"><code>ci:recognizes</code></a>
 
 <a href="https://vocab.methodandstructure.com/content-inventory#"
 rel="rdfs:isDefinedBy">Back to Top</a>
@@ -910,9 +945,9 @@ typeof="owl:ObjectProperty">
 
 #### `understands`
 
-This property relates an Audience to a SKOS concept that members of the
-audience are known to comprehend, and thereby do not need any additional
-explanation.
+This property relates a `ci:Audience` to a `skos:Concept` that members
+of the audience are known to comprehend, and thereby do not need any
+additional explanation.
 
 Domain:  
 <a
@@ -921,13 +956,17 @@ rel="rdfs:domain"><code>ci:Audience</code></a>
 
 Range:  
 <a href="https://www.w3.org/TR/skos-reference/#concepts"
-rel="rdfs:range"
-resource="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a>
+rel="rdfs:range" resource="skos:Concept"><code>skos:Concept</code></a>
 
 Sub-property of:  
 <a
-href="https://vocab.methodandstructure.com/content-inventory#aware-of"
-rel="rdfs:subPropertyOf"><code>ci:aware-of</code></a>
+href="https://vocab.methodandstructure.com/content-inventory#recognizes"
+rel="rdfs:subPropertyOf"><code>ci:recognizes</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#understood-by"
+rel="owl:inverseOf"><code>ci:understood-by</code></a>
 
 See also:  
 <a
@@ -940,13 +979,44 @@ rel="rdfs:isDefinedBy">Back to Top</a>
 
 </div>
 
+<div id="understood-by" class="section" about="[ci:understood-by]"
+typeof="owl:ObjectProperty">
+
+#### `understood-by`
+
+Relates a `skos:Concept` to a `ci:Audience` that understands it.
+
+Domain:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:domain" resource="skos:Concept"><code>skos:Concept</code></a>
+
+Range:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:range"><code>ci:Audience</code></a>
+
+Sub-property of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#recognized-by"
+rel="rdfs:subPropertyOf"><code>ci:recognized-by</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#understands"
+rel="owl:inverseOf"><code>ci:understands</code></a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
 <div id="values" class="section" about="[ci:values]"
 typeof="owl:ObjectProperty">
 
 #### `values`
 
-This property relates an Audience to a SKOS concept that members of the
-audience are known to *value*, that is, to find meaningful in an
+This property relates a `ci:Audience` to a `skos:Concept` that members
+of the audience are known to *value*, that is, to find meaningful in an
 axiological sense.
 
 Domain:  
@@ -956,17 +1026,57 @@ rel="rdfs:domain"><code>ci:Audience</code></a>
 
 Range:  
 <a href="https://www.w3.org/TR/skos-reference/#concepts"
-rel="rdfs:range"
-resource="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a>
+rel="rdfs:range" resource="skos:Concept"><code>skos:Concept</code></a>
 
 Sub-property of:  
-<a href="https://www.w3.org/TR/skos-reference/#semantic-relations"
-rel="rdfs:subPropertyOf"
-resource="http://www.w3.org/2004/02/skos/core#related"><code>skos:related</code></a>
+<a
+href="https://vocab.methodandstructure.com/content-inventory#recognizes"
+rel="rdfs:subPropertyOf"><code>ci:recognizes</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#valued-by"
+rel="owl:inverseOf"><code>ci:valued-by</code></a>
 
 See also:  
 <a href="https://vocab.methodandstructure.com/content-inventory#eschews"
 rel="rdfs:seeAlso"><code>ci:eschews</code></a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="valued-by" class="section" about="[ci:valued-by]"
+typeof="owl:ObjectProperty">
+
+#### `valued-by`
+
+Relates a `skos:Concept` to a `ci:Audience` that values it.
+
+Domain:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:domain" resource="skos:Concept"><code>skos:Concept</code></a>
+
+Range:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:range"><code>ci:Audience</code></a>
+
+Sub-property of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#recognized-by"
+rel="rdfs:subPropertyOf"><code>ci:recognized-by</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#valued-by"
+rel="owl:inverseOf"><code>ci:valued-by</code></a>
+
+See also:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#eschewed-by"
+rel="rdfs:seeAlso"><code>ci:eschewed-by</code></a>
 
 <a href="https://vocab.methodandstructure.com/content-inventory#"
 rel="rdfs:isDefinedBy">Back to Top</a>
@@ -978,9 +1088,9 @@ typeof="owl:ObjectProperty">
 
 #### `eschews`
 
-This property relates an Audience to a SKOS concept that members of the
-audience are known to actively avoid or regard with contempt. This
-relation is intended to represent the complement of *values*.
+This property relates a `ci:Audience` to a `skos:Concept` that members
+of the audience are known to actively avoid or regard with contempt.
+This relation is intended to represent the complement of *values*.
 
 Domain:  
 <a
@@ -989,17 +1099,56 @@ rel="rdfs:domain"><code>ci:Audience</code></a>
 
 Range:  
 <a href="https://www.w3.org/TR/skos-reference/#concepts"
-rel="rdfs:range"
-resource="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a>
+rel="rdfs:range" resource="skos:Concept"><code>skos:Concept</code></a>
 
 Sub-property of:  
-<a href="https://www.w3.org/TR/skos-reference/#semantic-relations"
-rel="rdfs:subPropertyOf"
-resource="http://www.w3.org/2004/02/skos/core#related"><code>skos:related</code></a>
+<a
+href="https://vocab.methodandstructure.com/content-inventory#recognizes"
+rel="rdfs:subPropertyOf"><code>ci:recognizes</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#eschewed-by"
+rel="owl:inverseOf"><code>ci:eschewed-by</code></a>
 
 See also:  
 <a href="https://vocab.methodandstructure.com/content-inventory#values"
 rel="rdfs:seeAlso"><code>ci:values</code></a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="eschewed-by" class="section" about="[ci:eschewed-by]"
+typeof="owl:ObjectProperty">
+
+#### `eschewed-by`
+
+Relates a `skos:Concept` to a `ci:Audience` that eschews it.
+
+Domain:  
+<a href="https://www.w3.org/TR/skos-reference/#concepts"
+rel="rdfs:domain" resource="skos:Concept"><code>skos:Concept</code></a>
+
+Range:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:range"><code>ci:Audience</code></a>
+
+Sub-property of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#recognized-by"
+rel="rdfs:subPropertyOf"><code>ci:recognized-by</code></a>
+
+Inverse of:  
+<a href="https://vocab.methodandstructure.com/content-inventory#eschews"
+rel="owl:inverseOf"><code>ci:eschews</code></a>
+
+See also:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#valued-by"
+rel="rdfs:seeAlso"><code>ci:valued-by</code></a>
 
 <a href="https://vocab.methodandstructure.com/content-inventory#"
 rel="rdfs:isDefinedBy">Back to Top</a>
@@ -1011,8 +1160,8 @@ typeof="owl:ObjectProperty">
 
 #### `exemplar`
 
-This property relates an `Audience` to a specific `foaf:Person` who is
-an exemplar of the audience.
+This property relates an `ci:Audience` to a specific `foaf:Person` who
+is an exemplar of the audience.
 
 Domain:  
 <a
@@ -1026,7 +1175,43 @@ resource="foaf:Person"><code>foaf:Person</code></a>
 Sub-property of:  
 <a href="https://www.w3.org/TR/skos-reference/#notes"
 rel="rdfs:subPropertyOf"
-resource="http://www.w3.org/2004/02/skos/core#example"><code>skos:example</code></a>
+resource="skos:example"><code>skos:example</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#exemplifies"
+rel="owl:inverseOf"><code>ci:exemplifies</code></a>
+
+<a href="https://vocab.methodandstructure.com/content-inventory#"
+rel="rdfs:isDefinedBy">Back to Top</a>
+
+</div>
+
+<div id="exemplifies" class="section" about="[ci:exemplifies]"
+typeof="owl:ObjectProperty">
+
+#### `exemplifies`
+
+Relates a `foaf:Person` who is an example member of a `ci:Audience`.
+
+Domain:  
+<a href="http://xmlns.com/foaf/0.1/#term_Person" rel="rdfs:domain"
+resource="foaf:Person"><code>foaf:Person</code></a>
+
+Range:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#Audience"
+rel="rdfs:range"><code>ci:Audience</code></a>
+
+Sub-property of:  
+<a href="https://www.w3.org/TR/skos-reference/#notes"
+rel="rdfs:subPropertyOf"
+resource="skos:example"><code>skos:example</code></a>
+
+Inverse of:  
+<a
+href="https://vocab.methodandstructure.com/content-inventory#exemplar"
+rel="owl:inverseOf"><code>ci:exemplar</code></a>
 
 <a href="https://vocab.methodandstructure.com/content-inventory#"
 rel="rdfs:isDefinedBy">Back to Top</a>
@@ -2441,6 +2626,8 @@ March 9, 2025
 June 4, 2025
 
 June 15, 2025
+
+July 6, 2025
 
 This document is copyright 2010-2025
 <a href="https://doriantaylor.com/person/dorian-taylor#me"

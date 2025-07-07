@@ -16,6 +16,7 @@
       xmlns:qb="http://purl.org/linked-data/cube#"
       xmlns:vann="http://purl.org/vocab/vann/"
       xmlns:ci="https://vocab.methodandstructure.com/content-inventory#"
+      prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# sh: http://www.w3.org/ns/shacl# xhv: http://www.w3.org/1999/xhtml/vocab# xsd: http://www.w3.org/2001/XMLSchema# bibo: http://purl.org/ontology/bibo/ dct: http://purl.org/dc/terms/ ev: http://purl.org/NET/c4dm/event.owl# foaf: http://xmlns.com/foaf/0.1/ qb: http://purl.org/linked-data/cube# skos: http://www.w3.org/2004/02/skos/core# vann: http://purl.org/vocab/vann/ ci: https://vocab.methodandstructure.com/content-inventory#"
       vocab="http://www.w3.org/1999/xhtml/vocab#" xml:lang="en">
   <head>
     <title about="#" property="dct:title">A Content Inventory Vocabulary</title>
@@ -23,17 +24,17 @@
     <link about="#" rel="rdfs:isDefinedBy bibo:uri" href="#"/>
     <link rel="up top contents index" href="/"/>
   </head>
-  <body about="" typeof="bibo:Webpage" rel="dct:subject foaf:primaryTopic">
-    <section about="#" typeof="owl:Ontology">
+  <body about="" typeof="bibo:Specification">
+    <div rel="dct:subject foaf:primaryTopic" resource="#" typeof="owl:Ontology">
       <dl>
         <dt>Author</dt>
         <dd><a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me"><span property="foaf:name">Dorian Taylor</span></a></dd>
         <dt>Version</dt>
-        <dd property="owl:versionInfo" datatype="xsd:string">0.16</dd>
+        <dd property="owl:versionInfo" datatype="xsd:string">0.17</dd>
         <dt>Created</dt>
         <dd property="dct:created" datatype="xsd:dateTime" content="2012-01-23T11:52:00-08:00">January 23, 2012</dd>
         <dt><a href="#sec-changelog">Updated</a></dt>
-        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-06-16T03:15:29Z">June 15, 2025</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-07-07T00:33:53Z">July 6, 2025</dd>
         <dt>Namespace <abbr>URI</abbr></dt>
         <dd><a href="#"><code>https://vocab.methodandstructure.com/content-inventory#</code></a></dd>
         <dt>Preferred Namespace Prefix</dt>
@@ -44,8 +45,6 @@
         <dd><a about="#" rel="owl:imports" resource="http://www.w3.org/2001/XMLSchema#" href="https://www.w3.org/TR/xmlschema-2/">XML Schema Part 2: Datatypes</a></dd>
         <dd><a about="#" rel="owl:imports" resource="http://purl.org/dc/terms/" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/">Dublin Core Terms</a></dd>
       </dl>
-    </section>
-    <section about="#">
       <p property="rdfs:comment" content="This vocabulary defines a number of concepts peculiar to content strategy which are not accounted for by other vocabularies."> This vocabulary defines a number of concepts peculiar to <a rel="dct:references" href="http://en.wikipedia.org/wiki/Content_strategy" title="Content strategy — Wikipedia">content strategy</a> which are not accounted for by other vocabularies.</p>
       <p>Such vocabularies include, but are far from limited to:</p>
       <ul>
@@ -75,9 +74,9 @@
         </figure>
         <p>and thus would map <code>p:<em>some-term</em></code> to <code>https://example.club/long/uri/<em>some-term</em></code>. Note that these strings are just concatenated together, in contrast to conventional relative <abbr>URI</abbr> resolution. Terms belonging to this specification have been emphasized to make them easier to pick out.</p>
       </aside>
-    </section>
-    <section id="sec-classes" about="#">
-      <h2>Classes</h2>
+    </div>
+    <section id="ch-classes">
+      <h2 property="dct:title">Classes</h2>
       <p>There are currently many extant vocabularies that deal with documents and related entities. The classes here are those that aren't otherwise accounted for.</p>
       <figure>
         <object style="display: block; margin: auto; max-width: 100%; height: auto;" data="content-inventory-classes.svg"><img src="content-inventory-classes" alt=""/></object>
@@ -85,8 +84,8 @@
           <p>This diagram shows the classes and properties defined in this document using solid lines, and third-party classes and properties using dashed lines.</p>
         </figcaption>
       </figure>
-      <section>
-        <h3>Editorial Action</h3>
+      <section id="sec-editorial">
+        <h3 property="dct:title">Editorial Action</h3>
         <p>These classes enable the assignment of specific things to <em>do</em> to a document.</p>
         <section id="Action" about="[ci:Action]" typeof="owl:Class">
           <h4><code property="rdfs:label" datatype="xsd:token">Action</code></h4>
@@ -125,8 +124,8 @@
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
       </section>
-      <section>
-        <h3>Document Classes/Decorators</h3>
+      <section id="sec-decorators">
+        <h3 property="dct:title">Document Classes/Decorators</h3>
         <p>Ontologies like <abbr>BIBO</abbr> are far from exhaustive in their breadth of document types, so any additional salient document types will go here.</p>
         <section id="Abstract" about="[ci:Abstract]" typeof="owl:Class">
           <h4><code property="rdfs:label" datatype="xsd:token">Abstract</code></h4>
@@ -204,8 +203,8 @@ dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .</pre>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
       </section>
-      <section>
-        <h3>Variation</h3>
+      <section id="sec-variation">
+        <h3 property="dct:title">Variation</h3>
         <p>This section is for classes that have to do with creating content that can vary. Currently the only class defined is <code>ci:Variable</code>, which is a way to refer to values which are defined elsewhere and thus can maintain their consistency across the document.</p>
         <section id="Variable" about="[ci:Variable]" typeof="owl:Class">
           <h4><code property="rdfs:label" datatype="xsd:token">Variable</code></h4>
@@ -235,8 +234,8 @@ dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .</pre>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
       </section>
-      <section>
-        <h3>Audience Modelling</h3>
+      <section id="sec-audiences">
+        <h3 property="dct:title">Audience Modelling</h3>
         <p>Classes involved in describing audiences will go here.</p>
         <section id="Audience" about="[ci:Audience]" typeof="owl:Class">
           <h4><code property="rdfs:label" datatype="xsd:token">Audience</code></h4>
@@ -259,8 +258,8 @@ dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .</pre>
         </section>
       </section>
     </section>
-    <section id="sec-properties" about="#">
-      <h2>Properties</h2>
+    <section id="sec-properties" about="#sec-properties">
+      <h2 property="dct:title">Properties</h2>
       <section>
         <h3>Authorial/Editorial Intent</h3>
         <p>After a content inventory comes an audit, wherein we figure out what we want to do with the content. The following properties govern <em>who</em> the document is (not) for and <em>what outcome</em> it is supposed to accomplish.</p>
@@ -352,8 +351,8 @@ bibo:status bs:published, <em>ci:obsolete</em> ;
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
       </section>
-      <section>
-        <h3>Template Description</h3>
+      <section id="sec-templates">
+        <h3 property="dct:title">Template Description</h3>
         <p>These properties have to do with mapping templates to the resources that they transform.</p>
         <section id="class" about="[ci:class]" typeof="owl:ObjectProperty">
           <h4><code property="rdfs:label" datatype="xsd:token">class</code></h4>
@@ -378,8 +377,8 @@ bibo:status bs:published, <em>ci:obsolete</em> ;
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
       </section>
-      <section>
-        <h3>Conceptual Relations</h3>
+      <section id="sec-concepts">
+        <h3 property="dct:title">Conceptual Relations</h3>
         <p>Documents, if they don't explicitly <em>mention</em>, certainly <em>allude to concepts</em>. Certain documents may <em>introduce</em> or <em>define</em> a concept, making it suitable introductory material. Still other documents may evoke images or concepts which members of the audience are actually trying to <em>avoid</em>. The following properties relate documents to concepts, specifically whether a document mentions, introduces, evokes without mentioning, or otherwise assumes a level of understanding on the part of the audience.</p>
         <p>The concepts themselves belong to an ordinary <abbr>SKOS</abbr> concept scheme, and can be reasoned over using their ordinary semantic relations (<code>skos:broader</code>, <code>skos:narrower</code>, <code>skos:related</code>).</p>
         <section id="mentions" about="[ci:mentions]" typeof="owl:ObjectProperty">
@@ -493,74 +492,165 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
             <p>References to DBPedia concepts have been linked to demonstrate that concepts can also be rendered as Web pages, as well as cross domains.</p>
           </figcaption>
         </figure>
-        <section id="aware-of" about="[ci:aware-of]" typeof="owl:ObjectProperty">
-          <h4><code property="rdfs:label" datatype="xsd:token">aware-of</code></h4>
-          <p property="rdfs:comment">This property relates an Audience to a SKOS concept that is likely to be in the orbit of the audience's members: they are <em>aware</em> that the concept <em>exists</em>, although they may not necessarily <em>understand</em> it.</p>
+        <section id="recognizes" about="[ci:recognizes]" typeof="owl:ObjectProperty">
+          <h4><code property="rdfs:label" datatype="xsd:token">recognizes</code></h4>
+          <p property="rdfs:comment">This property relates a <code>ci:Audience</code> to a <code>skos:Concept</code> that is likely to be in the orbit of the audience's members: they are <em>aware</em> that the concept <em>exists</em>, although they may not necessarily <em>understand</em> it.</p>
           <dl>
             <dt>Domain:</dt>
             <dd><a rel="rdfs:domain" href="#Audience"><code>ci:Audience</code></a></dd>
             <dt>Range:</dt>
-            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
+            <dd><a rel="rdfs:range" resource="skos:Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
             <dt>Sub-property of:</dt>
-            <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations"><code>skos:related</code></a></dd>
+            <dd><a rel="rdfs:subPropertyOf" resource="skos:semanticRelation" href="https://www.w3.org/TR/skos-reference/#semantic-relations"><code>skos:semanticRelation</code></a></dd>
+            <dt>Equivalent to:</dt>
+            <dd rel="owl:equivalentProperty" resource="#aware-of" typeof="owl:ObjectProperty"><code property="rdfs:label" datatype="xsd:token" content="aware-of">ci:aware-of</code></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#recognized-by"><code>ci:recognized-by</code></a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="recognized-by" about="[ci:recognized-by]" typeof="owl:ObjectProperty">
+          <h4><code property="rdfs:label" datatype="xsd:token">recognized-by</code></h4>
+          <p property="rdfs:comment">Relates a <code>skos:Concept</code> to a <code>ci:Audience</code> that recognizes it.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="skos:Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="#Audience"><code>ci:Audience</code></a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" resource="skos:semanticRelation" href="https://www.w3.org/TR/skos-reference/#semantic-relations"><code>skos:semanticRelation</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#recognizes"><code>ci:recognizes</code></a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
         <section id="understands" about="[ci:understands]" typeof="owl:ObjectProperty">
           <h4><code property="rdfs:label" datatype="xsd:token">understands</code></h4>
-          <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to comprehend, and thereby do not need any additional explanation.</p>
+          <p property="rdfs:comment">This property relates a <code>ci:Audience</code> to a <code>skos:Concept</code> that members of the audience are known to comprehend, and thereby do not need any additional explanation.</p>
           <dl>
             <dt>Domain:</dt>
             <dd><a rel="rdfs:domain" href="#Audience"><code>ci:Audience</code></a></dd>
             <dt>Range:</dt>
-            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
+            <dd><a rel="rdfs:range" resource="skos:Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
             <dt>Sub-property of:</dt>
-            <dd><a rel="rdfs:subPropertyOf" href="#aware-of"><code>ci:aware-of</code></a></dd>
+            <dd><a rel="rdfs:subPropertyOf" href="#recognizes"><code>ci:recognizes</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#understood-by"><code>ci:understood-by</code></a></dd>
             <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" resource="http://purl.org/dc/terms/educationLevel" href="http://dublincore.org/documents/dcmi-terms/#terms-educationLevel"><code>dct:educationLevel</code></a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
+        <section id="understood-by" about="[ci:understood-by]" typeof="owl:ObjectProperty">
+          <h4><code property="rdfs:label" datatype="xsd:token">understood-by</code></h4>
+          <p property="rdfs:comment">Relates a <code>skos:Concept</code> to a <code>ci:Audience</code> that understands it.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="skos:Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="#Audience"><code>ci:Audience</code></a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#recognized-by"><code>ci:recognized-by</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#understands"><code>ci:understands</code></a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
         <section id="values" about="[ci:values]" typeof="owl:ObjectProperty">
           <h4><code property="rdfs:label" datatype="xsd:token">values</code></h4>
-          <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to <em>value</em>, that is, to find meaningful in an axiological sense.</p>
+          <p property="rdfs:comment">This property relates a <code>ci:Audience</code> to a <code>skos:Concept</code> that members of the audience are known to <em>value</em>, that is, to find meaningful in an axiological sense.</p>
           <dl>
             <dt>Domain:</dt>
             <dd><a rel="rdfs:domain" href="#Audience"><code>ci:Audience</code></a></dd>
             <dt>Range:</dt>
-            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
+            <dd><a rel="rdfs:range" resource="skos:Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
             <dt>Sub-property of:</dt>
-            <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations"><code>skos:related</code></a></dd>
+            <dd><a rel="rdfs:subPropertyOf" href="#recognizes"><code>ci:recognizes</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#valued-by"><code>ci:valued-by</code></a></dd>
             <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="#eschews"><code>ci:eschews</code></a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
+        <section id="valued-by" about="[ci:valued-by]" typeof="owl:ObjectProperty">
+          <h4><code property="rdfs:label" datatype="xsd:token">valued-by</code></h4>
+          <p property="rdfs:comment">Relates a <code>skos:Concept</code> to a <code>ci:Audience</code> that values it.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="skos:Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="#Audience"><code>ci:Audience</code></a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#recognized-by"><code>ci:recognized-by</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#valued-by"><code>ci:valued-by</code></a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" href="#eschewed-by"><code>ci:eschewed-by</code></a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
         <section id="eschews" about="[ci:eschews]" typeof="owl:ObjectProperty">
           <h4><code property="rdfs:label" datatype="xsd:token">eschews</code></h4>
-          <p property="rdfs:comment">This property relates an Audience to a SKOS concept that members of the audience are known to actively avoid or regard with contempt. This relation is intended to represent the complement of <em>values</em>.</p>
+          <p property="rdfs:comment">This property relates a <code>ci:Audience</code> to a <code>skos:Concept</code> that members of the audience are known to actively avoid or regard with contempt. This relation is intended to represent the complement of <em>values</em>.</p>
           <dl>
             <dt>Domain:</dt>
             <dd><a rel="rdfs:domain" href="#Audience"><code>ci:Audience</code></a></dd>
             <dt>Range:</dt>
-            <dd><a rel="rdfs:range" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
+            <dd><a rel="rdfs:range" resource="skos:Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
             <dt>Sub-property of:</dt>
-            <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#related" href="https://www.w3.org/TR/skos-reference/#semantic-relations"><code>skos:related</code></a></dd>
+            <dd><a rel="rdfs:subPropertyOf" href="#recognizes"><code>ci:recognizes</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#eschewed-by"><code>ci:eschewed-by</code></a></dd>
             <dt>See also:</dt>
             <dd><a rel="rdfs:seeAlso" href="#values"><code>ci:values</code></a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
+        <section id="eschewed-by" about="[ci:eschewed-by]" typeof="owl:ObjectProperty">
+          <h4><code property="rdfs:label" datatype="xsd:token">eschewed-by</code></h4>
+          <p property="rdfs:comment">Relates a <code>skos:Concept</code> to a <code>ci:Audience</code> that eschews it.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="skos:Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="#Audience"><code>ci:Audience</code></a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" href="#recognized-by"><code>ci:recognized-by</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#eschews"><code>ci:eschews</code></a></dd>
+            <dt>See also:</dt>
+            <dd><a rel="rdfs:seeAlso" href="#valued-by"><code>ci:valued-by</code></a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
         <section id="exemplar" about="[ci:exemplar]" typeof="owl:ObjectProperty">
           <h4><code property="rdfs:label" datatype="xsd:token">exemplar</code></h4>
-          <p property="rdfs:comment">This property relates an <code>Audience</code> to a specific <code>foaf:Person</code> who is an exemplar of the audience.</p>
+          <p property="rdfs:comment">This property relates an <code>ci:Audience</code> to a specific <code>foaf:Person</code> who is an exemplar of the audience.</p>
           <dl>
             <dt>Domain:</dt>
             <dd><a rel="rdfs:domain" href="#Audience"><code>ci:Audience</code></a></dd>
             <dt>Range:</dt>
             <dd><a rel="rdfs:range" resource="foaf:Person" href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a></dd>
             <dt>Sub-property of:</dt>
-            <dd><a rel="rdfs:subPropertyOf" resource="http://www.w3.org/2004/02/skos/core#example" href="https://www.w3.org/TR/skos-reference/#notes"><code>skos:example</code></a></dd>
+            <dd><a rel="rdfs:subPropertyOf" resource="skos:example" href="https://www.w3.org/TR/skos-reference/#notes"><code>skos:example</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#exemplifies"><code>ci:exemplifies</code></a></dd>
+          </dl>
+          <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
+        </section>
+        <section id="exemplifies" about="[ci:exemplifies]" typeof="owl:ObjectProperty">
+          <h4><code property="rdfs:label" datatype="xsd:token">exemplifies</code></h4>
+          <p property="rdfs:comment">Relates a <code>foaf:Person</code> who is an example member of a <code>ci:Audience</code>.</p>
+          <dl>
+            <dt>Domain:</dt>
+            <dd><a rel="rdfs:domain" resource="foaf:Person" href="http://xmlns.com/foaf/0.1/#term_Person"><code>foaf:Person</code></a></dd>
+            <dt>Range:</dt>
+            <dd><a rel="rdfs:range" href="#Audience"><code>ci:Audience</code></a></dd>
+            <dt>Sub-property of:</dt>
+            <dd><a rel="rdfs:subPropertyOf" resource="skos:example" href="https://www.w3.org/TR/skos-reference/#notes"><code>skos:example</code></a></dd>
+            <dt>Inverse of:</dt>
+            <dd><a rel="owl:inverseOf" href="#exemplar"><code>ci:exemplar</code></a></dd>
           </dl>
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
@@ -1232,6 +1322,7 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
         <dd property="dct:modified" datatype="xsd:dateTime" content="2025-03-09T20:46:09Z">March 9, 2025</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2025-06-04T11:19:06Z">June 4, 2025</dd>
         <dd property="dct:modified" datatype="xsd:dateTime" content="2025-06-16T03:15:29Z">June 15, 2025</dd>
+        <dd property="dct:modified" datatype="xsd:dateTime" content="2025-07-07T00:33:53Z">July 6, 2025</dd>
       </dl>
       <p>This document is copyright 2010-2025 <a rel="dct:creator" href="https://doriantaylor.com/person/dorian-taylor#me">Dorian Taylor</a>, available under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada</a> license, where <dfn>attribution</dfn> is defined as a link <a href="#">here</a>.</p>
     </section>
