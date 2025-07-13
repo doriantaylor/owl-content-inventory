@@ -408,8 +408,8 @@ resource="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code>
 
 Properties:  
 <a
-href="https://vocab.methodandstructure.com/content-inventory#aware-of"
-rev="rdfs:domain"><code>ci:aware-of</code></a>
+href="https://vocab.methodandstructure.com/content-inventory#recognizes"
+rev="rdfs:domain"><code>ci:recognizes</code></a>
 
 <a
 href="https://vocab.methodandstructure.com/content-inventory#understands"

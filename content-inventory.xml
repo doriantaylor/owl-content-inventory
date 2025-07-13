@@ -245,7 +245,7 @@ dct:title "Punch The Monkey And WIN!#@$!%%^!"@en .</pre>
             <dd><a rel="rdfs:subClassOf" resource="http://purl.org/dc/terms/AgentClass" href="http://www.dublincore.org/specifications/dublin-core/dcmi-terms/#terms-AgentClass"><code>dct:AgentClass</code></a></dd>
             <dd><a rel="rdfs:subClassOf" resource="http://www.w3.org/2004/02/skos/core#Concept" href="https://www.w3.org/TR/skos-reference/#concepts"><code>skos:Concept</code></a></dd>
             <dt>Properties:</dt>
-            <dd><a rev="rdfs:domain" href="#aware-of"><code>ci:aware-of</code></a></dd>
+            <dd><a rev="rdfs:domain" href="#recognizes"><code>ci:recognizes</code></a></dd>
             <dd><a rev="rdfs:domain" href="#understands"><code>ci:understands</code></a></dd>
             <dd><a rev="rdfs:domain" href="#values"><code>ci:values</code></a></dd>
             <dd><a rev="rdfs:domain" href="#eschews"><code>ci:eschews</code></a></dd>
