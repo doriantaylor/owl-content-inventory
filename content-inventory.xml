@@ -503,7 +503,7 @@ dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
             <dt>Sub-property of:</dt>
             <dd><a rel="rdfs:subPropertyOf" resource="skos:semanticRelation" href="https://www.w3.org/TR/skos-reference/#semantic-relations"><code>skos:semanticRelation</code></a></dd>
             <dt>Equivalent to:</dt>
-            <dd rel="owl:equivalentProperty" resource="#aware-of" typeof="owl:ObjectProperty"><code property="rdfs:label" datatype="xsd:token" content="aware-of">ci:aware-of</code></dd>
+            <dd rel="owl:equivalentProperty" resource="#aware-of" typeof="owl:ObjectProperty"><code property="rdfs:label" datatype="xsd:token" content="aware-of">ci:aware-of</code><span property="owl:deprecated" datatype="xsd:boolean" content="true"/></dd>
             <dt>Inverse of:</dt>
             <dd><a rel="owl:inverseOf" href="#recognized-by"><code>ci:recognized-by</code></a></dd>
           </dl>
