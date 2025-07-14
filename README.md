@@ -897,7 +897,8 @@ rel="rdfs:subPropertyOf"
 resource="skos:semanticRelation"><code>skos:semanticRelation</code></a>
 
 Equivalent to:  
-`ci:aware-of`
+`ci:aware-of`<span property="owl:deprecated" datatype="xsd:boolean"
+content="true"></span>
 
 Inverse of:  
 <a
