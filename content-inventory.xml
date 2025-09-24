@@ -452,7 +452,7 @@ bibo:status bs:published, <em>ci:obsolete</em> ;
           <p><a rel="rdfs:isDefinedBy" href="#">Back to Top</a></p>
         </section>
       </section>
-      <section>
+      <section id="sec-audience-props">
         <h3>Audience Properties</h3>
         <p>On the other side of the relationships between documents and concepts, are the relationships between <em>audiences</em> and concepts. In order to get any use out of a document, it is safe to assume a person has to <em>understand</em> it, which they won't if the document deals with concepts the person doesn't understand, unless the document specifically contains content explaining those concepts. Conversely, a person may understand a concept all too well, and have an opinion about it, which will entice them to either <em>seek out</em> or <em>avoid</em> documents that deal with those concepts. These properties are intended to model both the audience's grasp of, and emotional valence toward, a given concept.</p>
         <p>Intersecting the concept relations declared on the documents in our inventory with the following properties declared on our audiences will enable us to construct appropriate pairings of content to audiences, and/or root out gaps in our assumptions about both our content <em>and</em> our audiences.</p>
@@ -463,7 +463,7 @@ bibo:status bs:published, <em>ci:obsolete</em> ;
 @prefix dbc:  &lt;https://dbpedia.org/page/Category:&gt; .
 
 &lt;https://example.news/2020/01/gruesome-car-accident&gt; a bibo:Article ;
-dct:title "Gruesome Car Accident Gruesomely Kills 42" ;
+dct:title "Gruesome Car Accident Gruesomely Kills 42"@en ;
 <em>ci:depicts</em> <a href="http://dbpedia.org/page/Category:Traffic_collisions">dbc:Traffic_collisions</a>, <a href="http://dbpedia.org/page/Category:Road_incident_deaths">dbc:Road_incident_deaths</a> .
 
 # we could define the following audience:
